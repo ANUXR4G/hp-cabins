@@ -5,7 +5,7 @@ node_modules
 .next
 out
 
-# large media — run `yarn clone:hpcabins` after clone to download assets
+# large media — synced locally via `yarn download:media` (runs automatically before build)
 *.mp4
 public/wp-content/
 

@@ -8,6 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "clone:hpcabins": "node scripts/clone-hpcabins.mjs",
+    "download:media": "node scripts/download-media.mjs",
+    "prebuild": "node scripts/download-media.mjs",
     "update:content": "node scripts/update-cms-content.mjs",
     "enrich:products": "node scripts/enrich-product-content.mjs",
     "generate:clients": "node scripts/generate-clients-data.mjs",
