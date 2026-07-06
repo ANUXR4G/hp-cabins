@@ -24,10 +24,10 @@ export default function ProductMediaGallery({ title, category, badge, images, pr
           className="w-full h-full object-cover transition-all duration-300"
         />
         <div className="absolute top-4 left-4 z-10 flex gap-2">
-          <span className="bg-black/80 text-white border border-white/10 text-xs font-normal tracking-widest uppercase px-3 py-1 rounded-none">
+          <span className="bg-black/80 text-white border border-white/10 text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-none">
             {category}
           </span>
-          <span className="bg-crimson text-white text-xs font-normal tracking-widest uppercase px-2.5 py-0.5 rounded-md">
+          <span className="bg-crimson text-white text-xs font-extrabold tracking-widest uppercase px-2.5 py-0.5 rounded-md">
             {badge}
           </span>
         </div>

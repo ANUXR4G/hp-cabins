@@ -37,7 +37,7 @@ export default function ContactPage() {
               <span>Home</span>
             </Link>
             <ChevronRight className="w-3 h-3" />
-            <span className="text-crimson font-normal">Contact Us</span>
+            <span className="text-crimson font-bold">Contact Us</span>
           </div>
         </div>
       </div>
@@ -46,8 +46,8 @@ export default function ContactPage() {
       <div className="bg-premium-black border-b border-white/10 py-5 sm:py-6 text-white shrink-0">
         <div className="page-container flex flex-col sm:flex-row items-center sm:items-center justify-between gap-4 text-center sm:text-left">
           <div className="space-y-1 max-w-2xl">
-            <h3 className="content font-normal text-white">Need a Custom Cabin Specification?</h3>
-            <p className="content text-white/60 leading-relaxed">We engineer modular layout designs, custom insulation, and plumbing arrays matching your footprint goals.</p>
+            <h3 className="text-sm font-bold text-white uppercase tracking-wider">Need a Custom Cabin Specification?</h3>
+            <p className="text-base text-white/60 leading-relaxed">We engineer modular layout designs, custom insulation, and plumbing arrays matching your footprint goals.</p>
           </div>
           <Link 
             href="#contact-form-section"
@@ -66,41 +66,41 @@ export default function ContactPage() {
           <div className="lg:col-span-3 order-1 md:order-1 lg:order-1 flex flex-col">
             <div className="space-y-6 flex-grow">
               <div>
-                <h3 className="heading font-display border-l-2 border-crimson pl-3 mb-2 text-premium-black">Get In Touch</h3>
+                <h3 className="text-lg font-bold uppercase font-display border-l-2 border-crimson pl-3 mb-2 text-premium-black">Get In Touch</h3>
                 <p className="section-desc">Reach out to our Hyderabad head office for consultations, quotes, and nationwide portable cabin delivery.</p>
               </div>
 
               <div className="space-y-3 sm:space-y-4 text-sm">
                 
-                <div className="flex gap-3 items-start p-3 bg-white rounded-none border border-hairline">
+                <div className="flex gap-3 items-start p-3 bg-white rounded-none border border-gray-200/60">
                   <Phone className="w-4 h-4 text-crimson shrink-0 mt-0.5" />
                   <div>
-                    <span className="block text-gray-400 font-normal text-xs">Phone</span>
-                    <a href={`tel:${phone.replace(/\s/g, '')}`} className="font-normal text-premium-black hover:text-crimson transition-colors">{phone}</a>
+                    <span className="block text-gray-400 font-bold uppercase text-xs">Phone</span>
+                    <a href={`tel:${phone.replace(/\s/g, '')}`} className="font-semibold text-premium-black hover:text-crimson transition-colors">{phone}</a>
                   </div>
                 </div>
 
-                <div className="flex gap-3 items-start p-3 bg-white rounded-none border border-hairline">
+                <div className="flex gap-3 items-start p-3 bg-white rounded-none border border-gray-200/60">
                   <Mail className="w-4 h-4 text-crimson shrink-0 mt-0.5" />
                   <div>
-                    <span className="block text-gray-400 font-normal text-xs">Email</span>
-                    <a href={`mailto:${email}`} className="font-normal text-premium-black hover:text-crimson transition-colors">{email}</a>
+                    <span className="block text-gray-400 font-bold uppercase text-xs">Email</span>
+                    <a href={`mailto:${email}`} className="font-semibold text-premium-black hover:text-crimson transition-colors">{email}</a>
                   </div>
                 </div>
 
-                <div className="flex gap-3 items-start p-3 bg-white rounded-none border border-hairline">
+                <div className="flex gap-3 items-start p-3 bg-white rounded-none border border-gray-200/60">
                   <MapPin className="w-4 h-4 text-crimson shrink-0 mt-0.5" />
                   <div>
-                    <span className="block text-gray-400 font-normal text-xs">Head Office</span>
-                    <p className="font-normal text-premium-black">{address}</p>
+                    <span className="block text-gray-400 font-bold uppercase text-xs">Head Office</span>
+                    <p className="font-semibold text-premium-black">{address}</p>
                   </div>
                 </div>
 
-                <div className="flex gap-3 items-start p-3 bg-white rounded-none border border-hairline">
+                <div className="flex gap-3 items-start p-3 bg-white rounded-none border border-gray-200/60">
                   <Calendar className="w-4 h-4 text-crimson shrink-0 mt-0.5" />
                   <div>
-                    <span className="block text-gray-400 font-normal text-xs">Working Hours</span>
-                    <p className="font-normal text-premium-black">{hours}</p>
+                    <span className="block text-gray-400 font-bold uppercase text-xs">Working Hours</span>
+                    <p className="font-semibold text-premium-black">{hours}</p>
                   </div>
                 </div>
 
@@ -108,7 +108,7 @@ export default function ContactPage() {
             </div>
 
             {/* Quick response banner */}
-            <div className="content text-gray-400 leading-relaxed italic border-t border-gray-200 pt-4 mt-6 hidden lg:block">
+            <div className="text-xs text-gray-400 leading-relaxed italic border-t border-gray-200 pt-4 mt-6 hidden lg:block">
               * Estimator desk calls are handled directly by layout engineers. Factory visits are by appointment.
             </div>
           </div>
@@ -129,8 +129,8 @@ export default function ContactPage() {
                 <div className="p-4 bg-crimson/5 rounded-full text-crimson">
                   <CheckCircle2 className="w-10 h-10" />
                 </div>
-                <h3 className="heading font-display text-premium-black">Message Sent</h3>
-                <p className="content text-gray-500 max-w-xs leading-relaxed">
+                <h3 className="text-lg font-bold font-display text-premium-black">Message Sent</h3>
+                <p className="text-base text-gray-500 max-w-xs leading-relaxed">
                   Your enquiry is in queue. A project estimation lead is reviewing your specifications and will follow up shortly.
                 </p>
               </div>
@@ -143,38 +143,38 @@ export default function ContactPage() {
                 className="space-y-4 text-base"
               >
                 <div className="space-y-1.5">
-                  <label className="font-normal text-gray-400 uppercase">Contact Name</label>
+                  <label className="font-bold text-gray-400 uppercase">Contact Name</label>
                   <input 
                     type="text" 
                     required 
                     placeholder="Enter your name" 
-                    className="w-full bg-gray-50 border border-gray-200 rounded-none p-3 focus:outline-none focus:border-crimson content text-premium-black font-normal"
+                    className="w-full bg-gray-50 border border-gray-200 rounded-none p-3 focus:outline-none focus:border-crimson text-sm text-premium-black font-semibold"
                   />
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="font-normal text-gray-400 uppercase">Phone Number</label>
+                  <label className="font-bold text-gray-400 uppercase">Phone Number</label>
                   <input 
                     type="tel" 
                     required 
                     placeholder="Enter phone number" 
-                    className="w-full bg-gray-50 border border-gray-200 rounded-none p-3 focus:outline-none focus:border-crimson content text-premium-black font-normal"
+                    className="w-full bg-gray-50 border border-gray-200 rounded-none p-3 focus:outline-none focus:border-crimson text-sm text-premium-black font-semibold"
                   />
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="font-normal text-gray-400 uppercase">Email Address</label>
+                  <label className="font-bold text-gray-400 uppercase">Email Address</label>
                   <input 
                     type="email" 
                     required 
                     placeholder="Enter email address" 
-                    className="w-full bg-gray-50 border border-gray-200 rounded-none p-3 focus:outline-none focus:border-crimson content text-premium-black font-normal"
+                    className="w-full bg-gray-50 border border-gray-200 rounded-none p-3 focus:outline-none focus:border-crimson text-sm text-premium-black font-semibold"
                   />
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="font-normal text-gray-400 uppercase">Inquiry Type</label>
-                  <select className="w-full bg-gray-50 border border-gray-200 rounded-none p-3 focus:outline-none focus:border-crimson content text-premium-black font-normal cursor-pointer">
+                  <label className="font-bold text-gray-400 uppercase">Inquiry Type</label>
+                  <select className="w-full bg-gray-50 border border-gray-200 rounded-none p-3 focus:outline-none focus:border-crimson text-sm text-premium-black font-semibold cursor-pointer">
                     <option value="Estimates">Request Drawing & Price Estimate</option>
                     <option value="Custom">Custom Cabin Engineering Options</option>
                     <option value="Factory">Schedule Factory Visit</option>
@@ -184,11 +184,11 @@ export default function ContactPage() {
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="font-normal text-gray-400 uppercase">Message & Configurations</label>
+                  <label className="font-bold text-gray-400 uppercase">Message & Configurations</label>
                   <textarea 
                     rows={4} 
                     placeholder="Provide details on cabin dimensions, quantities, HVAC needs, or shipping coordinates..." 
-                    className="w-full bg-gray-50 border border-gray-200 rounded-none p-3 focus:outline-none focus:border-crimson content text-premium-black leading-relaxed"
+                    className="w-full bg-gray-50 border border-gray-200 rounded-none p-3 focus:outline-none focus:border-crimson text-sm text-premium-black leading-relaxed"
                   />
                 </div>
 

@@ -10,9 +10,8 @@
       "background": "#F5F5F5"
     },
     "fonts": {
-      "header": "Saira Condensed, system-ui, sans-serif",
-      "body": "Cormorant Garamond, Garamond, serif",
-      "mono": "JetBrains Mono, ui-monospace, monospace"
+      "header": "Inter, system-ui, sans-serif",
+      "body": "Inter, system-ui, sans-serif"
     },
     "logos": {
       "header": "/wp-content/uploads/2025/06/HPC-LOGO-1.png",

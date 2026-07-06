@@ -88,8 +88,6 @@ export const clients = [
   'Emaar', 'Nakheel', 'Indian Oil', 'Wipro',
 ];
 
-export const affiliations = ['Make in India', 'GeM', 'NSIC', 'MSME Global'];
-
 export const workingProcess = [
   { icon: Users, step: '01', title: 'Consultation & Quote', desc: 'We offer a free consultation and provide an accurate online quote based on your requirements.' },
   { icon: Ruler, step: '02', title: 'Design & Customization', desc: 'Choose from a variety of designs or customize your portable cabin to fit your specific needs.' },

@@ -17,7 +17,7 @@ export default function ClientsPage() {
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4">
           <h1 className="inner-page-title text-white">Our Clients</h1>
-          <p className="content text-white/60 mt-3 max-w-2xl mx-auto">
+          <p className="text-sm text-white/60 mt-3 max-w-2xl mx-auto">
             Trusted by leading organizations across infrastructure, energy, technology, healthcare, and government sectors.
           </p>
           <div className="flex items-center justify-center gap-2 breadcrumb text-white/50 mt-5">
@@ -26,7 +26,7 @@ export default function ClientsPage() {
               <span>Home</span>
             </Link>
             <ChevronRight className="w-3 h-3" />
-            <span className="text-crimson font-normal">Clients</span>
+            <span className="text-crimson font-bold">Clients</span>
           </div>
         </div>
       </div>

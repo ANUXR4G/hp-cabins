@@ -23,7 +23,7 @@ export default function TestimonialsPage() {
               <span>Home</span>
             </Link>
             <ChevronRight className="w-3 h-3" />
-            <span className="text-crimson font-normal">Testimonials</span>
+            <span className="text-crimson font-bold">Testimonials</span>
           </div>
         </div>
       </div>

@@ -22,7 +22,7 @@ export default function NewsPage() {
               <span>Home</span>
             </Link>
             <ChevronRight className="w-3 h-3" />
-            <span className="text-crimson font-normal">News</span>
+            <span className="text-crimson font-bold">News</span>
           </div>
         </div>
       </div>

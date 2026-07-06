@@ -25,7 +25,7 @@ export default function ProductVideosSection({ title, videos }: Props) {
 
   return (
     <div className="bg-white p-6 sm:p-8 rounded-none border border-gray-200/60 space-y-6">
-      <h2 className="section-title border-l-2 border-crimson pl-3 text-premium-black">
+      <h2 className="text-lg font-bold uppercase border-l-2 border-crimson pl-3 text-premium-black font-display">
         Our Videos
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">

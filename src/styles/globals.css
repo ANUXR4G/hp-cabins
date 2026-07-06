@@ -26,7 +26,7 @@ html {
 
 @layer base {
   body {
-    @apply font-serif text-body-md text-body antialiased;
+    @apply font-sans text-base font-light text-body antialiased;
     background-color: var(--light-gray);
     overflow-x: clip;
     scroll-behavior: smooth;
@@ -35,14 +35,15 @@ html {
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply heading;
+    @apply font-display font-bold text-premium-black uppercase tracking-tight;
   }
 
-  p, li {
-    @apply content;
+  p {
+    @apply text-base font-light leading-relaxed text-body;
   }
 }
 
+/* Hide scrollbar but keep functionality */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
@@ -52,12 +53,12 @@ html {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .animate-fade-in {
-  animation: fadeIn 0.6s ease forwards;
+  animation: fadeIn 0.5s ease forwards;
 }
 
 @layer components {
@@ -66,147 +67,131 @@ html {
   }
 
   .section-spacing {
-    @apply py-section-sm lg:py-section;
+    @apply py-section;
   }
 
   .section-header {
-    @apply text-center max-w-3xl mx-auto mb-16 sm:mb-20 space-y-4 px-1;
-  }
-
-  /* Single heading size sitewide */
-  .heading {
-    @apply text-2xl font-display font-normal text-ink uppercase tracking-display leading-tight;
-  }
-
-  /* Single body/content size sitewide */
-  .content {
-    @apply text-body-md font-serif font-normal text-body leading-[1.5] normal-case;
+    @apply text-center max-w-3xl mx-auto mb-10 sm:mb-14 space-y-4 px-1;
   }
 
   .section-eyebrow {
-    @apply font-mono text-body-md uppercase tracking-caption text-crimson block;
+    @apply uppercase tracking-label text-sm font-bold text-crimson block;
   }
 
   .section-title {
-    @apply heading;
+    @apply text-display-sm sm:text-display-md font-bold font-display text-premium-black uppercase leading-tight;
   }
 
   .section-desc {
-    @apply content;
+    @apply text-base font-light text-body leading-relaxed normal-case;
   }
 
   .body-text {
-    @apply content;
+    @apply text-base font-light text-body leading-relaxed normal-case;
   }
 
   .card-title {
-    @apply heading;
+    @apply text-title-md font-bold text-premium-black normal-case;
   }
 
   .card-text {
-    @apply content;
+    @apply text-base font-light text-body leading-relaxed normal-case;
   }
 
   .label-text {
-    @apply font-mono text-body-md uppercase tracking-caption text-muted;
+    @apply text-sm font-bold uppercase tracking-label text-muted;
   }
 
   .meta-text {
-    @apply font-mono text-body-md uppercase tracking-caption text-muted;
+    @apply text-xs font-normal text-muted tracking-nav normal-case;
   }
 
   .btn-label {
-    @apply font-mono text-button-mono uppercase tracking-button font-normal;
+    @apply text-sm font-bold uppercase tracking-label;
   }
 
   .page-hero-title {
-    @apply heading;
+    @apply text-display-md sm:text-display-lg lg:text-display-xl font-bold font-display uppercase leading-none tracking-tight;
   }
 
   .inner-page-title {
-    @apply heading;
+    @apply text-display-sm sm:text-display-md font-bold font-display uppercase tracking-tight;
   }
 
   .breadcrumb {
-    @apply font-mono text-nav-mono uppercase tracking-nav text-muted;
+    @apply text-xs uppercase tracking-nav text-muted font-normal;
   }
 
-  .tile-light {
-    @apply bg-white text-ink;
-  }
-
-  .tile-parchment {
-    @apply bg-parchment text-ink;
-  }
-
-  .tile-dark {
-    @apply bg-premium-black text-white;
-  }
-
+  /* BMW-inspired flat surfaces — HP green palette */
   .card-surface {
-    @apply bg-surface-card rounded-none border border-hairline;
+    @apply bg-white rounded-none border border-hairline;
   }
 
   .surface-card {
     @apply bg-white border border-hairline rounded-none;
   }
 
+  .surface-elevated {
+    @apply bg-[#fafafa] border border-hairline-strong rounded-none;
+  }
+
   .hairline-divider {
     @apply border-t border-hairline;
   }
 
-  .btn-primary {
-    @apply inline-flex items-center justify-center min-h-[44px] px-8 py-3.5
-      bg-transparent text-crimson border border-crimson rounded-pill btn-label
-      transition-opacity duration-200 active:opacity-70;
+  .brand-stripe {
+    @apply h-1 w-full;
+    background: linear-gradient(
+      90deg,
+      var(--crimson-dark) 0%,
+      var(--crimson) 50%,
+      var(--crimson-light) 100%
+    );
   }
 
-  .btn-primary-filled {
-    @apply inline-flex items-center justify-center min-h-[44px] px-8 py-3.5
-      bg-crimson text-white border border-crimson rounded-pill btn-label
-      transition-opacity duration-200 active:opacity-80;
+  .btn-primary {
+    @apply inline-flex items-center justify-center h-12 px-8 btn-label
+      bg-crimson text-white border border-crimson rounded-none
+      transition-colors duration-200
+      hover:bg-crimson-dark hover:border-crimson-dark;
   }
 
   .btn-primary-outline {
-    @apply btn-primary;
+    @apply inline-flex items-center justify-center h-12 px-8 btn-label
+      bg-transparent text-crimson border border-crimson rounded-none
+      transition-colors duration-200
+      hover:bg-crimson hover:text-white;
   }
 
   .btn-on-dark {
-    @apply inline-flex items-center justify-center min-h-[44px] px-8 py-3.5
-      bg-transparent text-white border border-white rounded-pill btn-label
-      transition-opacity duration-200 active:opacity-70;
+    @apply inline-flex items-center justify-center h-12 px-8 btn-label
+      bg-transparent text-white border border-white rounded-none
+      transition-colors duration-200
+      hover:bg-white hover:text-premium-black;
   }
 
   .btn-icon {
-    @apply inline-flex items-center justify-center w-10 h-10 rounded-full
-      bg-transparent border border-hairline-strong text-ink
-      transition-opacity duration-200 active:opacity-70;
+    @apply inline-flex items-center justify-center w-12 h-12 rounded-full
+      bg-white border border-hairline text-premium-black
+      transition-colors duration-200 hover:border-crimson hover:text-crimson;
   }
 
   .text-link {
-    @apply content text-crimson hover:text-crimson-dark transition-colors underline underline-offset-2;
-  }
-
-  .text-link-on-dark {
-    @apply content text-crimson-light hover:text-white transition-colors underline underline-offset-2;
+    @apply btn-label text-crimson hover:text-crimson-dark transition-colors inline-flex items-center gap-2;
   }
 
   .text-input {
-    @apply w-full min-h-[44px] px-0 py-3 bg-transparent border-0 border-b border-hairline-strong
-      text-body-md text-ink font-normal rounded-none
-      focus:outline-none focus:border-crimson transition-colors placeholder:text-muted;
+    @apply w-full h-12 px-4 bg-white border border-hairline rounded-none
+      text-base font-light text-premium-black
+      focus:outline-none focus:border-crimson transition-colors;
   }
 
   .category-tab {
-    @apply font-mono text-caption-mono uppercase tracking-caption text-muted py-3 border-b border-transparent transition-colors;
+    @apply btn-label text-body py-3 border-b-2 border-transparent transition-colors;
   }
 
   .category-tab-active {
-    @apply font-mono text-caption-mono uppercase tracking-caption text-ink py-3 border-b border-crimson;
-  }
-
-  .top-nav {
-    @apply bg-transparent border-b border-hairline;
+    @apply btn-label text-premium-black py-3 border-b-2 border-crimson;
   }
 
   .luxury-card {
@@ -214,7 +199,7 @@ html {
   }
 
   .luxury-card:hover {
-    @apply border-crimson/50;
+    @apply border-crimson;
   }
 
   .carousel-viewport {
@@ -222,7 +207,7 @@ html {
   }
 
   .carousel-track {
-    @apply flex touch-pan-y gap-6 pl-4 sm:pl-6 lg:pl-8;
+    @apply flex touch-pan-y gap-4 sm:gap-5 pl-4 sm:pl-6 lg:pl-8;
   }
 
   .carousel-slide {
@@ -233,4 +218,5 @@ html {
 .floating-nav-active {
   color: var(--crimson) !important;
   border-left-color: var(--crimson) !important;
+  background: rgba(1, 117, 1, 0.04);
 }

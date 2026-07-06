@@ -68,7 +68,7 @@ export default function ProjectsPage() {
               <span>Home</span>
             </Link>
             <ChevronRight className="w-3 h-3" />
-            <span className="text-crimson font-normal">Projects</span>
+            <span className="text-crimson font-bold">Projects</span>
           </div>
         </div>
       </div>
@@ -80,11 +80,11 @@ export default function ProjectsPage() {
           <div className="flex flex-wrap gap-3 items-center w-full sm:w-auto">
             {/* Category selector */}
             <div className="space-y-1 w-full sm:w-auto">
-              <span className="content text-gray-400 font-normal uppercase block sm:hidden">Project Application</span>
+              <span className="text-xs text-gray-400 font-extrabold uppercase block sm:hidden">Project Application</span>
               <select 
                 value={activeCategory}
                 onChange={(e) => setActiveCategory(e.target.value)}
-                className="bg-gray-50 border border-gray-200 rounded-none px-4 py-2.5 content text-premium-black font-normal focus:outline-none focus:border-crimson w-full sm:w-48 cursor-pointer"
+                className="bg-gray-50 border border-gray-200 rounded-none px-4 py-2.5 text-sm text-premium-black font-semibold focus:outline-none focus:border-crimson w-full sm:w-48 cursor-pointer"
               >
                 {categories.map(cat => <option key={cat} value={cat}>{cat}</option>)}
               </select>
@@ -92,19 +92,19 @@ export default function ProjectsPage() {
 
             {/* City selector */}
             <div className="space-y-1 w-full sm:w-auto">
-              <span className="content text-gray-400 font-normal uppercase block sm:hidden">Location Region</span>
+              <span className="text-xs text-gray-400 font-extrabold uppercase block sm:hidden">Location Region</span>
               <select 
                 value={activeCity}
                 onChange={(e) => setActiveCity(e.target.value)}
-                className="bg-gray-50 border border-gray-200 rounded-none px-4 py-2.5 content text-premium-black font-normal focus:outline-none focus:border-crimson w-full sm:w-48 cursor-pointer"
+                className="bg-gray-50 border border-gray-200 rounded-none px-4 py-2.5 text-sm text-premium-black font-semibold focus:outline-none focus:border-crimson w-full sm:w-48 cursor-pointer"
               >
                 {cities.map(city => <option key={city} value={city}>{city}</option>)}
               </select>
             </div>
           </div>
 
-          <div className="content text-gray-500 shrink-0">
-            Showing <span className="font-normal text-premium-black">{filteredProjects.length}</span> Compounds
+          <div className="text-base text-gray-500 shrink-0">
+            Showing <span className="font-bold text-premium-black">{filteredProjects.length}</span> Compounds
           </div>
 
         </div>
@@ -128,7 +128,7 @@ export default function ProjectsPage() {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
                   />
-                  <span className="absolute top-4 left-4 bg-black/85 text-white border border-white/10 text-xs font-normal tracking-widest uppercase px-3 py-1 rounded-none">
+                  <span className="absolute top-4 left-4 bg-black/85 text-white border border-white/10 text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-none">
                     {project.category}
                   </span>
                 </div>
@@ -136,11 +136,11 @@ export default function ProjectsPage() {
                 {/* Content */}
                 <div className="p-6 flex-grow flex flex-col justify-between gap-4">
                   <div className="space-y-2">
-                    <div className="flex items-center gap-1 text-gray-400 text-xs font-normal">
+                    <div className="flex items-center gap-1 text-gray-400 text-xs uppercase tracking-wider font-bold">
                       <MapPin className="w-3.5 h-3.5 text-crimson shrink-0" />
                       <span>{project.location}, {project.city}</span>
                     </div>
-                    <h3 className="content font-normal text-premium-black group-hover:text-crimson transition-colors duration-200 line-clamp-1 font-display">
+                    <h3 className="text-base font-extrabold text-premium-black group-hover:text-crimson transition-colors duration-200 line-clamp-1 font-display">
                       {project.name}
                     </h3>
                     <p className="section-desc line-clamp-3">
@@ -150,14 +150,14 @@ export default function ProjectsPage() {
 
                   <div className="border-t border-gray-100 pt-4 flex items-center justify-between mt-auto">
                     <div>
-                      <span className="content text-gray-400 uppercase block font-normal">Project Value</span>
-                      <span className="content font-normal tabular-nums text-premium-black">
+                      <span className="text-xs text-gray-400 uppercase block font-bold">Project Value</span>
+                      <span className="text-sm font-bold tabular-nums text-premium-black">
                         {project.startingPrice > 0 ? `₹ ${project.startingPrice.toLocaleString()}` : 'On Request'}
                       </span>
                     </div>
                     <div>
-                      <span className="content text-gray-400 uppercase block text-right font-normal">Status</span>
-                      <span className="content font-normal text-crimson tabular-nums">{project.deliveryDate}</span>
+                      <span className="text-xs text-gray-400 uppercase block text-right font-bold">Status</span>
+                      <span className="text-sm font-bold text-crimson tabular-nums">{project.deliveryDate}</span>
                     </div>
                   </div>
                 </div>
@@ -166,14 +166,14 @@ export default function ProjectsPage() {
             ))}
           </div>
         ) : (
-          <div className="bg-white rounded-none border border-hairline p-16 text-center space-y-4">
+          <div className="bg-white rounded-none border border-gray-200/80 p-16 text-center space-y-4">
             <span className="text-gray-400 text-sm">No modular compounds found matching the selected parameters.</span>
             <button 
               onClick={() => {
                 setActiveCategory('All Categories');
                 setActiveCity('All Locations');
               }}
-              className="bg-crimson hover:bg-crimson-dark content text-white py-3 px-6 rounded-none block mx-auto cursor-pointer"
+              className="bg-crimson hover:bg-crimson-dark text-white text-sm font-bold uppercase tracking-widest py-3 px-6 rounded-none block mx-auto cursor-pointer"
             >
               Reset Filters
             </button>

@@ -21,9 +21,9 @@ export default function YouTubeCard() {
         <div className="flex items-center justify-between px-5 py-3 border-b border-white/10 bg-white/5">
           <div className="flex items-center gap-2">
             <span className="w-2.5 h-2.5 rounded-full bg-red-500 animate-pulse" />
-            <span className="content text-white/80">Featured Video</span>
+            <span className="text-xs font-bold uppercase tracking-wider text-white/80">Featured Video</span>
           </div>
-          <span className="content text-white/40 tabular-nums">India Trade Awards</span>
+          <span className="text-xs text-white/40 tabular-nums">India Trade Awards</span>
         </div>
 
         <div className="relative aspect-video flex-1">
@@ -50,8 +50,8 @@ export default function YouTubeCard() {
                 </div>
               </motion.div>
               <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent text-left">
-                <p className="content text-white">Hindustan Portable Cabins</p>
-                <p className="content text-white/60 mt-0.5">India Trade Awards Recognition</p>
+                <p className="text-white text-sm font-bold">Hindustan Portable Cabins</p>
+                <p className="text-white/60 text-xs mt-0.5">India Trade Awards Recognition</p>
               </div>
             </button>
           ) : (

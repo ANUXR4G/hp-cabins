@@ -75,19 +75,19 @@ export default function Navbar() {
 
   const navTriggerClass = (active: boolean) =>
     active
-      ? 'flex items-center gap-1 px-2 py-1 font-mono text-nav-mono uppercase tracking-nav font-normal transition-colors duration-200 text-crimson whitespace-nowrap'
-      : 'flex items-center gap-1 px-2 py-1 font-mono text-nav-mono uppercase tracking-nav font-normal transition-colors duration-200 text-ink/80 hover:text-crimson group whitespace-nowrap';
+      ? 'flex items-center gap-1 px-2.5 py-1.5 text-sm font-normal tracking-nav transition-colors duration-200 text-crimson whitespace-nowrap border-b-2 border-crimson'
+      : 'flex items-center gap-1 px-2.5 py-1.5 text-sm font-normal tracking-nav transition-colors duration-200 text-premium-black/80 hover:text-crimson group whitespace-nowrap border-b-2 border-transparent';
 
   const navChevronClass = (active: boolean) =>
-    `w-3 h-3 shrink-0 transition-colors duration-200 ${active ? 'text-crimson' : 'text-muted group-hover:text-crimson'}`;
+    `w-3 h-3 shrink-0 transition-colors duration-200 ${active ? 'text-crimson' : 'text-gray-400 group-hover:text-crimson'}`;
 
   const navActiveBar = (_active: boolean) => null;
 
   const dropdownLinkClass = (itemActive: boolean) =>
-    `block px-2.5 py-2 font-mono text-caption-mono uppercase tracking-caption font-normal transition-colors leading-snug ${
+    `block px-2.5 py-2 text-sm font-light tracking-nav transition-colors leading-snug normal-case ${
       itemActive
         ? 'text-crimson'
-        : 'text-ink hover:text-crimson'
+        : 'text-premium-black hover:text-crimson hover:bg-gray-50'
     }`;
 
   const renderDropdownWrap = (
@@ -111,7 +111,7 @@ export default function Navbar() {
         </Link>
         {openMenu === key && (
           <div className={`absolute left-0 top-full pt-2 z-50 ${wide ? 'w-[min(90vw,720px)]' : 'w-56'}`}>
-            <div className="bg-white border border-hairline rounded-none p-4 animate-fade-in">
+            <div className="bg-white rounded-none border border-gray-150 p-4 animate-fade-in">
               {panel}
             </div>
           </div>
@@ -128,7 +128,7 @@ export default function Navbar() {
 
     return (
       <div className="w-[min(92vw,860px)] bg-white rounded-none border border-gray-150 p-5 animate-fade-in">
-        <div className="font-mono text-caption-mono uppercase tracking-caption text-muted border-b border-hairline pb-2 mb-3 flex items-center gap-1.5">
+        <div className="text-xs uppercase tracking-widest font-extrabold text-gray-400 border-b border-gray-150 pb-2 mb-3 flex items-center gap-1.5">
           <LayoutGrid className="w-3.5 h-3.5" style={{ color: accentColor }} />
           <span>{label}</span>
         </div>
@@ -208,7 +208,7 @@ export default function Navbar() {
         <button
           type="button"
           onMouseEnter={() => setBranchView('national')}
-          className={`w-full flex items-center justify-between px-2 py-2 text-xs font-normal rounded-none transition-colors ${
+          className={`w-full flex items-center justify-between px-2 py-2 text-xs font-bold rounded-none transition-colors ${
             branchView === 'national' ? 'text-crimson' : 'text-gray-600 hover:text-crimson hover:bg-gray-50'
           }`}
         >
@@ -217,7 +217,7 @@ export default function Navbar() {
         <button
           type="button"
           onMouseEnter={() => setBranchView('international')}
-          className={`w-full flex items-center justify-between px-2 py-2 text-xs font-normal rounded-none transition-colors ${
+          className={`w-full flex items-center justify-between px-2 py-2 text-xs font-bold rounded-none transition-colors ${
             branchView === 'international' ? 'text-crimson' : 'text-gray-600 hover:text-crimson hover:bg-gray-50'
           }`}
         >
@@ -258,12 +258,12 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 h-14 top-nav bg-white/90">
+    <nav className="fixed top-0 left-0 w-full z-50 h-16 bg-white border-b border-hairline">
       <div className="max-w-editorial mx-auto px-4 sm:px-6 lg:px-8 h-full">
         
         {/* DESKTOP: logo | nav | phone */}
         <div className="hidden lg:block relative">
-        <div className="grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-4 h-14">
+        <div className="grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-4 h-16">
           
           <Link href="/" className="flex items-center shrink-0 py-1">
             {db?.branding?.logos?.header || db?.branding?.logoUrl ? (
@@ -408,7 +408,7 @@ export default function Navbar() {
                 key={`${m.label}-${m.href}`}
                 href={m.href}
                 onClick={() => setIsOpen(false)}
-                className={`flex items-center gap-3 px-3 py-2.5 font-normal transition-colors text-xs ${
+                className={`flex items-center gap-3 px-3 py-2.5 font-bold uppercase tracking-wider transition-colors text-xs ${
                   linkActive
                     ? 'text-crimson'
                     : 'text-premium-black hover:text-crimson'
@@ -423,7 +423,7 @@ export default function Navbar() {
             <div className="pt-2.5 border-t border-gray-100">
               <a
                 href={`tel:${(db?.contact?.phone || '+919000088459').replace(/\s/g, '')}`}
-                className="flex items-center justify-center gap-2 text-white text-xs font-normal py-3 px-4 rounded-none w-full"
+                className="flex items-center justify-center gap-2 text-white text-xs font-bold uppercase tracking-wider py-3 px-4 rounded-none w-full"
                 style={{ backgroundColor: accentColor }}
               >
                 <Phone className="w-4 h-4" />

@@ -82,8 +82,8 @@ export default function FloatingElements() {
           {/* Header */}
           <div className="flex items-center justify-between border-b border-gray-100 pb-3">
             <div>
-              <h4 className="content font-normal text-premium-black">Contact HP Cabins</h4>
-              <p className="content text-gray-400 mt-0.5">Quick estimates & engineering desk</p>
+              <h4 className="text-sm font-extrabold uppercase tracking-wider text-premium-black">Contact HP Cabins</h4>
+              <p className="text-xs text-gray-400 mt-0.5">Quick estimates & engineering desk</p>
             </div>
             <button 
               onClick={() => {
@@ -104,7 +104,7 @@ export default function FloatingElements() {
               className="flex flex-col items-center justify-center p-2 bg-gray-50 hover:bg-crimson/5 border border-gray-150 hover:border-crimson/20 rounded-none transition-all group"
             >
               <Phone className="w-4 h-4 text-crimson group-hover:scale-110 transition-transform" style={{ color: accentColor }} />
-              <span className="content mt-1">Call</span>
+              <span className="text-xs font-bold uppercase tracking-wider mt-1">Call</span>
             </a>
             
             {/* WhatsApp */}
@@ -115,7 +115,7 @@ export default function FloatingElements() {
               className="flex flex-col items-center justify-center p-2 bg-gray-50 hover:bg-emerald-50 border border-gray-150 hover:border-emerald-250 rounded-none transition-all group"
             >
               <MessageCircle className="w-4 h-4 text-emerald-500 group-hover:scale-110 transition-transform fill-current" />
-              <span className="content mt-1">Chat</span>
+              <span className="text-xs font-bold uppercase tracking-wider mt-1">Chat</span>
             </a>
 
             {/* Email */}
@@ -124,7 +124,7 @@ export default function FloatingElements() {
               className="flex flex-col items-center justify-center p-2 bg-gray-50 hover:bg-indigo-50 border border-gray-150 hover:border-indigo-250 rounded-none transition-all group"
             >
               <Mail className="w-4 h-4 text-indigo-500 group-hover:scale-110 transition-transform" />
-              <span className="content mt-1">Email</span>
+              <span className="text-xs font-bold uppercase tracking-wider mt-1">Email</span>
             </a>
 
             {/* Get Quote Link */}
@@ -133,7 +133,7 @@ export default function FloatingElements() {
               className="flex flex-col items-center justify-center p-2 bg-gray-50 hover:bg-crimson/5 border border-gray-150 hover:border-crimson/20 rounded-none transition-all group cursor-pointer"
             >
               <FileText className="w-4 h-4 text-crimson group-hover:scale-110 transition-transform" style={{ color: accentColor }} />
-              <span className="content mt-1">Quote</span>
+              <span className="text-xs font-bold uppercase tracking-wider mt-1">Quote</span>
             </button>
           </div>
 
@@ -142,13 +142,13 @@ export default function FloatingElements() {
             {formSubmitted ? (
               <div className="py-4 text-center space-y-2 flex flex-col items-center justify-center">
                 <CheckCircle2 className="w-8 h-8 text-emerald-500 animate-bounce" />
-                <span className="block font-normal text-sm">Request Sent Successfully</span>
-                <p className="content text-gray-400 max-w-[200px] leading-relaxed">
+                <span className="block font-bold text-sm">Request Sent Successfully</span>
+                <p className="text-xs text-gray-400 max-w-[200px] leading-relaxed">
                   An estimation lead will contact you shortly on your phone number.
                 </p>
                 <button 
                   onClick={() => setFormSubmitted(false)}
-                  className="content text-crimson hover:underline"
+                  className="text-xs font-bold uppercase text-crimson hover:underline"
                   style={{ color: accentColor }}
                 >
                   Send another request
@@ -156,7 +156,7 @@ export default function FloatingElements() {
               </div>
             ) : (
               <form onSubmit={handleFormSubmit} className="space-y-2 text-xs">
-                <span className="block font-normal uppercase text-gray-400 tracking-wider mb-2">Or Request Callback</span>
+                <span className="block font-extrabold uppercase text-gray-400 tracking-wider mb-2">Or Request Callback</span>
                 <div className="grid grid-cols-2 gap-2">
                   <input 
                     type="text" 
@@ -164,7 +164,7 @@ export default function FloatingElements() {
                     required
                     value={enquiryForm.name}
                     onChange={(e) => setEnquiryForm({ ...enquiryForm, name: e.target.value })}
-                    className="w-full bg-white border border-gray-200 rounded-none p-2 focus:outline-none focus:border-crimson content font-normal"
+                    className="w-full bg-white border border-gray-200 rounded-none p-2 focus:outline-none focus:border-crimson text-sm font-semibold"
                   />
                   <input 
                     type="tel" 
@@ -172,7 +172,7 @@ export default function FloatingElements() {
                     required
                     value={enquiryForm.phone}
                     onChange={(e) => setEnquiryForm({ ...enquiryForm, phone: e.target.value })}
-                    className="w-full bg-white border border-gray-200 rounded-none p-2 focus:outline-none focus:border-crimson content font-normal"
+                    className="w-full bg-white border border-gray-200 rounded-none p-2 focus:outline-none focus:border-crimson text-sm font-semibold"
                   />
                 </div>
                 <textarea 
@@ -180,7 +180,7 @@ export default function FloatingElements() {
                   placeholder="Inquiry / Dimensions details..."
                   value={enquiryForm.message}
                   onChange={(e) => setEnquiryForm({ ...enquiryForm, message: e.target.value })}
-                  className="w-full bg-white border border-gray-200 rounded-none p-2 focus:outline-none focus:border-crimson content"
+                  className="w-full bg-white border border-gray-200 rounded-none p-2 focus:outline-none focus:border-crimson text-sm"
                 />
                 <button 
                   type="submit" 

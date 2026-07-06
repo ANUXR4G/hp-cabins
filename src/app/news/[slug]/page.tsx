@@ -23,7 +23,7 @@ export default function NewsArticlePage() {
           <div className="absolute inset-0 bg-premium-black" />
         </div>
         <div className="relative z-10 max-w-4xl mx-auto px-4">
-          <h1 className="inner-page-title text-white leading-tight">
+          <h1 className="text-2xl sm:inner-page-title text-white leading-tight">
             {article.title}
           </h1>
           <div className="flex items-center justify-center gap-2 breadcrumb text-white/50 mt-4 flex-wrap">
@@ -36,7 +36,7 @@ export default function NewsArticlePage() {
               News
             </Link>
             <ChevronRight className="w-3 h-3" />
-            <span className="text-crimson font-normal line-clamp-1">{article.title}</span>
+            <span className="text-crimson font-bold line-clamp-1">{article.title}</span>
           </div>
         </div>
       </div>
@@ -44,13 +44,13 @@ export default function NewsArticlePage() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
         <Link
           href="/news"
-          className="inline-flex items-center gap-1.5 text-base font-normal text-gray-500 hover:text-crimson transition-colors mb-8"
+          className="inline-flex items-center gap-1.5 text-base font-bold uppercase tracking-wider text-gray-500 hover:text-crimson transition-colors mb-8"
         >
           <ArrowLeft className="w-3.5 h-3.5" />
           Back to News
         </Link>
 
-        <article className="bg-white rounded-none border border-hairline overflow-hidden">
+        <article className="bg-white rounded-none border border-gray-200/60 overflow-hidden">
           <div className="relative h-56 sm:h-72 overflow-hidden">
             <img
               src={article.image}
@@ -61,7 +61,7 @@ export default function NewsArticlePage() {
 
           <div className="p-6 sm:p-8 space-y-5">
             <div className="flex justify-center">
-              <span className="inline-flex items-center gap-1.5 text-xs font-normal text-crimson">
+              <span className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-crimson">
                 <Calendar className="w-3.5 h-3.5" />
                 {formatNewsDate(article.date)}
               </span>
