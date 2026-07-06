@@ -77,7 +77,7 @@ export default function FloatingElements() {
     <>
       {/* 1. FLOATING MODERN CONTACT POPUP PANEL */}
       {isWidgetOpen && (
-        <div className="fixed sm:right-14 right-5 bottom-24 z-50 w-[min(100vw-2.5rem,20rem)] sm:w-80 bg-white/90 backdrop-blur-md border border-gray-200/80 shadow-2xl rounded-2xl p-5 text-premium-black animate-fade-in flex flex-col space-y-4">
+        <div className="fixed right-5 sm:right-6 bottom-24 z-50 w-[min(calc(100%-2.5rem),20rem)] sm:w-80 bg-white/90 backdrop-blur-md border border-gray-200/80 shadow-2xl rounded-2xl p-5 text-premium-black animate-fade-in flex flex-col space-y-4">
           
           {/* Header */}
           <div className="flex items-center justify-between border-b border-gray-100 pb-3">
@@ -199,7 +199,7 @@ export default function FloatingElements() {
       )}
 
       {/* 2. BOTTOM-RIGHT CIRCULAR ACTIONS WRAPPER */}
-      <div className="fixed right-5 sm:right-14 bottom-6 flex flex-col gap-3.5 z-40 items-end">
+      <div className="fixed right-5 sm:right-6 bottom-6 flex flex-col gap-3.5 z-40 items-end">
         
         {/* Toggle Widget Circle Button */}
         <button

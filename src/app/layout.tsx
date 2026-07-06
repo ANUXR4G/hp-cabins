@@ -56,7 +56,7 @@ export default function RootLayout({
         <SocialSidebar />
         <FloatingElements />
 
-        <main className="flex-grow pt-[64px] lg:pt-[72px] relative z-10 sm:pr-12 xl:pr-14">
+        <main className="flex-grow pt-[64px] lg:pt-[72px] relative z-10 w-full overflow-x-hidden">
           {children}
         </main>
 

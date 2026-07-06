@@ -14,7 +14,7 @@ export default function Footer() {
 
   const footerLogo = db?.branding?.logos?.footer || db?.branding?.logoUrl || cms.branding.logoUrl;
   return (
-    <footer className="bg-premium-black text-white/70 border-t border-white/10 pt-16 pb-8 font-sans sm:pr-12 xl:pr-14">
+    <footer className="bg-premium-black text-white/70 border-t border-white/10 pt-16 pb-8 font-sans w-full overflow-x-hidden">
       <div className="page-container">
         
         {/* Main Footer Content */}
