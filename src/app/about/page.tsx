@@ -4,6 +4,8 @@ import React from 'react';
 import Link from 'next/link';
 import { ChevronRight, Home, Shield, Compass, Target, HelpCircle, Check, Hammer, Layers, Award } from 'lucide-react';
 
+import { welcomeParagraphs } from '@/data/homeSections';
+
 export default function AboutPage() {
   const stats = [
     { value: "15+", label: "Years in Industry" },
@@ -25,13 +27,13 @@ export default function AboutPage() {
     <div className="bg-[#F5F5F5] min-h-screen pb-24 font-sans text-premium-black">
       
       {/* Page Header */}
-      <div className="relative bg-premium-black py-16 text-center overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <img src="/wp-content/uploads/2025/08/WhatsApp-Image-2025-07-29-at-8.29.46-PM7.jpeg" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-premium-black" />
+      <div className="page-hero">
+        <div className="page-hero-media">
+          <img src="/wp-content/uploads/2025/08/IMG_20210331_103428-scaled.jpg" className="w-full h-full object-cover" alt="" />
         </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4">
-          <h1 className="inner-page-title text-white">About Hindustan Portable Cabins</h1>
+        <div className="page-hero-overlay" />
+        <div className="page-hero-content">
+          <h1 className="inner-page-title text-white drop-shadow">About Hindustan Portable Cabins</h1>
           
           {/* Breadcrumbs */}
           <div className="flex items-center justify-center gap-2 breadcrumb text-white/50 mt-4">
@@ -72,9 +74,11 @@ export default function AboutPage() {
             <span className="text-crimson section-eyebrow block mb-1">Since 2010</span>
             <h2 className="section-title text-premium-black">Leading Portable Cabin Manufacturer in India</h2>
             
-            <p className="text-base leading-relaxed text-gray-600">
-              Hindustan Portable Cabins is a leading and fast-growing manufacturer of high-quality portable cabins in India. We specialize in portable office containers, site cabins, security cabins, and customized modular solutions. With branches and manufacturing units across India, we serve clients nationwide and internationally with excellence, innovation, and reliability.
-            </p>
+            <div className="space-y-4">
+              {welcomeParagraphs.map((p, i) => (
+                <p key={i} className="text-base leading-relaxed text-gray-600">{p}</p>
+              ))}
+            </div>
 
             {/* Three Pillars */}
             <div className="space-y-4 pt-4 border-t border-gray-200">

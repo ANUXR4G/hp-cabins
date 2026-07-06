@@ -14,14 +14,14 @@ export default function PropertyCard({ property }: PropertyCardProps) {
   const coverImage = getProductCoverImage(property);
 
   return (
-    <div className="group flex flex-col bg-white rounded-none overflow-hidden border border-gray-200/80 luxury-card hover:border-crimson/50 transition-all duration-300">
+    <div className="group flex flex-col heavy-card overflow-hidden luxury-card">
       
       {/* Cabin Image & Badges */}
-      <div className="relative h-60 overflow-hidden bg-gray-100">
+      <div className="relative h-64 overflow-hidden bg-[#eaeaea] border-b border-hairline">
         <img 
           src={coverImage} 
           alt={property.title}
-          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+          className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500 ease-out"
           loading="lazy"
         />
         <div className="absolute top-4 left-4 flex flex-col gap-2 z-10">

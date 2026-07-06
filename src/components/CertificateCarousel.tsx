@@ -35,7 +35,7 @@ export default function CertificateCarousel({ slides, accentColor = '#017501' }:
   return (
     <section
       id="certificates-section"
-      className="relative overflow-hidden py-16 sm:py-20 bg-white border-b border-gray-200/50"
+      className="relative overflow-hidden py-16 sm:py-20 section-bg-white border-b border-hairline"
     >
       <h2 className="text-center section-title text-premium-black mb-10 sm:mb-12 px-4">
         Certificates

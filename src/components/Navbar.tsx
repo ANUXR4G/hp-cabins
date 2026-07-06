@@ -74,21 +74,18 @@ export default function Navbar() {
   };
 
   const navTriggerClass = (active: boolean) =>
-    active
-      ? 'flex items-center gap-1 px-2.5 py-1.5 text-sm font-normal tracking-nav transition-colors duration-200 text-crimson whitespace-nowrap border-b-2 border-crimson'
-      : 'flex items-center gap-1 px-2.5 py-1.5 text-sm font-normal tracking-nav transition-colors duration-200 text-premium-black/80 hover:text-crimson group whitespace-nowrap border-b-2 border-transparent';
+    active ? 'nav-link nav-link-active' : 'nav-link';
 
   const navChevronClass = (active: boolean) =>
-    `w-3 h-3 shrink-0 transition-colors duration-200 ${active ? 'text-crimson' : 'text-gray-400 group-hover:text-crimson'}`;
+    `w-3 h-3 shrink-0 transition-colors duration-200 ${active ? 'text-white' : 'text-white/60'}`;
 
   const navActiveBar = (_active: boolean) => null;
 
   const dropdownLinkClass = (itemActive: boolean) =>
-    `block px-2.5 py-2 text-sm font-light tracking-nav transition-colors leading-snug normal-case ${
-      itemActive
-        ? 'text-crimson'
-        : 'text-premium-black hover:text-crimson hover:bg-gray-50'
-    }`;
+    itemActive ? 'nav-dropdown-link nav-dropdown-link-active' : 'nav-dropdown-link';
+
+  const logoSrc = db?.branding?.logos?.header || db?.branding?.logoUrl || '/wp-content/uploads/2025/06/HPC-LOGO-1.png';
+  const mobileLogoSrc = db?.branding?.logos?.mobile || logoSrc;
 
   const renderDropdownWrap = (
     key: string,
@@ -128,7 +125,7 @@ export default function Navbar() {
 
     return (
       <div className="w-[min(92vw,860px)] bg-white rounded-none border border-gray-150 p-5 animate-fade-in">
-        <div className="text-xs uppercase tracking-widest font-extrabold text-gray-400 border-b border-gray-150 pb-2 mb-3 flex items-center gap-1.5">
+        <div className="text-xs uppercase tracking-widest font-bold text-gray-500 border-b border-gray-150 pb-2 mb-3 flex items-center gap-1.5">
           <LayoutGrid className="w-3.5 h-3.5" style={{ color: accentColor }} />
           <span>{label}</span>
         </div>
@@ -208,8 +205,8 @@ export default function Navbar() {
         <button
           type="button"
           onMouseEnter={() => setBranchView('national')}
-          className={`w-full flex items-center justify-between px-2 py-2 text-xs font-bold rounded-none transition-colors ${
-            branchView === 'national' ? 'text-crimson' : 'text-gray-600 hover:text-crimson hover:bg-gray-50'
+          className={`w-full flex items-center justify-between px-2 py-2 text-xs font-semibold rounded-none transition-colors ${
+            branchView === 'national' ? 'text-crimson bg-gray-50' : 'text-gray-600 hover:text-crimson hover:bg-gray-50'
           }`}
         >
           National <ChevronRight className="w-3 h-3" />
@@ -218,7 +215,7 @@ export default function Navbar() {
           type="button"
           onMouseEnter={() => setBranchView('international')}
           className={`w-full flex items-center justify-between px-2 py-2 text-xs font-bold rounded-none transition-colors ${
-            branchView === 'international' ? 'text-crimson' : 'text-gray-600 hover:text-crimson hover:bg-gray-50'
+            branchView === 'international' ? 'text-crimson bg-gray-50' : 'text-gray-600 hover:text-crimson hover:bg-gray-50'
           }`}
         >
           International <ChevronRight className="w-3 h-3" />
@@ -258,39 +255,23 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 h-16 bg-white border-b border-hairline">
-      <div className="max-w-editorial mx-auto px-4 sm:px-6 lg:px-8 h-full">
+    <nav className="fixed top-0 left-0 w-full z-50 site-header">
+      <div className="site-header-stripe" />
+      <div className="max-w-editorial mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* DESKTOP: logo | nav | phone */}
-        <div className="hidden lg:block relative">
-        <div className="grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-4 h-16">
+        <div className="hidden md:block relative">
+        <div className="grid grid-cols-[110px_minmax(0,1fr)_auto] items-center gap-3 xl:gap-4 min-h-[72px] py-2">
           
-          <Link href="/" className="flex items-center shrink-0 py-1">
-            {db?.branding?.logos?.header || db?.branding?.logoUrl ? (
-              <img src={db.branding.logos?.header || db.branding.logoUrl} alt={db?.branding?.name || "Hindustan Portable Cabins"} className="h-10 w-auto object-contain" />
-            ) : (
-              <svg viewBox="0 0 240 60" className="h-10 w-auto" shapeRendering="geometricPrecision" textRendering="geometricPrecision">
-                <rect x="10" y="8" width="3.5" height="44" rx="1.5" fill={accentColor} />
-                <text x="24" y="36" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="800" fontSize="18" fill="#111111" letterSpacing="0.5">THE C</text>
-                <g fill={accentColor}>
-                  {/* Left Hook Leg */}
-                  <path d="M 98 12 L 91 12 L 79 38 L 72 38 L 72 42 L 85 42 L 86 38 L 95 18 Z" />
-                  {/* Right Leg */}
-                  <path d="M 98 12 L 106 12 L 118 42 L 108 42 L 100 20 L 99 18 Z" />
-                  {/* Crossbar */}
-                  <polygon points="84,32 108,32 110,36 82,36" />
-                </g>
-                <text x="124" y="36" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="800" fontSize="18" fill="#111111" letterSpacing="0.5">BINS</text>
-                <text x="24" y="49" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="800" fontSize="7" letterSpacing="0.4">
-                  <tspan fill="#111111">TRANSFORMING THE </tspan>
-                  <tspan fill={accentColor}>MODULAR </tspan>
-                  <tspan fill="#111111">INDUSTRY</tspan>
-                </text>
-              </svg>
-            )}
+          <Link href="/" className="flex items-center shrink-0">
+            <img
+              src={logoSrc}
+              alt={db?.branding?.name || 'Hindustan Portable Cabins'}
+              className="w-[110px] h-auto object-contain"
+            />
           </Link>
 
-          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 min-w-0 px-2">
+          <div className="flex flex-wrap items-center justify-center gap-x-1 gap-y-0.5 min-w-0 px-1">
             {renderPlainLink('Home', '/', Home)}
             {renderDropdownWrap('about', 'About Us', Info, '/about', (
               <div className="space-y-0.5">
@@ -336,7 +317,7 @@ export default function Navbar() {
           <div className="flex items-center justify-end shrink-0">
             <a 
               href={`tel:${(db?.contact?.phone || '+919000088459').replace(/\s/g, '')}`}
-              className="btn-primary gap-2 whitespace-nowrap"
+              className="inline-flex items-center justify-center gap-2 h-10 px-4 text-sm font-semibold text-white rounded-none whitespace-nowrap transition-colors hover:bg-crimson-dark"
               style={{ backgroundColor: accentColor }}
             >
               <Phone className="w-3.5 h-3.5 fill-white text-white shrink-0" />
@@ -361,35 +342,19 @@ export default function Navbar() {
         </div>
 
         {/* TABLET / MOBILE HEADER STRIP */}
-        <div className="flex lg:hidden items-center justify-between py-3">
-          <Link href="/" className="flex items-center gap-1.5 py-1">
-            {db?.branding?.logos?.mobile || db?.branding?.logoUrl ? (
-              <img src={db.branding.logos?.mobile || db.branding.logos?.header || db.branding.logoUrl} alt={db?.branding?.name || "Hindustan Portable Cabins"} className="h-9 w-auto object-contain" />
-            ) : (
-              <svg viewBox="0 0 240 60" className="h-9 w-auto" shapeRendering="geometricPrecision" textRendering="geometricPrecision">
-                <rect x="10" y="8" width="3.5" height="44" rx="1.5" fill={accentColor} />
-                <text x="24" y="36" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="800" fontSize="18" fill="#111111" letterSpacing="0.5">THE C</text>
-                <g fill={accentColor}>
-                  {/* Left Hook Leg */}
-                  <path d="M 98 12 L 91 12 L 79 38 L 72 38 L 72 42 L 85 42 L 86 38 L 95 18 Z" />
-                  {/* Right Leg */}
-                  <path d="M 98 12 L 106 12 L 118 42 L 108 42 L 100 20 L 99 18 Z" />
-                  {/* Crossbar */}
-                  <polygon points="84,32 108,32 110,36 82,36" />
-                </g>
-                <text x="124" y="36" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="800" fontSize="18" fill="#111111" letterSpacing="0.5">BINS</text>
-                <text x="24" y="49" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="800" fontSize="7" letterSpacing="0.4">
-                  <tspan fill="#111111">TRANSFORMING THE </tspan>
-                  <tspan fill={accentColor}>MODULAR </tspan>
-                  <tspan fill="#111111">INDUSTRY</tspan>
-                </text>
-              </svg>
-            )}
+        <div className="flex md:hidden items-center justify-between min-h-[64px] py-2">
+          <Link href="/" className="flex items-center shrink-0">
+            <img
+              src={mobileLogoSrc}
+              alt={db?.branding?.name || 'Hindustan Portable Cabins'}
+              className="w-[90px] sm:w-[110px] h-auto object-contain"
+            />
           </Link>
 
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="p-2 text-premium-black/90 hover:text-crimson transition-colors focus:outline-none"
+            className="p-2 text-white hover:text-crimson-light transition-colors focus:outline-none"
+            aria-label={isOpen ? 'Close menu' : 'Open menu'}
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -399,8 +364,8 @@ export default function Navbar() {
 
       {/* MOBILE NAV DRAWER */}
       {isOpen && (
-        <div className="lg:hidden absolute top-full left-0 w-full bg-white border-b border-gray-200/80 z-50 max-h-[80vh] overflow-y-auto">
-          <div className="px-4 pt-3 pb-6 space-y-1 text-xs">
+        <div className="md:hidden absolute top-full left-0 w-full bg-[#111111] border-b border-white/10 z-50 max-h-[80vh] overflow-y-auto">
+          <div className="px-4 pt-3 pb-6 space-y-0.5">
             {mobileLinks.map((m) => {
               const linkActive = isLinkActive(m.href);
               return (
@@ -408,22 +373,22 @@ export default function Navbar() {
                 key={`${m.label}-${m.href}`}
                 href={m.href}
                 onClick={() => setIsOpen(false)}
-                className={`flex items-center gap-3 px-3 py-2.5 font-bold uppercase tracking-wider transition-colors text-xs ${
+                className={`flex items-center gap-3 px-3 py-2.5 text-sm font-normal normal-case transition-colors ${
                   linkActive
-                    ? 'text-crimson'
-                    : 'text-premium-black hover:text-crimson'
+                    ? 'text-white bg-[#333333]'
+                    : 'text-white/90 hover:text-white hover:bg-[#333333]'
                 }`}
               >
                 {React.createElement(m.icon, {
-                  className: `w-4 h-4 shrink-0 ${linkActive ? 'text-crimson' : 'text-gray-400'}`,
+                  className: `w-4 h-4 shrink-0 ${linkActive ? 'text-crimson-light' : 'text-white/50'}`,
                 })}
                 <span>{m.label}</span>
               </Link>
             );})}
-            <div className="pt-2.5 border-t border-gray-100">
+            <div className="pt-2.5 border-t border-white/10">
               <a
                 href={`tel:${(db?.contact?.phone || '+919000088459').replace(/\s/g, '')}`}
-                className="flex items-center justify-center gap-2 text-white text-xs font-bold uppercase tracking-wider py-3 px-4 rounded-none w-full"
+                className="flex items-center justify-center gap-2 text-white text-sm font-semibold py-3 px-4 rounded-none w-full"
                 style={{ backgroundColor: accentColor }}
               >
                 <Phone className="w-4 h-4" />

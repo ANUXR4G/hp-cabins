@@ -10,13 +10,13 @@ export default function ClientsPage() {
   return (
     <div className="bg-[#F5F5F5] min-h-screen font-sans text-premium-black">
       {/* Page header */}
-      <div className="relative bg-premium-black py-14 text-center overflow-hidden">
-        <div className="absolute inset-0 opacity-25">
-          <img src={clientsBackground} alt="" className="w-full h-full object-cover blur-sm scale-105" />
-          <div className="absolute inset-0 bg-premium-black/70" />
+      <div className="page-hero py-14">
+        <div className="page-hero-media">
+          <img src={clientsBackground} alt="" className="w-full h-full object-cover" />
         </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4">
-          <h1 className="inner-page-title text-white">Our Clients</h1>
+        <div className="page-hero-overlay" />
+        <div className="page-hero-content">
+          <h1 className="inner-page-title text-white drop-shadow">Our Clients</h1>
           <p className="text-sm text-white/60 mt-3 max-w-2xl mx-auto">
             Trusted by leading organizations across infrastructure, energy, technology, healthcare, and government sectors.
           </p>

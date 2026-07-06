@@ -5,10 +5,9 @@ import {
 } from 'lucide-react';
 
 export const welcomeParagraphs = [
-  'Hindustan Portable Cabins is a leading and fast-growing manufacturer of high-quality portable cabins in India. Since our inception in 2010, we have proudly completed 15 successful years in the industry, earning a strong reputation for excellence, innovation, and reliability.',
-  'With a deep-rooted commitment to quality and customer satisfaction, we specialize in designing and manufacturing a wide range of portable office containers, site cabins, security cabins, and customized modular solutions. Over the years, our dedication to delivering value has led to the expansion of our manufacturing units and branches across India.',
-  'We take great pride in our experienced and skilled team, whose hard work and commitment ensure each project is executed with precision and professionalism. Our cabins are not only preferred across industries in India but are also being exported to international markets.',
-  'As a trusted industry supplier of portable office containers in India, Hindustan Portable Cabins continues to lead with innovation, adaptability, and customer-focused solutions that support diverse industrial and commercial needs.',
+  'Established in 2010, Hindustan Portable Cabins is a leading manufacturer of high-quality portable cabins in India. With more than 15 years of industry experience, we have built a trusted reputation for quality, innovation, and dependable project delivery.',
+  'We design and manufacture portable office containers, site office cabins, security cabins, and customized modular structures for industrial and commercial applications. Our manufacturing units and branch offices across India enable us to serve clients nationwide with efficient logistics and professional on-site support.',
+  'Every project is handled by a trained and experienced team, ensuring precision from design and fabrication to delivery and installation. Trusted by leading organizations in India and selected international markets, Hindustan Portable Cabins continues to provide reliable solutions tailored to diverse operational requirements.',
 ];
 
 export const whyChooseUs = [

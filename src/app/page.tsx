@@ -25,6 +25,10 @@ import {
   qualityOffers, principles, branchesNational, branchesInternational,
   certificateSlides, maintainingSafetyText,
 } from '@/data/homeSections';
+import {
+  factoryShowcase, teamAndSite, whyChooseImages, qualityImages,
+  safetyImages, industryImages, branchImages, processImages,
+} from '@/data/sectionImages';
 
 const cms = getCms();
 
@@ -47,12 +51,12 @@ export default function HomePage() {
     return () => clearInterval(slideTimer);
   }, [heroSlides.length]);
 
-  const featuredCabins = (db?.products?.length ? db.products : cms.products).slice(0, 3);
-  const activeProjects = (db?.projects?.length ? db.projects : cms.projects).slice(0, 2);
+  const featuredCabins = (db?.products?.length ? db.products : cms.products).slice(0, 6);
+  const activeProjects = (db?.projects?.length ? db.projects : cms.projects).slice(0, 4);
 
   const activeIndustries = db?.industries?.length ? db.industries : cms.industries;
 
-  const galleryItems = (db?.products?.length ? db.products : cms.products).slice(0, 3);
+  const galleryItems = (db?.products?.length ? db.products : cms.products).slice(0, 9);
 
   const timelineStages = workingProcess.map((step, i) => ({
     number: step.step,
@@ -104,21 +108,21 @@ export default function HomePage() {
               )}
             </motion.div>
           </AnimatePresence>
-          <div className="absolute inset-0 bg-gradient-to-r from-[#F5F5F5] via-[#F5F5F5]/92 to-[#F5F5F5]/40 sm:to-[#F5F5F5]/15 lg:to-transparent z-10" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/45 to-black/20 sm:to-transparent z-10" />
         </div>
 
         {/* Hero Content Panel */}
         <div className="relative z-20 page-container w-full flex flex-col justify-center h-full py-10 sm:py-12">
           <div className="max-w-2xl text-left space-y-4 sm:space-y-6">
-            <span className="section-eyebrow text-[#111111]" style={{ color: accentColor }}>
+            <span className="section-eyebrow text-white" style={{ color: accentColor }}>
               {db?.branding?.tagline || 'LEADING MANUFACTURER OF PORTABLE CABINS IN INDIA'}
             </span>
             
-            <h1 className="page-hero-title text-[#111111]">
+            <h1 className="page-hero-title text-white drop-shadow-lg">
               {heroSlides[activeSlide]?.title || 'Portable Cabin Solutions'}
             </h1>
             
-            <p className="body-text max-w-lg">
+            <p className="body-text max-w-lg text-white/85">
               {heroSlides[activeSlide]?.desc}
             </p>
             
@@ -132,8 +136,7 @@ export default function HomePage() {
               </Link>
               <Link 
                 href="#contact-section" 
-                className="btn-primary-outline w-full sm:w-auto"
-                style={{ color: accentColor, borderColor: accentColor }}
+                className="btn-on-dark w-full sm:w-auto"
               >
                 Get a Quote
               </Link>
@@ -157,69 +160,61 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 1.5 RESPONSIVE STATISTICS CARD GRID SECTION */}
-      <section className="relative z-20 -mt-8 sm:-mt-12 pb-2">
+      {/* 1.5 STATISTICS */}
+      <section className="relative z-20 -mt-10 sm:-mt-14 section-band py-8 sm:py-10">
         <div className="page-container">
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4 lg:gap-5">
-            
-            <div className="card-surface p-4 sm:p-5 transition-all duration-300 flex flex-col items-center justify-center text-center min-h-[120px]">
-              <div className="w-10 h-10 sm:w-11 sm:h-11 bg-crimson/5 flex items-center justify-center rounded-full text-crimson mb-2 sm:mb-3" style={{ color: accentColor, backgroundColor: accentColor + '0d' }}>
-                <Building className="w-5 h-5" />
-              </div>
-              <span className="block text-lg sm:text-2xl font-extrabold tabular-nums text-[#111111] leading-none">15+</span>
-              <span className="block text-xs font-extrabold text-gray-400 uppercase tracking-widest mt-1.5 sm:mt-2">Years Experience</span>
-            </div>
-
-            <div className="card-surface p-4 sm:p-5 transition-all duration-300 flex flex-col items-center justify-center text-center min-h-[120px]">
-              <div className="w-10 h-10 sm:w-11 sm:h-11 bg-crimson/5 flex items-center justify-center rounded-full text-crimson mb-2 sm:mb-3" style={{ color: accentColor, backgroundColor: accentColor + '0d' }}>
-                <Home className="w-5 h-5" />
-              </div>
-              <span className="block text-lg sm:text-2xl font-extrabold tabular-nums text-[#111111] leading-none">5,000+</span>
-              <span className="block text-xs font-extrabold text-gray-400 uppercase tracking-widest mt-1.5 sm:mt-2">Projects Completed</span>
-            </div>
-
-            <div className="card-surface p-4 sm:p-5 transition-all duration-300 flex flex-col items-center justify-center text-center min-h-[120px]">
-              <div className="w-10 h-10 sm:w-11 sm:h-11 bg-crimson/5 flex items-center justify-center rounded-full text-crimson mb-2 sm:mb-3" style={{ color: accentColor, backgroundColor: accentColor + '0d' }}>
-                <Users className="w-5 h-5" />
-              </div>
-              <span className="block text-lg sm:text-2xl font-extrabold tabular-nums text-[#111111] leading-none">3,000+</span>
-              <span className="block text-xs font-extrabold text-gray-400 uppercase tracking-widest mt-1.5 sm:mt-2">Clients Served</span>
-            </div>
-
-            <div className="card-surface p-4 sm:p-5 transition-all duration-300 flex flex-col items-center justify-center text-center min-h-[120px]">
-              <div className="w-10 h-10 sm:w-11 sm:h-11 bg-crimson/5 flex items-center justify-center rounded-full text-crimson mb-2 sm:mb-3" style={{ color: accentColor, backgroundColor: accentColor + '0d' }}>
-                <MapPin className="w-5 h-5" />
-              </div>
-              <span className="block text-lg sm:text-2xl font-extrabold tabular-nums text-[#111111] leading-none">Nationwide</span>
-              <span className="block text-xs font-extrabold text-gray-400 uppercase tracking-widest mt-1.5 sm:mt-2">India Coverage</span>
-            </div>
-
-            <div className="card-surface p-4 sm:p-5 transition-all duration-300 flex flex-col items-center justify-center text-center min-h-[120px] col-span-2 sm:col-span-1">
-              <div className="w-10 h-10 sm:w-11 sm:h-11 bg-crimson/5 flex items-center justify-center rounded-full text-crimson mb-2 sm:mb-3" style={{ color: accentColor, backgroundColor: accentColor + '0d' }}>
-                <CheckCircle2 className="w-5 h-5" />
-              </div>
-              <span className="block text-lg sm:text-2xl font-extrabold tabular-nums text-[#111111] leading-none">100%</span>
-              <span className="block text-xs font-extrabold text-gray-400 uppercase tracking-widest mt-1.5 sm:mt-2">Quality Guarantee</span>
-            </div>
-
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
+            {[
+              { icon: Building, value: '15+', label: 'Years Experience' },
+              { icon: Home, value: '5,000+', label: 'Projects Completed' },
+              { icon: Users, value: '3,000+', label: 'Clients Served' },
+              { icon: MapPin, value: 'Nationwide', label: 'India Coverage' },
+              { icon: CheckCircle2, value: '100%', label: 'Quality Guarantee' },
+            ].map((stat) => {
+              const Icon = stat.icon;
+              return (
+                <div key={stat.label} className={`stat-panel ${stat.label === 'Quality Guarantee' ? 'col-span-2 sm:col-span-1' : ''}`}>
+                  <div className="w-10 h-10 mx-auto bg-crimson/10 flex items-center justify-center mb-3" style={{ color: accentColor, backgroundColor: accentColor + '14' }}>
+                    <Icon className="w-5 h-5" />
+                  </div>
+                  <span className="block text-xl sm:text-2xl font-bold tabular-nums text-premium-black leading-none">{stat.value}</span>
+                  <span className="block text-xs font-bold text-muted uppercase tracking-widest mt-2">{stat.label}</span>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
 
+      {/* PROJECT PHOTO STRIP */}
+      <section className="py-8 bg-[#222222] border-b border-white/10 overflow-hidden">
+        <div className="page-container mb-4 flex items-center justify-between gap-4">
+          <span className="text-xs font-bold uppercase tracking-widest text-white/70">Manufacturing & Deployments</span>
+          <span className="hidden sm:block h-px flex-1 bg-white/10 ml-4" />
+        </div>
+        <div className="flex gap-3 overflow-x-auto no-scrollbar px-4 sm:px-6 lg:px-8 pb-1">
+          {factoryShowcase.concat(teamAndSite).map((src, idx) => (
+            <div key={`${src}-${idx}`} className="photo-mosaic-item shrink-0 w-56 sm:w-72 h-40 sm:h-48">
+              <img src={src} alt="HP Cabins project" className="w-full h-full object-cover" loading="lazy" />
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* 2. CORPORATE SUMMARY & COUNT-UP */}
-      <section id="about-section" className="section-spacing page-container pt-8 sm:pt-12">
+      <section id="about-section" className="section-spacing section-bg-white page-container border-b border-hairline">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           <div className="lg:col-span-5 space-y-5">
-            <span className="section-eyebrow" style={{ color: accentColor }}>INDIA MODULAR MANUFACTURING</span>
+            <span className="section-eyebrow" style={{ color: accentColor }}>About the Company</span>
             <h2 className="section-title">
-              Welcome To Hindustan Portable Cabins
+              Welcome to Hindustan Portable Cabins
             </h2>
             {welcomeParagraphs.map((p, i) => (
               <p key={i} className="body-text">{p}</p>
             ))}
             <div className="pt-2 flex flex-wrap gap-4">
               <Link href="/about" className="inline-flex items-center gap-1 btn-label transition-colors hover:text-crimson" style={{ color: accentColor }}>
-                <span>Discover factory capacities</span>
+                <span>Learn more about us</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <Link href="/contact" className="inline-flex items-center gap-1 btn-label text-gray-500 hover:text-crimson transition-colors">
@@ -229,8 +224,15 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="lg:col-span-7">
-            <div className="rounded-none overflow-hidden border border-gray-200/60 bg-black">
+          <div className="lg:col-span-7 space-y-4">
+            <div className="grid grid-cols-3 gap-2 border border-hairline-strong">
+              {factoryShowcase.slice(0, 3).map((src) => (
+                <div key={src} className="overflow-hidden bg-[#eaeaea]">
+                  <img src={src} alt="Factory" className="w-full h-28 sm:h-36 object-cover" />
+                </div>
+              ))}
+            </div>
+            <div className="overflow-hidden border border-hairline-strong bg-black">
               <video
                 src="/bannervdo.mp4"
                 className="w-full aspect-video object-cover"
@@ -247,7 +249,7 @@ export default function HomePage() {
       </section>
 
       {/* WHY CHOOSE US */}
-      <section className="py-24 bg-white border-b border-gray-200/50">
+      <section className="py-24 section-bg-alt border-b border-hairline">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
             <span className="section-eyebrow" style={{ color: accentColor }}>Why Us</span>
@@ -256,16 +258,23 @@ export default function HomePage() {
               We don&apos;t just build cabins — we build trust, quality, and long-term partnerships. Here&apos;s why clients across India and abroad choose us.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {whyChooseUs.map((item, idx) => {
               const Icon = item.icon;
               return (
-                <div key={idx} className="bg-gray-50 p-6 rounded-none border border-gray-100/80 space-y-4 transition-shadow">
-                  <div className="w-10 h-10 bg-crimson/5 flex items-center justify-center rounded-none text-crimson" style={{ color: accentColor, backgroundColor: accentColor + '0d' }}>
-                    <Icon className="w-5 h-5" />
+                <div key={idx} className="image-card group">
+                  <div className="image-card-photo">
+                    <img src={whyChooseImages[idx % whyChooseImages.length]} alt={item.title} loading="lazy" />
                   </div>
-                  <h4 className="card-title">{item.title}</h4>
-                  <p className="section-desc">{item.desc}</p>
+                  <div className="heavy-card-body space-y-2">
+                    <div className="flex items-center gap-3">
+                      <div className="w-9 h-9 bg-crimson/10 flex items-center justify-center shrink-0" style={{ color: accentColor, backgroundColor: accentColor + '14' }}>
+                        <Icon className="w-4 h-4" />
+                      </div>
+                      <h4 className="card-title">{item.title}</h4>
+                    </div>
+                    <p className="section-desc text-sm">{item.desc}</p>
+                  </div>
                 </div>
               );
             })}
@@ -305,7 +314,7 @@ export default function HomePage() {
       </section>
 
       {/* 4. PRODUCTS CATALOG GRID */}
-      <section id="featured-section" className="section-spacing page-container">
+      <section id="featured-section" className="section-spacing section-bg-alt page-container border-b border-hairline">
         <div className="section-header">
           <span className="section-eyebrow" style={{ color: accentColor }}>Fabrication Portfolio</span>
           <h2 className="section-title">Featured Modular Cabins</h2>
@@ -333,25 +342,36 @@ export default function HomePage() {
       </section>
 
       {/* QUALITY WE OFFERS */}
-      <section className="py-24 bg-[#F5F5F5] border-b border-gray-200/50">
+      <section className="py-24 section-bg-white border-b border-hairline">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white p-8 sm:p-10 rounded-none border border-gray-200/60 mb-12 space-y-3">
-            <span className="section-eyebrow" style={{ color: accentColor }}>Our Promise</span>
-            <h2 className="section-title text-premium-black">Quality We Offers</h2>
-            <p className="section-desc max-w-3xl">
-              At Hindustan Portable Cabins, quality isn&apos;t just a promise — it&apos;s the foundation of our brand. Every cabin we manufacture reflects our unwavering commitment to durability, functionality, and excellence.
-            </p>
+          <div className="section-band -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 py-10 mb-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+              <div className="space-y-3">
+                <span className="section-eyebrow" style={{ color: accentColor }}>Our Promise</span>
+                <h2 className="section-title text-white">Quality We Offer</h2>
+                <p className="text-base text-white/75 leading-relaxed max-w-xl">
+                  Quality is the foundation of our brand. Every cabin is built for durability, functionality, and long-term site performance.
+                </p>
+              </div>
+              <div className="grid grid-cols-2 gap-2 border border-white/10">
+                {qualityImages.slice(0, 4).map((src) => (
+                  <div key={src} className="overflow-hidden h-32 sm:h-36 bg-[#333]">
+                    <img src={src} alt="Quality cabin" className="w-full h-full object-cover opacity-90" loading="lazy" />
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {qualityOffers.map((item, idx) => {
               const Icon = item.icon;
               return (
-                <div key={idx} className="bg-white p-6 rounded-none border border-gray-200/60 space-y-4 transition-shadow">
-                  <div className="w-10 h-10 bg-crimson/5 flex items-center justify-center rounded-none" style={{ color: accentColor, backgroundColor: accentColor + '0d' }}>
+                <div key={idx} className="heavy-card p-6 space-y-4">
+                  <div className="w-10 h-10 bg-crimson/10 flex items-center justify-center" style={{ color: accentColor, backgroundColor: accentColor + '14' }}>
                     <Icon className="w-5 h-5" />
                   </div>
                   <h4 className="card-title">{item.title}</h4>
-                  <p className="section-desc">{item.desc}</p>
+                  <p className="section-desc text-sm">{item.desc}</p>
                 </div>
               );
             })}
@@ -360,23 +380,28 @@ export default function HomePage() {
       </section>
 
       {/* 5. DYNAMIC INDUSTRIES VERTICAL */}
-      <section className="py-24 bg-white border-t border-b border-gray-200/50">
+      <section className="py-24 section-bg-white border-t border-b border-hairline">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
             <span className="section-eyebrow" style={{ color: accentColor }}>Industrial Applications</span>
             <h2 className="section-title">Industries We Serve Across India</h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
             {activeIndustries.map((ind: any, idx: number) => {
               const Icon = getIndustryIcon(ind.icon);
               return (
-                <div key={idx} className="bg-gray-50 p-6 rounded-none border border-gray-100/80 space-y-4 transition-shadow">
-                  <div className="w-10 h-10 bg-crimson/5 flex items-center justify-center rounded-none text-crimson" style={{ color: accentColor, backgroundColor: accentColor + '0d' }}>
-                    <Icon className="w-5 h-5" />
+                <div key={idx} className="image-card group">
+                  <div className="image-card-photo h-52">
+                    <img src={industryImages[idx % industryImages.length]} alt={ind.title} loading="lazy" />
                   </div>
-                  <h4 className="card-title">{ind.title}</h4>
-                  <p className="section-desc">{ind.desc}</p>
+                  <div className="heavy-card-body">
+                    <div className="flex items-center gap-2 mb-2">
+                      <Icon className="w-4 h-4 text-crimson" style={{ color: accentColor }} />
+                      <h4 className="card-title">{ind.title}</h4>
+                    </div>
+                    <p className="section-desc text-sm">{ind.desc}</p>
+                  </div>
                 </div>
               );
             })}
@@ -385,25 +410,39 @@ export default function HomePage() {
       </section>
 
       {/* OUR COMMITMENT TO SAFETY */}
-      <section className="py-24 bg-white border-b border-gray-200/50">
+      <section className="py-24 section-bg-alt border-b border-hairline">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-            <span className="section-eyebrow" style={{ color: accentColor }}>Safety First</span>
-            <h2 className="section-title">Our Commitment to Safety</h2>
-            <p className="section-desc">
-              Safety is not just a requirement — it&apos;s a core value that drives everything we do. From design to delivery, we follow stringent safety standards.
-            </p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center mb-12">
+            <div className="space-y-3">
+              <span className="section-eyebrow" style={{ color: accentColor }}>Safety First</span>
+              <h2 className="section-title">Our Commitment to Safety</h2>
+              <p className="section-desc">
+                Safety is not just a requirement — it&apos;s a core value that drives everything we do. From design to delivery, we follow stringent safety standards.
+              </p>
+            </div>
+            <div className="grid grid-cols-2 gap-2 border border-hairline-strong">
+              {safetyImages.slice(0, 2).map((src) => (
+                <div key={src} className="overflow-hidden h-40 sm:h-48 bg-[#eaeaea]">
+                  <img src={src} alt="Safety on site" className="w-full h-full object-cover" loading="lazy" />
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {safetyCards.map((item, idx) => {
               const Icon = item.icon;
               return (
-                <div key={idx} className="bg-gray-50 p-6 rounded-none border border-gray-100/80 space-y-4 transition-shadow">
-                  <div className="w-10 h-10 bg-crimson/5 flex items-center justify-center rounded-none" style={{ color: accentColor, backgroundColor: accentColor + '0d' }}>
-                    <Icon className="w-5 h-5" />
+                <div key={idx} className="image-card group">
+                  <div className="image-card-photo h-36">
+                    <img src={safetyImages[idx % safetyImages.length]} alt={item.title} loading="lazy" />
                   </div>
-                  <h4 className="card-title">{item.title}</h4>
-                  <p className="section-desc">{item.desc}</p>
+                  <div className="heavy-card-body space-y-2">
+                    <div className="w-9 h-9 bg-crimson/10 flex items-center justify-center" style={{ color: accentColor, backgroundColor: accentColor + '14' }}>
+                      <Icon className="w-4 h-4" />
+                    </div>
+                    <h4 className="card-title">{item.title}</h4>
+                    <p className="section-desc text-sm">{item.desc}</p>
+                  </div>
                 </div>
               );
             })}
@@ -412,9 +451,9 @@ export default function HomePage() {
       </section>
 
       {/* PRINCIPLES & TRAINED STAFF */}
-      <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <div className="bg-white p-8 rounded-none border border-gray-200/50 space-y-4">
+      <section className="py-24 section-bg-white border-b border-hairline max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+          <div className="lg:col-span-5 heavy-card p-8 space-y-4">
             <span className="section-eyebrow" style={{ color: accentColor }}>Our Values</span>
             <h2 className="section-title">Our Principles</h2>
             <ul className="space-y-3">
@@ -426,12 +465,26 @@ export default function HomePage() {
               ))}
             </ul>
           </div>
-          <div className="bg-white p-8 rounded-none border border-gray-200/50 space-y-4">
+          <div className="lg:col-span-3 relative overflow-hidden border border-hairline-strong min-h-[280px] bg-[#eaeaea]">
+            <img src={teamAndSite[0]} alt="HP Cabins team" className="absolute inset-0 w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+            <div className="absolute bottom-4 left-4 right-4 text-white">
+              <span className="text-xs font-bold uppercase tracking-widest">Our Workforce</span>
+            </div>
+          </div>
+          <div className="lg:col-span-4 heavy-card p-8 space-y-4">
             <span className="section-eyebrow" style={{ color: accentColor }}>Our Team</span>
             <h2 className="section-title">Trained Staff & Workers</h2>
             <p className="section-desc">
-              At Hindustan Portable Cabins, our strength lies in our skilled and experienced workforce. Every staff member undergoes regular training to stay updated with the latest industry standards. From design to delivery, our team ensures precision, safety, and quality at every stage. We promote a culture of continuous learning and professional growth. With us, you get expert craftsmanship backed by dedication and discipline.
+              At Hindustan Portable Cabins, our strength lies in our skilled and experienced workforce. Every staff member undergoes regular training to stay updated with the latest industry standards.
             </p>
+            <div className="grid grid-cols-2 gap-2 pt-2">
+              {teamAndSite.slice(1, 3).map((src) => (
+                <div key={src} className="overflow-hidden h-24 border border-hairline bg-[#eaeaea]">
+                  <img src={src} alt="Team at work" className="w-full h-full object-cover" loading="lazy" />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -443,7 +496,7 @@ export default function HomePage() {
           
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
             <span className="section-eyebrow" style={{ color: accentColor }}>Factory Operations</span>
-            <h2 className="section-title">Our Working Process</h2>
+            <h2 className="section-title text-white">Our Working Process</h2>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
@@ -453,17 +506,23 @@ export default function HomePage() {
                 <button 
                   key={idx}
                   onClick={() => setActiveTimelineStage(idx)}
-                  className={`p-5 sm:p-6 rounded-none flex flex-col items-center justify-center text-center gap-3 sm:gap-4 transition-all duration-300 border cursor-pointer min-h-[110px] ${
+                  className={`relative p-0 rounded-sm flex flex-col overflow-hidden transition-all duration-300 border cursor-pointer min-h-[160px] ${
                     isActive 
-                      ? 'bg-white/10 border-white/25 text-white scale-[1.02]' 
-                      : 'bg-white/5 border-white/5 text-white/70 hover:border-white/15 hover:bg-white/[0.07]'
+                      ? 'border-crimson scale-[1.02] shadow-xl' 
+                      : 'border-white/10 hover:border-white/25'
                   }`}
                   style={{ borderColor: isActive ? accentColor : undefined }}
                 >
-                  <span className="text-xs font-bold tracking-widest tabular-nums" style={{ color: accentColor }}>STAGE {stage.number}</span>
-                  <span className="text-base font-bold uppercase tracking-wider leading-snug">
-                    {stage.name}
-                  </span>
+                  <div className="relative h-24 w-full">
+                    <img src={processImages[idx]} alt={stage.name} className="w-full h-full object-cover" />
+                    <div className="absolute inset-0 bg-black/50" />
+                    <span className="absolute top-2 left-2 text-xs font-bold tracking-widest" style={{ color: accentColor }}>STAGE {stage.number}</span>
+                  </div>
+                  <div className={`p-4 text-center flex-grow flex items-center justify-center ${isActive ? 'bg-white/15' : 'bg-white/5'}`}>
+                    <span className="text-sm font-bold uppercase tracking-wider leading-snug text-white">
+                      {stage.name}
+                    </span>
+                  </div>
                 </button>
               );
             })}
@@ -471,7 +530,7 @@ export default function HomePage() {
 
           <div className="mt-8 p-8 bg-white/5 rounded-none border border-white/10 max-w-3xl mx-auto text-center space-y-3 animate-fade-in">
             <span className="btn-label" style={{ color: accentColor }}>Stage {timelineStages[activeTimelineStage].number} Details</span>
-            <h4 className="text-lg font-bold">{timelineStages[activeTimelineStage].name}</h4>
+            <h4 className="text-lg font-bold text-white uppercase tracking-wide">{timelineStages[activeTimelineStage].name}</h4>
             <p className="text-base text-white/60 max-w-lg mx-auto leading-relaxed">
               {timelineStages[activeTimelineStage].desc}
             </p>
@@ -481,7 +540,7 @@ export default function HomePage() {
       </section>
 
       {/* 5. FEATURED PROJECTS COMPOUNDS */}
-      <section id="projects-section" className="py-24 bg-white border-b border-gray-200/50">
+      <section id="projects-section" className="py-24 section-bg-alt border-b border-hairline">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
             <span className="section-eyebrow" style={{ color: accentColor }}>Field Applications</span>
@@ -492,7 +551,7 @@ export default function HomePage() {
             {activeProjects.map((project: any) => (
               <div 
                 key={project.id}
-                className="group flex flex-col sm:flex-row bg-gray-50 rounded-none overflow-hidden border border-gray-100 transition-all duration-300 h-full"
+                className="group flex flex-col sm:flex-row heavy-card overflow-hidden h-full"
               >
                 <div className="relative sm:w-2/5 lg:w-1/2 h-52 sm:h-auto sm:min-h-[220px] overflow-hidden shrink-0">
                   <img 
@@ -522,7 +581,7 @@ export default function HomePage() {
       </section>
 
       {/* 7. MEDIA — team photo & award video */}
-      <section id="videos-section" className="py-24 bg-[#F5F5F5] border-b border-gray-200/50">
+      <section id="videos-section" className="py-24 section-bg-white border-b border-hairline">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
             <span className="section-eyebrow block" style={{ color: accentColor }}>Recognition</span>
@@ -532,21 +591,21 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="rounded-none overflow-hidden border border-gray-200/60 bg-white">
-              <img
-                src="/wp-content/uploads/2025/08/WhatsApp-Image-2025-07-28-at-16.56.46-scaled.jpeg"
-                alt="Hindustan Portable Cabins team"
-                className="w-full h-full min-h-[280px] object-cover"
-              />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+            {teamAndSite.slice(0, 2).map((src) => (
+              <div key={src} className="overflow-hidden border border-hairline-strong bg-[#eaeaea]">
+                <img src={src} alt="HP Cabins team and site" className="w-full h-full min-h-[220px] object-cover" loading="lazy" />
+              </div>
+            ))}
+            <div className="overflow-hidden border border-hairline-strong bg-white">
+              <YouTubeCard />
             </div>
-            <YouTubeCard />
           </div>
         </div>
       </section>
 
       {/* BRANCHES & MANUFACTURING UNITS */}
-      <section id="branches-section" className="py-24 bg-white border-b border-gray-200/50">
+      <section id="branches-section" className="py-24 section-bg-alt border-b border-hairline">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-10 space-y-3">
             <span className="section-eyebrow" style={{ color: accentColor }}>Locations</span>
@@ -557,30 +616,36 @@ export default function HomePage() {
               <button
                 key={tab}
                 onClick={() => setBranchTab(tab)}
-                className={`px-6 py-2.5 rounded-none text-xs font-bold uppercase tracking-wider transition-all ${
-                  branchTab === tab ? 'text-white' : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
+                className={`px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all border ${
+                  branchTab === tab ? 'text-white border-crimson bg-crimson' : 'bg-white text-body border-hairline-strong hover:border-crimson'
                 }`}
-                style={branchTab === tab ? { backgroundColor: accentColor } : undefined}
+                style={branchTab === tab ? { backgroundColor: accentColor, borderColor: accentColor } : undefined}
               >
                 {tab}
               </button>
             ))}
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {branches.map((branch, idx) => (
-              <div key={idx} className="bg-gray-50 p-6 rounded-none border border-gray-100/80 space-y-3 transition-shadow">
-                <div className="flex items-center gap-2">
-                  <MapPin className="w-4 h-4 shrink-0" style={{ color: accentColor }} />
-                  <h4 className="card-title">{branch.name}</h4>
+              <div key={idx} className="image-card group">
+                <div className="image-card-photo h-40">
+                  <img src={branchImages[idx % branchImages.length]} alt={branch.name} loading="lazy" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/75 to-transparent" />
+                  <div className="absolute bottom-3 left-3 flex items-center gap-2 text-white">
+                    <MapPin className="w-4 h-4 shrink-0" />
+                    <h4 className="font-bold text-base">{branch.name}</h4>
+                  </div>
                 </div>
-                <p className="section-desc">{branch.address}</p>
-                <div className="flex items-start gap-2 text-base text-gray-500">
-                  <Phone className="w-3.5 h-3.5 shrink-0 mt-0.5" style={{ color: accentColor }} />
-                  <span>{branch.phones}</span>
-                </div>
-                <div className="flex items-start gap-2 text-base text-gray-500">
-                  <Mail className="w-3.5 h-3.5 shrink-0 mt-0.5" style={{ color: accentColor }} />
-                  <span>{branch.emails}</span>
+                <div className="heavy-card-body space-y-2">
+                  <p className="section-desc text-sm">{branch.address}</p>
+                  <div className="flex items-start gap-2 text-sm text-gray-500">
+                    <Phone className="w-3.5 h-3.5 shrink-0 mt-0.5" style={{ color: accentColor }} />
+                    <span>{branch.phones}</span>
+                  </div>
+                  <div className="flex items-start gap-2 text-sm text-gray-500">
+                    <Mail className="w-3.5 h-3.5 shrink-0 mt-0.5" style={{ color: accentColor }} />
+                    <span>{branch.emails}</span>
+                  </div>
                 </div>
               </div>
             ))}
@@ -589,27 +654,28 @@ export default function HomePage() {
       </section>
 
       {/* 7.5. PHOTOREALISTIC GALLERY SHOWCASE */}
-      <section id="gallery-section" className="py-24 bg-white border-b border-gray-200/50">
+      <section id="gallery-section" className="py-24 section-bg-dark border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
             <span className="section-eyebrow block" style={{ color: accentColor }}>Visual Showcase</span>
-            <h2 className="section-title text-premium-black">Our Portable Cabin Gallery</h2>
-            <p className="section-desc">
+            <h2 className="section-title text-white">Our Portable Cabin Gallery</h2>
+            <p className="text-base text-white/70 leading-relaxed">
               Explore our portable office cabins, security cabins, accommodation units and container solutions manufactured across India.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {galleryItems.map((item: any) => (
-            <div key={item.id} className="group relative aspect-[4/3] sm:h-72 lg:h-80 rounded-none overflow-hidden border border-gray-150 bg-gray-50 transition-all duration-500 hover:hover:-translate-y-1">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-5">
+            {galleryItems.map((item: any, idx: number) => (
+            <div key={item.id} className={`group relative overflow-hidden border border-white/15 bg-[#222] ${idx === 0 ? 'sm:col-span-2 sm:row-span-2 sm:min-h-[320px]' : 'aspect-[4/3] sm:min-h-[180px]'}`}>
               <img 
                 src={item.images?.[0] || '/wp-content/uploads/2025/08/Steel-Prefabricated-Portable-Cabin_21890091633_steel-prefabricated-portable-cabin.jpg'} 
                 alt={item.title} 
-                className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" 
+                className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03] min-h-[160px]" 
+                loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-white">
-                <span className="text-xs uppercase tracking-widest font-extrabold" style={{ color: accentColor }}>{item.category}</span>
-                <h4 className="card-title mt-1">{item.title}</h4>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-transparent flex flex-col justify-end p-4 sm:p-5">
+                <span className="text-xs uppercase tracking-widest font-bold" style={{ color: accentColor }}>{item.category}</span>
+                <h4 className="text-sm sm:text-base font-bold text-white mt-1 line-clamp-2">{item.title}</h4>
               </div>
             </div>
             ))}
@@ -627,7 +693,8 @@ export default function HomePage() {
       <ClientLogoCarousel logos={allClientLogos} accentColor={accentColor} />
 
       {/* 9. FAQ ACCORDION SECTION */}
-      <section id="faq-section" className="py-24 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="faq-section" className="py-24 section-bg-alt border-b border-hairline">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 space-y-3">
           <span className="section-eyebrow" style={{ color: accentColor }}>Regulatory & Specs</span>
           <h2 className="section-title text-premium-black">Frequently Asked Questions</h2>
@@ -637,7 +704,7 @@ export default function HomePage() {
           {faqsList.map((faq, idx) => {
             const isOpen = activeFaq === idx;
             return (
-              <div key={idx} className="bg-white rounded-none border border-gray-200/60 overflow-hidden transition-all">
+              <div key={idx} className="heavy-card overflow-hidden">
                 <button 
                   onClick={() => setActiveFaq(isOpen ? null : idx)}
                   className="w-full flex items-center justify-between p-5 text-left card-title hover:text-crimson transition-colors focus:outline-none"
@@ -653,6 +720,7 @@ export default function HomePage() {
               </div>
             );
           })}
+        </div>
         </div>
       </section>
 

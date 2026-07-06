@@ -65,13 +65,13 @@ function PropertiesContent() {
     <div className="bg-[#F5F5F5] min-h-screen pb-24 font-sans text-premium-black">
       
       {/* Page Header Banner */}
-      <div className="relative bg-premium-black py-16 text-center overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <img src="/wp-content/uploads/2025/08/Steel-Prefabricated-Portable-Cabin_21890091633_steel-prefabricated-portable-cabin.jpg" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-premium-black" />
+      <div className="page-hero">
+        <div className="page-hero-media">
+          <img src="/wp-content/uploads/2025/08/Steel-Prefabricated-Portable-Cabin_21890091633_steel-prefabricated-portable-cabin.jpg" className="w-full h-full object-cover" alt="" />
         </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4">
-          <h1 className="inner-page-title text-white">Our Products</h1>
+        <div className="page-hero-overlay" />
+        <div className="page-hero-content">
+          <h1 className="inner-page-title text-white drop-shadow">Our Products</h1>
           
           {/* Breadcrumbs */}
           <div className="flex items-center justify-center gap-2 breadcrumb text-white/50 mt-4">

@@ -26,7 +26,7 @@ html {
 
 @layer base {
   body {
-    @apply font-sans text-base font-light text-body antialiased;
+    @apply font-sans text-base font-normal text-body antialiased;
     background-color: var(--light-gray);
     overflow-x: clip;
     scroll-behavior: smooth;
@@ -39,7 +39,7 @@ html {
   }
 
   p {
-    @apply text-base font-light leading-relaxed text-body;
+    @apply text-base font-normal leading-relaxed text-body;
   }
 }
 
@@ -67,15 +67,15 @@ html {
   }
 
   .section-spacing {
-    @apply py-section;
+    @apply py-24 lg:py-28;
   }
 
   .section-header {
-    @apply text-center max-w-3xl mx-auto mb-10 sm:mb-14 space-y-4 px-1;
+    @apply text-center max-w-3xl mx-auto mb-12 sm:mb-16 space-y-4 px-1;
   }
 
   .section-eyebrow {
-    @apply uppercase tracking-label text-sm font-bold text-crimson block;
+    @apply uppercase tracking-label text-xs font-bold text-crimson block;
   }
 
   .section-title {
@@ -83,11 +83,11 @@ html {
   }
 
   .section-desc {
-    @apply text-base font-light text-body leading-relaxed normal-case;
+    @apply text-base font-normal text-body-strong leading-relaxed normal-case;
   }
 
   .body-text {
-    @apply text-base font-light text-body leading-relaxed normal-case;
+    @apply text-base font-normal text-body-strong leading-relaxed normal-case;
   }
 
   .card-title {
@@ -120,6 +120,35 @@ html {
 
   .breadcrumb {
     @apply text-xs uppercase tracking-nav text-muted font-normal;
+  }
+
+  /* Site header — matches hpcabins.in dark nav bar */
+  .site-header {
+    @apply bg-[#111111] border-b border-white/10 shadow-[0_2px_12px_rgba(0,0,0,0.08)];
+  }
+
+  .site-header-stripe {
+    @apply h-1 w-full;
+    background: linear-gradient(90deg, var(--crimson-dark) 0%, var(--crimson) 50%, var(--crimson-light) 100%);
+  }
+
+  .nav-link {
+    @apply flex items-center gap-1 px-2 py-2 text-sm font-normal normal-case tracking-normal
+      text-white/90 whitespace-nowrap transition-colors duration-200
+      hover:text-white hover:bg-[#333333];
+  }
+
+  .nav-link-active {
+    @apply text-white bg-[#333333];
+  }
+
+  .nav-dropdown-link {
+    @apply block px-3 py-2 text-sm font-normal normal-case tracking-normal leading-snug
+      text-premium-black transition-colors hover:text-crimson hover:bg-gray-50;
+  }
+
+  .nav-dropdown-link-active {
+    @apply text-crimson bg-gray-50;
   }
 
   /* BMW-inspired flat surfaces — HP green palette */
@@ -212,6 +241,74 @@ html {
 
   .carousel-slide {
     @apply min-w-0 shrink-0 grow-0;
+  }
+
+  /* Enterprise section surfaces */
+  .section-bg-alt {
+    @apply bg-[#F5F5F5];
+  }
+
+  .section-bg-white {
+    @apply bg-white;
+  }
+
+  .section-bg-dark {
+    @apply bg-premium-black text-white;
+  }
+
+  .section-band {
+    @apply bg-premium-black text-white border-y border-white/10;
+  }
+
+  .heavy-card {
+    @apply bg-white border border-hairline-strong overflow-hidden
+      transition-colors duration-200 hover:border-crimson;
+  }
+
+  .heavy-card-media {
+    @apply relative w-full overflow-hidden border-b border-hairline bg-[#eaeaea];
+  }
+
+  .heavy-card-media img {
+    @apply w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03];
+  }
+
+  .heavy-card-body {
+    @apply p-6 sm:p-7;
+  }
+
+  .stat-panel {
+    @apply bg-white border border-hairline-strong p-5 sm:p-6 text-center
+      border-t-[3px] border-t-crimson;
+  }
+
+  .image-card {
+    @apply bg-white border border-hairline-strong overflow-hidden
+      transition-colors duration-200 hover:border-crimson;
+  }
+
+  .image-card-photo {
+    @apply relative w-full overflow-hidden border-b border-hairline bg-[#eaeaea] h-44 sm:h-48;
+  }
+
+  .image-card-photo img {
+    @apply w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03];
+  }
+
+  .page-hero {
+    @apply relative py-16 text-center overflow-hidden bg-premium-black text-white border-y border-white/10;
+  }
+
+  .page-hero-media {
+    @apply absolute inset-0 opacity-20;
+  }
+
+  .page-hero-overlay {
+    @apply absolute inset-0 bg-premium-black/80;
+  }
+
+  .page-hero-content {
+    @apply relative z-10 max-w-7xl mx-auto px-4;
   }
 }
 
