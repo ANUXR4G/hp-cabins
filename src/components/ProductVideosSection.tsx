@@ -24,15 +24,15 @@ export default function ProductVideosSection({ title, videos }: Props) {
   if (!videos.length) return null;
 
   return (
-    <div className="bg-white p-6 sm:p-8 rounded-2xl border border-gray-200/60 shadow-sm space-y-6">
-      <h2 className="text-lg font-bold uppercase border-l-2 border-crimson pl-3 text-premium-black font-serif">
+    <div className="bg-white p-6 sm:p-8 rounded-none border border-gray-200/60 space-y-6">
+      <h2 className="text-lg font-bold uppercase border-l-2 border-crimson pl-3 text-premium-black font-display">
         Our Videos
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {videos.map((src, idx) => (
           <div
             key={`${src}-${idx}`}
-            className="relative rounded-xl overflow-hidden border border-gray-200 bg-black aspect-video"
+            className="relative rounded-none overflow-hidden border border-gray-200 bg-black aspect-video"
           >
             {isFileVideo(src) ? (
               <video

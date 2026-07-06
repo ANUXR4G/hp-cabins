@@ -47,34 +47,34 @@ export default function ClientLogoCarousel({ logos, accentColor = '#017501' }: P
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12 space-y-3">
           <span
-            className="uppercase tracking-widest text-[10px] font-extrabold block"
+            className="section-eyebrow block"
             style={{ color: accentColor }}
           >
             Trusted Partners
           </span>
-          <h2 className="text-2xl sm:text-3xl font-extrabold font-serif text-premium-black">
+          <h2 className="section-title text-premium-black">
             Our Clients
           </h2>
-          <p className="text-sm text-gray-500 font-light leading-relaxed">
+          <p className="section-desc">
             Leading organizations across infrastructure, energy, technology, and government trust Hindustan Portable Cabins.
           </p>
           <Link
             href="/clients"
-            className="inline-block text-[10px] font-bold uppercase tracking-wider text-crimson hover:underline pt-1"
+            className="inline-block btn-label text-crimson hover:underline pt-1"
           >
             View All Clients
           </Link>
         </div>
       </div>
 
-      <div className="overflow-hidden px-4 sm:px-8" ref={emblaRef}>
-        <div className="flex touch-pan-y -ml-3 sm:-ml-4">
+      <div className="carousel-viewport" ref={emblaRef}>
+        <div className="carousel-track">
           {logos.map((src) => (
             <div
               key={src}
-              className="min-w-0 shrink-0 grow-0 basis-[42%] sm:basis-[28%] md:basis-[18%] lg:basis-[14%] xl:basis-[11%] pl-3 sm:pl-4"
+              className="carousel-slide basis-[42%] sm:basis-[28%] md:basis-[18%] lg:basis-[14%] xl:basis-[11%]"
             >
-              <div className="flex items-center justify-center bg-white rounded-sm shadow-lg border border-gray-100 p-3 sm:p-4 min-h-[72px] sm:min-h-[84px] h-full">
+              <div className="flex items-center justify-center bg-white rounded-sm border border-gray-100 p-3 sm:p-4 min-h-[72px] sm:min-h-[84px] h-full">
                 <img
                   src={src}
                   alt={logoAlt(src)}

@@ -10,8 +10,8 @@
       "background": "#F5F5F5"
     },
     "fonts": {
-      "header": "system-ui, -apple-system, sans-serif",
-      "body": "system-ui, -apple-system, sans-serif"
+      "header": "Inter, system-ui, sans-serif",
+      "body": "Inter, system-ui, sans-serif"
     },
     "logos": {
       "header": "/wp-content/uploads/2025/06/HPC-LOGO-1.png",

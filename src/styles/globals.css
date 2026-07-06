@@ -1,14 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --font-inter: 'Inter', sans-serif;
-  --font-poppins: 'Poppins', sans-serif;
-  
-  /* THE CABINS Premium Color Palette */
+  /* HP Cabins brand colors — unchanged */
   --premium-black: #111111;
   --premium-black-light: #222222;
   --crimson: #017501;
@@ -17,7 +12,6 @@
   --light-gray: #F5F5F5;
   --pure-white: #FFFFFF;
 
-  /* Aliasing old variables to avoid compile issues and map colors dynamically */
   --navy: var(--premium-black);
   --navy-light: var(--premium-black-light);
   --gold: var(--crimson);
@@ -25,83 +19,28 @@
   --gold-dark: var(--crimson-dark);
 }
 
-body {
-  font-family: var(--font-inter);
-  background-color: var(--light-gray);
-  color: var(--premium-black);
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-  width: 100%;
-  max-width: 100%;
-}
-
 html {
-  overflow-x: hidden;
+  overflow-x: clip;
   width: 100%;
-  max-width: 100%;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-poppins);
-}
+@layer base {
+  body {
+    @apply font-sans text-base font-light text-body antialiased;
+    background-color: var(--light-gray);
+    overflow-x: clip;
+    scroll-behavior: smooth;
+    width: 100%;
+    min-height: 100%;
+  }
 
-/* Glassmorphism Panel styles */
-.glass-panel {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-}
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold text-premium-black uppercase tracking-tight;
+  }
 
-.glass-panel-dark {
-  background: rgba(17, 17, 17, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-/* Parallax Background Helper */
-.parallax-bg {
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-/* Premium Cabin Card Lift-up and Glow Effect */
-.luxury-card {
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.luxury-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(1, 117, 1, 0.06), 0 1px 3px rgba(0, 0, 0, 0.05);
-  border-color: var(--crimson);
-}
-
-/* Custom premium buttons */
-.luxury-btn {
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s ease;
-}
-
-.luxury-btn::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  background: rgba(1, 117, 1, 0.15);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  transition: width 0.6s ease, height 0.6s ease;
-}
-
-.luxury-btn:hover::after {
-  width: 300%;
-  height: 300%;
+  p {
+    @apply text-base font-light leading-relaxed text-body;
+  }
 }
 
 /* Hide scrollbar but keep functionality */
@@ -109,51 +48,173 @@ h1, h2, h3, h4, h5, h6 {
   display: none;
 }
 .no-scrollbar {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-/* Smooth Fade in animations */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(25px); }
+  from { opacity: 0; transform: translateY(12px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
 .animate-fade-in {
-  animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: fadeIn 0.5s ease forwards;
 }
 
 @layer components {
   .page-container {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply max-w-editorial mx-auto px-4 sm:px-6 lg:px-8;
   }
 
   .section-spacing {
-    @apply py-16 sm:py-20 lg:py-24;
+    @apply py-section;
   }
 
   .section-header {
-    @apply text-center max-w-3xl mx-auto mb-10 sm:mb-14 space-y-3 px-1;
+    @apply text-center max-w-3xl mx-auto mb-10 sm:mb-14 space-y-4 px-1;
   }
 
   .section-eyebrow {
-    @apply uppercase tracking-widest text-[10px] font-extrabold text-crimson block;
+    @apply uppercase tracking-label text-sm font-bold text-crimson block;
   }
 
   .section-title {
-    @apply text-2xl sm:text-3xl font-extrabold font-serif text-premium-black leading-tight;
+    @apply text-display-sm sm:text-display-md font-bold font-display text-premium-black uppercase leading-tight;
   }
 
   .section-desc {
-    @apply text-sm text-gray-500 font-light leading-relaxed;
+    @apply text-base font-light text-body leading-relaxed normal-case;
   }
 
+  .body-text {
+    @apply text-base font-light text-body leading-relaxed normal-case;
+  }
+
+  .card-title {
+    @apply text-title-md font-bold text-premium-black normal-case;
+  }
+
+  .card-text {
+    @apply text-base font-light text-body leading-relaxed normal-case;
+  }
+
+  .label-text {
+    @apply text-sm font-bold uppercase tracking-label text-muted;
+  }
+
+  .meta-text {
+    @apply text-xs font-normal text-muted tracking-nav normal-case;
+  }
+
+  .btn-label {
+    @apply text-sm font-bold uppercase tracking-label;
+  }
+
+  .page-hero-title {
+    @apply text-display-md sm:text-display-lg lg:text-display-xl font-bold font-display uppercase leading-none tracking-tight;
+  }
+
+  .inner-page-title {
+    @apply text-display-sm sm:text-display-md font-bold font-display uppercase tracking-tight;
+  }
+
+  .breadcrumb {
+    @apply text-xs uppercase tracking-nav text-muted font-normal;
+  }
+
+  /* BMW-inspired flat surfaces — HP green palette */
   .card-surface {
-    @apply bg-white rounded-2xl border border-gray-200/60 shadow-sm;
+    @apply bg-white rounded-none border border-hairline;
+  }
+
+  .surface-card {
+    @apply bg-white border border-hairline rounded-none;
+  }
+
+  .surface-elevated {
+    @apply bg-[#fafafa] border border-hairline-strong rounded-none;
+  }
+
+  .hairline-divider {
+    @apply border-t border-hairline;
+  }
+
+  .brand-stripe {
+    @apply h-1 w-full;
+    background: linear-gradient(
+      90deg,
+      var(--crimson-dark) 0%,
+      var(--crimson) 50%,
+      var(--crimson-light) 100%
+    );
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center h-12 px-8 btn-label
+      bg-crimson text-white border border-crimson rounded-none
+      transition-colors duration-200
+      hover:bg-crimson-dark hover:border-crimson-dark;
+  }
+
+  .btn-primary-outline {
+    @apply inline-flex items-center justify-center h-12 px-8 btn-label
+      bg-transparent text-crimson border border-crimson rounded-none
+      transition-colors duration-200
+      hover:bg-crimson hover:text-white;
+  }
+
+  .btn-on-dark {
+    @apply inline-flex items-center justify-center h-12 px-8 btn-label
+      bg-transparent text-white border border-white rounded-none
+      transition-colors duration-200
+      hover:bg-white hover:text-premium-black;
+  }
+
+  .btn-icon {
+    @apply inline-flex items-center justify-center w-12 h-12 rounded-full
+      bg-white border border-hairline text-premium-black
+      transition-colors duration-200 hover:border-crimson hover:text-crimson;
+  }
+
+  .text-link {
+    @apply btn-label text-crimson hover:text-crimson-dark transition-colors inline-flex items-center gap-2;
+  }
+
+  .text-input {
+    @apply w-full h-12 px-4 bg-white border border-hairline rounded-none
+      text-base font-light text-premium-black
+      focus:outline-none focus:border-crimson transition-colors;
+  }
+
+  .category-tab {
+    @apply btn-label text-body py-3 border-b-2 border-transparent transition-colors;
+  }
+
+  .category-tab-active {
+    @apply btn-label text-premium-black py-3 border-b-2 border-crimson;
+  }
+
+  .luxury-card {
+    @apply transition-colors duration-200;
+  }
+
+  .luxury-card:hover {
+    @apply border-crimson;
+  }
+
+  .carousel-viewport {
+    @apply w-full overflow-hidden;
+  }
+
+  .carousel-track {
+    @apply flex touch-pan-y gap-4 sm:gap-5 pl-4 sm:pl-6 lg:pl-8;
+  }
+
+  .carousel-slide {
+    @apply min-w-0 shrink-0 grow-0;
   }
 }
 
-/* Custom styles for Left Side Floating Navigation */
 .floating-nav-active {
   color: var(--crimson) !important;
   border-left-color: var(--crimson) !important;

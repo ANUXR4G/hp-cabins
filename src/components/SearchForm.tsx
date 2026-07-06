@@ -35,7 +35,7 @@ export default function SearchForm({ onSearch, compact = false }: SearchFormProp
   return (
     <form 
       onSubmit={handleSearch} 
-      className={`glass-panel p-6 sm:p-7 rounded-2xl shadow-xl border border-white/60 max-w-6xl mx-auto w-full transition-all duration-300 ${
+      className={`glass-panel p-6 sm:p-7 rounded-none border border-white/60 max-w-6xl mx-auto w-full transition-all duration-300 ${
         compact ? 'shadow-md p-4' : 'translate-y-[-20%]'
       }`}
     >
@@ -50,7 +50,7 @@ export default function SearchForm({ onSearch, compact = false }: SearchFormProp
           <select 
             value={category} 
             onChange={(e) => setCategory(e.target.value)}
-            className="w-full bg-white/80 border border-gray-200/80 rounded-xl px-3 py-3 text-sm text-premium-black font-semibold focus:outline-none focus:border-crimson transition-colors duration-200 cursor-pointer"
+            className="w-full bg-white/80 border border-gray-200/80 rounded-none px-3 py-3 text-sm text-premium-black font-semibold focus:outline-none focus:border-crimson transition-colors duration-200 cursor-pointer"
           >
             <option value="">All Categories</option>
             {categories.map(cat => (
@@ -68,7 +68,7 @@ export default function SearchForm({ onSearch, compact = false }: SearchFormProp
           <select 
             value={city} 
             onChange={(e) => setCity(e.target.value)}
-            className="w-full bg-white/80 border border-gray-200/80 rounded-xl px-3 py-3 text-sm text-premium-black font-semibold focus:outline-none focus:border-crimson transition-colors duration-200 cursor-pointer"
+            className="w-full bg-white/80 border border-gray-200/80 rounded-none px-3 py-3 text-sm text-premium-black font-semibold focus:outline-none focus:border-crimson transition-colors duration-200 cursor-pointer"
           >
             <option value="">All Regions (India-wide)</option>
             {cities.map(c => (
@@ -86,7 +86,7 @@ export default function SearchForm({ onSearch, compact = false }: SearchFormProp
           <select 
             value={size} 
             onChange={(e) => setSize(e.target.value)}
-            className="w-full bg-white/80 border border-gray-200/80 rounded-xl px-3 py-3 text-sm text-premium-black font-semibold focus:outline-none focus:border-crimson transition-colors duration-200 cursor-pointer"
+            className="w-full bg-white/80 border border-gray-200/80 rounded-none px-3 py-3 text-sm text-premium-black font-semibold focus:outline-none focus:border-crimson transition-colors duration-200 cursor-pointer"
           >
             <option value="">Any Dimensions</option>
             <option value="compact">Compact (Under 150 sqft)</option>
@@ -104,7 +104,7 @@ export default function SearchForm({ onSearch, compact = false }: SearchFormProp
           <select 
             value={budget} 
             onChange={(e) => setBudget(e.target.value)}
-            className="w-full bg-white/80 border border-gray-200/80 rounded-xl px-3 py-3 text-sm text-premium-black font-semibold focus:outline-none focus:border-crimson transition-colors duration-200 cursor-pointer"
+            className="w-full bg-white/80 border border-gray-200/80 rounded-none px-3 py-3 text-sm text-premium-black font-semibold focus:outline-none focus:border-crimson transition-colors duration-200 cursor-pointer"
           >
             <option value="">Request Quote</option>
           </select>
@@ -116,7 +116,7 @@ export default function SearchForm({ onSearch, compact = false }: SearchFormProp
       <div className="flex justify-end mt-5">
         <button 
           type="submit" 
-          className="flex items-center justify-center gap-2 bg-crimson hover:bg-crimson-dark text-white font-sans uppercase font-bold text-sm tracking-wider py-3.5 px-8 rounded-xl transition-all duration-300 w-full lg:w-auto hover:shadow-md cursor-pointer"
+          className="flex items-center justify-center gap-2 bg-crimson hover:bg-crimson-dark text-white font-sans uppercase font-bold text-sm tracking-wider py-3.5 px-8 rounded-none transition-all duration-300 w-full lg:w-auto cursor-pointer"
         >
           <Search className="w-4 h-4 text-white" />
           <span>Find Modular Cabins</span>

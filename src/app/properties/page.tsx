@@ -71,10 +71,10 @@ function PropertiesContent() {
           <div className="absolute inset-0 bg-premium-black" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4">
-          <h1 className="text-3xl font-extrabold text-white font-serif tracking-wide">Our Products</h1>
+          <h1 className="inner-page-title text-white">Our Products</h1>
           
           {/* Breadcrumbs */}
-          <div className="flex items-center justify-center gap-2 text-white/50 text-[10px] uppercase tracking-wider mt-4">
+          <div className="flex items-center justify-center gap-2 breadcrumb text-white/50 mt-4">
             <Link href="/" className="hover:text-crimson flex items-center gap-1 transition-colors">
               <Home className="w-3.5 h-3.5" />
               <span>Home</span>
@@ -93,7 +93,7 @@ function PropertiesContent() {
           <div className="lg:col-span-1 space-y-6">
             
             {/* Desktop Categories Panel */}
-            <div className="hidden lg:block bg-white p-6 rounded-2xl border border-gray-200/60 shadow-sm">
+            <div className="hidden lg:block bg-white p-6 rounded-none border border-gray-200/60">
               <h3 className="text-sm font-bold uppercase tracking-wider border-l-2 border-crimson pl-3 mb-6 text-premium-black">
                 Cabin Range
               </h3>
@@ -104,9 +104,9 @@ function PropertiesContent() {
                     <button
                       key={cat}
                       onClick={() => setActiveCategory(cat)}
-                      className={`text-left text-sm py-3.5 px-4 rounded-xl font-bold transition-all duration-200 cursor-pointer ${
+                      className={`text-left text-sm py-3.5 px-4 rounded-none font-bold transition-all duration-200 cursor-pointer ${
                         isActive 
-                          ? 'bg-premium-black text-white shadow-md' 
+                          ? 'bg-premium-black text-white' 
                           : 'bg-gray-50 text-gray-600 hover:bg-gray-100 hover:text-premium-black'
                       }`}
                     >
@@ -126,9 +126,9 @@ function PropertiesContent() {
                     <button
                       key={city}
                       onClick={() => setSelectedCity(city)}
-                      className={`text-[10px] uppercase font-bold py-2 px-3.5 rounded-full border transition-all duration-200 cursor-pointer ${
+                      className={`text-xs uppercase font-bold py-2 px-3.5 rounded-full border transition-all duration-200 cursor-pointer ${
                         (city === '' && selectedCity === '') || selectedCity === city
-                          ? 'bg-crimson border-crimson text-white font-bold shadow-sm'
+                          ? 'bg-crimson border-crimson text-white font-bold'
                           : 'bg-white border-gray-200 text-gray-500 hover:border-crimson hover:text-crimson'
                       }`}
                     >
@@ -143,7 +143,7 @@ function PropertiesContent() {
             <div className="lg:hidden flex gap-4">
               <button 
                 onClick={() => setShowMobileFilters(!showMobileFilters)}
-                className="flex items-center gap-2 bg-premium-black text-white text-sm font-bold uppercase tracking-wider py-3.5 px-5 rounded-xl shadow-sm border border-white/10 w-full justify-center"
+                className="flex items-center gap-2 bg-premium-black text-white text-sm font-bold uppercase tracking-wider py-3.5 px-5 rounded-none border border-white/10 w-full justify-center"
               >
                 <SlidersHorizontal className="w-4 h-4" />
                 <span>Filters & Ranges</span>
@@ -152,23 +152,23 @@ function PropertiesContent() {
 
             {/* Mobile Dropdown filters panel */}
             {showMobileFilters && (
-              <div className="lg:hidden bg-white p-5 rounded-2xl border border-gray-200/60 shadow-md space-y-5 animate-fade-in">
+              <div className="lg:hidden bg-white p-5 rounded-none border border-gray-200/60 space-y-5 animate-fade-in">
                 <div className="space-y-2">
-                  <span className="text-[10px] uppercase text-gray-400 font-extrabold block">Select Category</span>
+                  <span className="text-xs uppercase text-gray-400 font-extrabold block">Select Category</span>
                   <select 
                     value={activeCategory}
                     onChange={(e) => setActiveCategory(e.target.value)}
-                    className="w-full bg-gray-50 border border-gray-200 rounded-xl p-3 text-sm font-semibold"
+                    className="w-full bg-gray-50 border border-gray-200 rounded-none p-3 text-sm font-semibold"
                   >
                     {categories.map(c => <option key={c} value={c}>{c}</option>)}
                   </select>
                 </div>
                 <div className="space-y-2">
-                  <span className="text-[10px] uppercase text-gray-400 font-extrabold block">Select Region</span>
+                  <span className="text-xs uppercase text-gray-400 font-extrabold block">Select Region</span>
                   <select 
                     value={selectedCity}
                     onChange={(e) => setSelectedCity(e.target.value)}
-                    className="w-full bg-gray-50 border border-gray-200 rounded-xl p-3 text-sm font-semibold"
+                    className="w-full bg-gray-50 border border-gray-200 rounded-none p-3 text-sm font-semibold"
                   >
                     <option value="">All Regions</option>
                     <option value="Hyderabad">Hyderabad</option>
@@ -187,11 +187,11 @@ function PropertiesContent() {
           <div className="lg:col-span-3 space-y-6">
             
             {/* Catalog Info Bar */}
-            <div className="flex items-center justify-between bg-white p-4 rounded-xl border border-gray-200/60 shadow-sm text-[11px] sm:text-sm">
-              <span className="text-gray-500 font-light">
+            <div className="flex items-center justify-between bg-white p-4 rounded-none border border-gray-200/60 text-base sm:text-sm">
+              <span className="text-gray-500">
                 Showing <span className="font-bold text-premium-black">{filteredProperties.length}</span> products
               </span>
-              <span className="text-crimson font-extrabold uppercase tracking-widest text-[10px]">
+              <span className="text-crimson font-extrabold uppercase tracking-widest text-xs">
                 {activeCategory} {selectedCity ? `in ${selectedCity}` : 'in India'}
               </span>
             </div>
@@ -204,14 +204,14 @@ function PropertiesContent() {
                 ))}
               </div>
             ) : (
-              <div className="bg-white rounded-2xl border border-gray-200/60 shadow-sm p-16 text-center space-y-4">
-                <span className="text-gray-400 text-sm font-light">No modular units found matching your selection criteria.</span>
+              <div className="bg-white rounded-none border border-gray-200/60 p-16 text-center space-y-4">
+                <span className="text-gray-400 text-sm">No modular units found matching your selection criteria.</span>
                 <button 
                   onClick={() => {
                     setActiveCategory('All Products');
                     setSelectedCity('');
                   }}
-                  className="bg-crimson hover:bg-crimson-dark text-white text-sm font-bold uppercase tracking-widest py-3 px-6 rounded-xl block mx-auto shadow-md cursor-pointer"
+                  className="bg-crimson hover:bg-crimson-dark text-white text-sm font-bold uppercase tracking-widest py-3 px-6 rounded-none block mx-auto cursor-pointer"
                 >
                   Reset Filters
                 </button>

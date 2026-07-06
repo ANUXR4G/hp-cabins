@@ -33,7 +33,7 @@ const socialLinks = [
 export default function SocialSidebar() {
   return (
     <aside
-      className="fixed right-0 top-1/2 -translate-y-1/2 z-40 hidden sm:flex flex-col shadow-lg"
+      className="fixed right-0 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col rounded-l-lg overflow-hidden"
       aria-label="Social media links"
     >
       {socialLinks.map(({ href, label, icon: Icon, className }) => (

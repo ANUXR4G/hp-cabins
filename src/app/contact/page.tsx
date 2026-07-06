@@ -28,10 +28,10 @@ export default function ContactPage() {
           <div className="absolute inset-0 bg-premium-black" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4">
-          <h1 className="text-3xl font-extrabold text-white font-serif tracking-wide">Contact Us</h1>
+          <h1 className="inner-page-title text-white">Contact Us</h1>
           
           {/* Breadcrumbs */}
-          <div className="flex items-center justify-center gap-2 text-white/50 text-[10px] uppercase tracking-wider mt-4">
+          <div className="flex items-center justify-center gap-2 breadcrumb text-white/50 mt-4">
             <Link href="/" className="hover:text-crimson flex items-center gap-1 transition-colors">
               <Home className="w-3.5 h-3.5" />
               <span>Home</span>
@@ -47,11 +47,11 @@ export default function ContactPage() {
         <div className="page-container flex flex-col sm:flex-row items-center sm:items-center justify-between gap-4 text-center sm:text-left">
           <div className="space-y-1 max-w-2xl">
             <h3 className="text-sm font-bold text-white uppercase tracking-wider">Need a Custom Cabin Specification?</h3>
-            <p className="text-[11px] text-white/60 font-light leading-relaxed">We engineer modular layout designs, custom insulation, and plumbing arrays matching your footprint goals.</p>
+            <p className="text-base text-white/60 leading-relaxed">We engineer modular layout designs, custom insulation, and plumbing arrays matching your footprint goals.</p>
           </div>
           <Link 
             href="#contact-form-section"
-            className="bg-crimson hover:bg-crimson-dark text-white text-[10px] font-bold uppercase tracking-wider py-3 px-6 rounded-xl transition-all border border-crimson/20 shrink-0 w-full sm:w-auto text-center"
+            className="bg-crimson hover:bg-crimson-dark btn-label text-white py-3 px-6 rounded-none transition-all border border-crimson/20 shrink-0 w-full sm:w-auto text-center"
           >
             Get Estimation
           </Link>
@@ -66,40 +66,40 @@ export default function ContactPage() {
           <div className="lg:col-span-3 order-1 md:order-1 lg:order-1 flex flex-col">
             <div className="space-y-6 flex-grow">
               <div>
-                <h3 className="text-lg font-bold uppercase font-serif border-l-2 border-crimson pl-3 mb-2 text-premium-black">Get In Touch</h3>
-                <p className="text-sm text-gray-500 leading-relaxed font-light">Reach out to our Hyderabad head office for consultations, quotes, and nationwide portable cabin delivery.</p>
+                <h3 className="text-lg font-bold uppercase font-display border-l-2 border-crimson pl-3 mb-2 text-premium-black">Get In Touch</h3>
+                <p className="section-desc">Reach out to our Hyderabad head office for consultations, quotes, and nationwide portable cabin delivery.</p>
               </div>
 
               <div className="space-y-3 sm:space-y-4 text-sm">
                 
-                <div className="flex gap-3 items-start p-3 bg-white rounded-xl border border-gray-200/60 shadow-sm">
+                <div className="flex gap-3 items-start p-3 bg-white rounded-none border border-gray-200/60">
                   <Phone className="w-4 h-4 text-crimson shrink-0 mt-0.5" />
                   <div>
-                    <span className="block text-gray-400 font-bold uppercase text-[9px]">Phone</span>
+                    <span className="block text-gray-400 font-bold uppercase text-xs">Phone</span>
                     <a href={`tel:${phone.replace(/\s/g, '')}`} className="font-semibold text-premium-black hover:text-crimson transition-colors">{phone}</a>
                   </div>
                 </div>
 
-                <div className="flex gap-3 items-start p-3 bg-white rounded-xl border border-gray-200/60 shadow-sm">
+                <div className="flex gap-3 items-start p-3 bg-white rounded-none border border-gray-200/60">
                   <Mail className="w-4 h-4 text-crimson shrink-0 mt-0.5" />
                   <div>
-                    <span className="block text-gray-400 font-bold uppercase text-[9px]">Email</span>
+                    <span className="block text-gray-400 font-bold uppercase text-xs">Email</span>
                     <a href={`mailto:${email}`} className="font-semibold text-premium-black hover:text-crimson transition-colors">{email}</a>
                   </div>
                 </div>
 
-                <div className="flex gap-3 items-start p-3 bg-white rounded-xl border border-gray-200/60 shadow-sm">
+                <div className="flex gap-3 items-start p-3 bg-white rounded-none border border-gray-200/60">
                   <MapPin className="w-4 h-4 text-crimson shrink-0 mt-0.5" />
                   <div>
-                    <span className="block text-gray-400 font-bold uppercase text-[9px]">Head Office</span>
+                    <span className="block text-gray-400 font-bold uppercase text-xs">Head Office</span>
                     <p className="font-semibold text-premium-black">{address}</p>
                   </div>
                 </div>
 
-                <div className="flex gap-3 items-start p-3 bg-white rounded-xl border border-gray-200/60 shadow-sm">
+                <div className="flex gap-3 items-start p-3 bg-white rounded-none border border-gray-200/60">
                   <Calendar className="w-4 h-4 text-crimson shrink-0 mt-0.5" />
                   <div>
-                    <span className="block text-gray-400 font-bold uppercase text-[9px]">Working Hours</span>
+                    <span className="block text-gray-400 font-bold uppercase text-xs">Working Hours</span>
                     <p className="font-semibold text-premium-black">{hours}</p>
                   </div>
                 </div>
@@ -108,7 +108,7 @@ export default function ContactPage() {
             </div>
 
             {/* Quick response banner */}
-            <div className="text-[10px] text-gray-400 leading-relaxed italic border-t border-gray-200 pt-4 mt-6 hidden lg:block">
+            <div className="text-xs text-gray-400 leading-relaxed italic border-t border-gray-200 pt-4 mt-6 hidden lg:block">
               * Estimator desk calls are handled directly by layout engineers. Factory visits are by appointment.
             </div>
           </div>
@@ -129,8 +129,8 @@ export default function ContactPage() {
                 <div className="p-4 bg-crimson/5 rounded-full text-crimson">
                   <CheckCircle2 className="w-10 h-10" />
                 </div>
-                <h3 className="text-lg font-bold font-serif text-premium-black">Message Sent</h3>
-                <p className="text-sm text-gray-500 font-light max-w-xs leading-relaxed">
+                <h3 className="text-lg font-bold font-display text-premium-black">Message Sent</h3>
+                <p className="text-base text-gray-500 max-w-xs leading-relaxed">
                   Your enquiry is in queue. A project estimation lead is reviewing your specifications and will follow up shortly.
                 </p>
               </div>
@@ -140,7 +140,7 @@ export default function ContactPage() {
                   e.preventDefault();
                   setFormSubmitted(true);
                 }}
-                className="space-y-4 text-[11px]"
+                className="space-y-4 text-base"
               >
                 <div className="space-y-1.5">
                   <label className="font-bold text-gray-400 uppercase">Contact Name</label>
@@ -148,7 +148,7 @@ export default function ContactPage() {
                     type="text" 
                     required 
                     placeholder="Enter your name" 
-                    className="w-full bg-gray-50 border border-gray-200 rounded-xl p-3 focus:outline-none focus:border-crimson text-sm text-premium-black font-semibold"
+                    className="w-full bg-gray-50 border border-gray-200 rounded-none p-3 focus:outline-none focus:border-crimson text-sm text-premium-black font-semibold"
                   />
                 </div>
 
@@ -158,7 +158,7 @@ export default function ContactPage() {
                     type="tel" 
                     required 
                     placeholder="Enter phone number" 
-                    className="w-full bg-gray-50 border border-gray-200 rounded-xl p-3 focus:outline-none focus:border-crimson text-sm text-premium-black font-semibold"
+                    className="w-full bg-gray-50 border border-gray-200 rounded-none p-3 focus:outline-none focus:border-crimson text-sm text-premium-black font-semibold"
                   />
                 </div>
 
@@ -168,13 +168,13 @@ export default function ContactPage() {
                     type="email" 
                     required 
                     placeholder="Enter email address" 
-                    className="w-full bg-gray-50 border border-gray-200 rounded-xl p-3 focus:outline-none focus:border-crimson text-sm text-premium-black font-semibold"
+                    className="w-full bg-gray-50 border border-gray-200 rounded-none p-3 focus:outline-none focus:border-crimson text-sm text-premium-black font-semibold"
                   />
                 </div>
 
                 <div className="space-y-1.5">
                   <label className="font-bold text-gray-400 uppercase">Inquiry Type</label>
-                  <select className="w-full bg-gray-50 border border-gray-200 rounded-xl p-3 focus:outline-none focus:border-crimson text-sm text-premium-black font-semibold cursor-pointer">
+                  <select className="w-full bg-gray-50 border border-gray-200 rounded-none p-3 focus:outline-none focus:border-crimson text-sm text-premium-black font-semibold cursor-pointer">
                     <option value="Estimates">Request Drawing & Price Estimate</option>
                     <option value="Custom">Custom Cabin Engineering Options</option>
                     <option value="Factory">Schedule Factory Visit</option>
@@ -188,13 +188,13 @@ export default function ContactPage() {
                   <textarea 
                     rows={4} 
                     placeholder="Provide details on cabin dimensions, quantities, HVAC needs, or shipping coordinates..." 
-                    className="w-full bg-gray-50 border border-gray-200 rounded-xl p-3 focus:outline-none focus:border-crimson text-sm text-premium-black font-light leading-relaxed"
+                    className="w-full bg-gray-50 border border-gray-200 rounded-none p-3 focus:outline-none focus:border-crimson text-sm text-premium-black leading-relaxed"
                   />
                 </div>
 
                 <button 
                   type="submit" 
-                  className="w-full bg-premium-black hover:bg-gray-800 text-white text-[10px] font-bold uppercase tracking-wider py-3.5 px-4 rounded-xl transition-all duration-300 border border-white/10 hover:shadow-md cursor-pointer"
+                  className="w-full bg-premium-black hover:bg-gray-800 btn-label text-white py-3.5 px-4 rounded-none transition-all duration-300 border border-white/10 cursor-pointer"
                 >
                   Send Inquiry Message
                 </button>

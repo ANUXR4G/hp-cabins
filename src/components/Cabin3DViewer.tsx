@@ -515,7 +515,7 @@ export default function Cabin3DViewer({ cabinId, baseMaterial = 'steel' }: Cabin
   return (
     <div 
       ref={viewerContainerRef} 
-      className={`relative flex flex-col bg-white rounded-2xl overflow-hidden border border-gray-200/80 shadow-lg ${
+      className={`relative flex flex-col bg-white rounded-none overflow-hidden border border-gray-200/80 ${
         isFullscreen ? 'w-full h-full p-4' : 'w-full h-[480px]'
       }`}
     >
@@ -539,30 +539,30 @@ export default function Cabin3DViewer({ cabinId, baseMaterial = 'steel' }: Cabin
         )}
 
         {/* Quick Instructions badge */}
-        <div className="absolute top-4 left-4 bg-black/75 backdrop-blur-md px-3.5 py-1.5 rounded-lg border border-white/10 text-white flex items-center gap-2 text-sm">
+        <div className="absolute top-4 left-4 bg-black/75 backdrop-blur-md px-3.5 py-1.5 rounded-none border border-white/10 text-white flex items-center gap-2 text-sm">
           <RotateCw className="w-3.5 h-3.5 animate-spin" style={{ animationDuration: '4s' }} />
-          <span className="font-medium tracking-wide uppercase text-[10px]">Drag to rotate 360°</span>
+          <span className="font-medium tracking-wide uppercase text-xs">Drag to rotate 360°</span>
         </div>
 
         {/* Floating Right Side Controls */}
         <div className="absolute bottom-4 right-4 flex flex-col gap-2.5 z-20">
           <button 
             onClick={() => setZoom(z => Math.min(2.0, z + 0.15))}
-            className="p-3 bg-white hover:bg-crimson hover:text-white rounded-xl shadow-md text-premium-black border border-gray-100 transition-all duration-300 active:scale-90"
+            className="p-3 bg-white hover:bg-crimson hover:text-white rounded-none text-premium-black border border-gray-100 transition-all duration-300 active:scale-90"
             title="Zoom In"
           >
             <ZoomIn className="w-4 h-4" />
           </button>
           <button 
             onClick={() => setZoom(z => Math.max(0.5, z - 0.15))}
-            className="p-3 bg-white hover:bg-crimson hover:text-white rounded-xl shadow-md text-premium-black border border-gray-100 transition-all duration-300 active:scale-90"
+            className="p-3 bg-white hover:bg-crimson hover:text-white rounded-none text-premium-black border border-gray-100 transition-all duration-300 active:scale-90"
             title="Zoom Out"
           >
             <ZoomOut className="w-4 h-4" />
           </button>
           <button 
             onClick={toggleFullscreen}
-            className="p-3 bg-white hover:bg-crimson hover:text-white rounded-xl shadow-md text-premium-black border border-gray-100 transition-all duration-300 active:scale-90"
+            className="p-3 bg-white hover:bg-crimson hover:text-white rounded-none text-premium-black border border-gray-100 transition-all duration-300 active:scale-90"
             title="Toggle Fullscreen"
           >
             {isFullscreen ? <Minimize2 className="w-4 h-4" /> : <Maximize2 className="w-4 h-4" />}
@@ -573,26 +573,26 @@ export default function Cabin3DViewer({ cabinId, baseMaterial = 'steel' }: Cabin
         <div className="absolute bottom-4 left-4 flex gap-2 z-20">
           <button 
             onClick={() => setIsNight(!isNight)}
-            className={`p-3 rounded-xl shadow-md border transition-all duration-300 flex items-center gap-2 text-sm font-semibold ${
+            className={`p-3 rounded-none border transition-all duration-300 flex items-center gap-2 text-sm font-semibold ${
               isNight 
                 ? 'bg-crimson border-crimson text-white shadow-crimson/10' 
                 : 'bg-white border-gray-100 text-premium-black hover:bg-gray-50'
             }`}
           >
             {isNight ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
-            <span className="text-[10px] tracking-wider uppercase">{isNight ? 'Night View' : 'Day View'}</span>
+            <span className="text-xs tracking-wider uppercase">{isNight ? 'Night View' : 'Day View'}</span>
           </button>
 
           <button 
             onClick={() => setIsInterior(!isInterior)}
-            className={`p-3 rounded-xl shadow-md border transition-all duration-300 flex items-center gap-2 text-sm font-semibold ${
+            className={`p-3 rounded-none border transition-all duration-300 flex items-center gap-2 text-sm font-semibold ${
               isInterior 
                 ? 'bg-crimson border-crimson text-white shadow-crimson/10' 
                 : 'bg-white border-gray-100 text-premium-black hover:bg-gray-50'
             }`}
           >
             <Eye className="w-4 h-4" />
-            <span className="text-[10px] tracking-wider uppercase">{isInterior ? 'Interior View' : 'Exterior View'}</span>
+            <span className="text-xs tracking-wider uppercase">{isInterior ? 'Interior View' : 'Exterior View'}</span>
           </button>
         </div>
       </div>
@@ -600,8 +600,8 @@ export default function Cabin3DViewer({ cabinId, baseMaterial = 'steel' }: Cabin
       {/* Material Cladding Selector Bar */}
       <div className="bg-gray-50/50 border-t border-gray-200/60 p-4 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div className="flex flex-col">
-          <span className="text-sm font-bold text-premium-black uppercase tracking-wider">Material Cladding System</span>
-          <span className="text-[10px] text-gray-500 font-light mt-0.5">Customize the modular exterior finish</span>
+          <span className="text-base font-bold text-premium-black uppercase tracking-wider">Material Cladding System</span>
+          <span className="text-xs text-gray-500 mt-0.5">Customize the modular exterior finish</span>
         </div>
         
         <div className="flex gap-2">
@@ -613,9 +613,9 @@ export default function Cabin3DViewer({ cabinId, baseMaterial = 'steel' }: Cabin
             <button
               key={mat.id}
               onClick={() => setMaterial(mat.id as any)}
-              className={`px-3 py-2 bg-white rounded-xl border text-sm font-medium transition-all duration-300 hover:shadow-md flex items-center gap-2 ${
+              className={`px-3 py-2 bg-white rounded-none border text-sm font-medium transition-all duration-300 flex items-center gap-2 ${
                 material === mat.id 
-                  ? 'border-crimson text-crimson font-bold shadow-sm' 
+                  ? 'border-crimson text-crimson font-bold' 
                   : 'border-gray-200 text-gray-600 hover:border-gray-300'
               }`}
             >

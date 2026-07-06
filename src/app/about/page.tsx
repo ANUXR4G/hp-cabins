@@ -31,10 +31,10 @@ export default function AboutPage() {
           <div className="absolute inset-0 bg-premium-black" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4">
-          <h1 className="text-3xl font-extrabold text-white font-serif tracking-wide">About Hindustan Portable Cabins</h1>
+          <h1 className="inner-page-title text-white">About Hindustan Portable Cabins</h1>
           
           {/* Breadcrumbs */}
-          <div className="flex items-center justify-center gap-2 text-white/50 text-[10px] uppercase tracking-wider mt-4">
+          <div className="flex items-center justify-center gap-2 breadcrumb text-white/50 mt-4">
             <Link href="/" className="hover:text-crimson flex items-center gap-1 transition-colors">
               <Home className="w-3.5 h-3.5" />
               <span>Home</span>
@@ -49,12 +49,12 @@ export default function AboutPage() {
       <div className="bg-premium-black border-y border-white/10 py-6 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between gap-4 mb-4">
-            <span className="text-[10px] text-crimson uppercase tracking-widest font-extrabold">Delivered Modular Arrays</span>
-            <Link href="/projects" className="text-[10px] text-white/50 hover:text-crimson transition-colors font-bold uppercase tracking-wider">View Project Timeline</Link>
+            <span className="text-xs text-crimson uppercase tracking-widest font-extrabold">Delivered Modular Arrays</span>
+            <Link href="/projects" className="text-xs text-white/50 hover:text-crimson transition-colors font-bold uppercase tracking-wider">View Project Timeline</Link>
           </div>
           <div className="flex gap-4 overflow-x-auto no-scrollbar pb-2">
             {recentProjectImages.map((imgUrl, idx) => (
-              <div key={idx} className="h-28 w-44 rounded-xl overflow-hidden shrink-0 border border-white/10 relative shadow-md">
+              <div key={idx} className="h-28 w-44 rounded-none overflow-hidden shrink-0 border border-white/10 relative">
                 <img src={imgUrl} className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-black/30" />
               </div>
@@ -69,10 +69,10 @@ export default function AboutPage() {
           
           {/* Left Text Detail */}
           <div className="lg:col-span-7 space-y-6">
-            <span className="text-crimson uppercase tracking-widest text-[10px] font-extrabold block mb-1">Since 2010</span>
-            <h2 className="text-2xl sm:text-3xl font-extrabold font-serif text-premium-black">Leading Portable Cabin Manufacturer in India</h2>
+            <span className="text-crimson section-eyebrow block mb-1">Since 2010</span>
+            <h2 className="section-title text-premium-black">Leading Portable Cabin Manufacturer in India</h2>
             
-            <p className="text-sm sm:text-sm leading-relaxed text-gray-600 font-light">
+            <p className="text-base leading-relaxed text-gray-600">
               Hindustan Portable Cabins is a leading and fast-growing manufacturer of high-quality portable cabins in India. We specialize in portable office containers, site cabins, security cabins, and customized modular solutions. With branches and manufacturing units across India, we serve clients nationwide and internationally with excellence, innovation, and reliability.
             </p>
 
@@ -84,8 +84,8 @@ export default function AboutPage() {
                   <Check className="w-3.5 h-3.5" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-premium-black uppercase tracking-wider">Superior Quality & Craftsmanship</h4>
-                  <p className="text-[11px] text-gray-500 font-light mt-0.5 leading-relaxed">
+                  <h4 className="text-base font-bold text-premium-black uppercase tracking-wider">Superior Quality & Craftsmanship</h4>
+                  <p className="text-base text-gray-500 mt-0.5 leading-relaxed">
                     We use premium materials and advanced technology to ensure every cabin is durable, weather-resistant, and built to last.
                   </p>
                 </div>
@@ -96,8 +96,8 @@ export default function AboutPage() {
                   <Layers className="w-3.5 h-3.5" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-premium-black uppercase tracking-wider">Customized Solutions</h4>
-                  <p className="text-[11px] text-gray-500 font-light mt-0.5 leading-relaxed">
+                  <h4 className="text-base font-bold text-premium-black uppercase tracking-wider">Customized Solutions</h4>
+                  <p className="text-base text-gray-500 mt-0.5 leading-relaxed">
                     From portable office containers to specialized modular cabins, we offer fully tailored solutions to fit your specific space, purpose, and budget.
                   </p>
                 </div>
@@ -108,8 +108,8 @@ export default function AboutPage() {
                   <Award className="w-3.5 h-3.5" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-premium-black uppercase tracking-wider">Safety & Compliance</h4>
-                  <p className="text-[11px] text-gray-500 font-light mt-0.5 leading-relaxed">
+                  <h4 className="text-base font-bold text-premium-black uppercase tracking-wider">Safety & Compliance</h4>
+                  <p className="text-base text-gray-500 mt-0.5 leading-relaxed">
                     Each cabin is engineered for structural strength, fire resistance, and electrical safety, following stringent national and international safety standards.
                   </p>
                 </div>
@@ -120,7 +120,7 @@ export default function AboutPage() {
             <div className="pt-2">
               <Link 
                 href="/contact"
-                className="bg-crimson hover:bg-crimson-dark text-white text-sm font-bold uppercase tracking-wider py-4 px-8 rounded-xl inline-block transition-all shadow-md shadow-crimson/15 hover:scale-105 active:scale-95"
+                className="bg-crimson hover:bg-crimson-dark text-white text-sm font-bold uppercase tracking-wider py-4 px-8 rounded-none inline-block transition-all shadow-crimson/15 hover:scale-105 active:scale-95"
               >
                 Request Factory Visit
               </Link>
@@ -128,7 +128,7 @@ export default function AboutPage() {
           </div>
 
           {/* Right Image */}
-          <div className="lg:col-span-5 h-[400px] bg-gray-100 rounded-2xl overflow-hidden shadow-lg border border-gray-200 relative">
+          <div className="lg:col-span-5 h-[400px] bg-gray-100 rounded-none overflow-hidden border border-gray-200 relative">
             <img 
               src="/wp-content/uploads/2025/08/WhatsApp-Image-2025-07-29-at-8.29.46-PM7.jpeg" 
               alt="Hindustan Portable Cabins Manufacturing" 
@@ -147,8 +147,8 @@ export default function AboutPage() {
           <div className="grid grid-cols-2 md:grid-cols-5 gap-8 text-center">
             {stats.map((stat, idx) => (
               <div key={idx} className="space-y-1">
-                <span className="block text-2xl sm:text-3xl font-extrabold text-crimson font-mono">{stat.value}</span>
-                <span className="block text-[9px] uppercase tracking-wider text-white/50 font-bold">{stat.label}</span>
+                <span className="block text-2xl sm:text-3xl font-extrabold text-crimson tabular-nums">{stat.value}</span>
+                <span className="block text-xs uppercase tracking-wider text-white/50 font-bold">{stat.label}</span>
               </div>
             ))}
           </div>

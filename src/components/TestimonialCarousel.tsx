@@ -39,34 +39,26 @@ export default function TestimonialCarousel({ testimonials, accentColor = '#0175
       className="relative overflow-hidden py-16 sm:py-20 bg-[#F5F5F5] border-b border-gray-200/50"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12 space-y-3">
-          <span
-            className="uppercase tracking-widest text-[10px] font-extrabold block"
-            style={{ color: accentColor }}
-          >
+        <div className="section-header mb-10 sm:mb-12">
+          <span className="section-eyebrow" style={{ color: accentColor }}>
             Client Testimonials
           </span>
-          <h2 className="text-2xl sm:text-3xl font-extrabold font-serif text-premium-black">
-            What Our Clients Say
-          </h2>
-          <p className="text-sm text-gray-500 font-light leading-relaxed">
+          <h2 className="section-title">What Our Clients Say</h2>
+          <p className="section-desc">
             Trusted by infrastructure, energy, technology, and government leaders across India.
           </p>
-          <Link
-            href="/testimonials"
-            className="inline-block text-[10px] font-bold uppercase tracking-wider text-crimson hover:underline pt-1"
-          >
+          <Link href="/testimonials" className="inline-block btn-label text-crimson hover:underline pt-1">
             View All Testimonials
           </Link>
         </div>
       </div>
 
-      <div className="overflow-hidden px-4 sm:px-8" ref={emblaRef}>
-        <div className="flex touch-pan-y -ml-4 sm:-ml-6">
+      <div className="carousel-viewport" ref={emblaRef}>
+        <div className="carousel-track">
           {testimonials.map((testimonial) => (
             <div
               key={testimonial.id}
-              className="min-w-0 shrink-0 grow-0 basis-[88%] sm:basis-[55%] md:basis-[38%] lg:basis-[30%] xl:basis-[24%] pl-4 sm:pl-6"
+              className="carousel-slide basis-[88%] sm:basis-[55%] md:basis-[38%] lg:basis-[30%] xl:basis-[24%]"
             >
               <TestimonialCard testimonial={testimonial} compact />
             </div>

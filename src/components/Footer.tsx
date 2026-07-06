@@ -28,16 +28,16 @@ export default function Footer() {
               ) : (
                 <svg viewBox="0 0 240 60" className="h-11 w-auto" shapeRendering="geometricPrecision" textRendering="geometricPrecision">
                   <rect x="12" y="10" width="3.5" height="39" rx="1.5" fill="#017501" />
-                  <text x="26" y="36" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="800" fontSize="18" fill="#FFFFFF" letterSpacing="0.5">THE C</text>
+                  <text x="26" y="36" fontFamily="Poppins, system-ui, sans-serif" fontWeight="800" fontSize="18" fill="#FFFFFF" letterSpacing="0.5">THE C</text>
                   <path d="M 123 11 L 148 48 L 136 48 L 137 41 L 109 41 L 104 48 L 95 48 L 95 43 L 101 43 Z M 123 18 L 135 36 L 111 36 Z" fill="#017501" fillRule="evenodd" />
-                  <text x="151" y="36" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="800" fontSize="18" fill="#FFFFFF" letterSpacing="0.5">BINS</text>
-                  <text x="26" y="49" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="800" fontSize="6.8" fill="#888888" letterSpacing="0.6">
+                  <text x="151" y="36" fontFamily="Poppins, system-ui, sans-serif" fontWeight="800" fontSize="18" fill="#FFFFFF" letterSpacing="0.5">BINS</text>
+                  <text x="26" y="49" fontFamily="Inter, system-ui, sans-serif" fontWeight="800" fontSize="6.8" fill="#888888" letterSpacing="0.6">
                     TRANSFORMING THE <tspan fill="#017501">MODULAR INDUSTRY</tspan>
                   </text>
                 </svg>
               )}
             </Link>
-            <p className="text-xs leading-relaxed text-white/50">
+            <p className="text-base leading-relaxed text-white/50">
               Leading manufacturer of high-quality portable office containers, site cabins, security cabins, and customized modular solutions across India since 2010.
             </p>
             {/* Newsletter */}
@@ -47,9 +47,9 @@ export default function Footer() {
                 <input 
                   type="email" 
                   placeholder="Your Email Address" 
-                  className="bg-navy-light text-xs text-white placeholder-white/30 w-full pl-4 pr-12 py-3 rounded-xl border border-white/10 focus:outline-none focus:border-crimson transition-colors duration-200"
+                  className="bg-navy-light text-xs text-white placeholder-white/30 w-full pl-4 pr-12 py-3 rounded-none border border-white/10 focus:outline-none focus:border-crimson transition-colors duration-200"
                 />
-                <button type="submit" className="absolute right-2 p-1.5 bg-crimson hover:bg-crimson-dark text-white rounded-lg transition-colors duration-200 cursor-pointer">
+                <button type="submit" className="absolute right-2 p-1.5 bg-crimson hover:bg-crimson-dark text-white rounded-none transition-colors duration-200 cursor-pointer">
                   <Send className="w-3.5 h-3.5" />
                 </button>
               </form>

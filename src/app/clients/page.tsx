@@ -16,11 +16,11 @@ export default function ClientsPage() {
           <div className="absolute inset-0 bg-premium-black/70" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4">
-          <h1 className="text-3xl font-extrabold text-white font-serif tracking-wide">Our Clients</h1>
-          <p className="text-sm text-white/60 font-light mt-3 max-w-2xl mx-auto">
+          <h1 className="inner-page-title text-white">Our Clients</h1>
+          <p className="text-sm text-white/60 mt-3 max-w-2xl mx-auto">
             Trusted by leading organizations across infrastructure, energy, technology, healthcare, and government sectors.
           </p>
-          <div className="flex items-center justify-center gap-2 text-white/50 text-[10px] uppercase tracking-wider mt-5">
+          <div className="flex items-center justify-center gap-2 breadcrumb text-white/50 mt-5">
             <Link href="/" className="hover:text-crimson flex items-center gap-1 transition-colors">
               <Home className="w-3.5 h-3.5" />
               <span>Home</span>
