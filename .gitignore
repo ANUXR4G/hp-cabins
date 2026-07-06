@@ -5,10 +5,6 @@ node_modules
 .next
 out
 
-# large media — synced locally via `yarn download:media` (runs automatically before build)
-*.mp4
-public/wp-content/
-
 # production
 build
 dist
@@ -33,3 +29,7 @@ Thumbs.db
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# videos — synced at build time via scripts/download-media.mjs (images in public/wp-content are committed)
+public/**/*.mp4
+public/bannervdo.mp4
