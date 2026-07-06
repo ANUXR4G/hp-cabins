@@ -573,7 +573,7 @@ export default function Cabin3DViewer({ cabinId, baseMaterial = 'steel' }: Cabin
         <div className="absolute bottom-4 left-4 flex gap-2 z-20">
           <button 
             onClick={() => setIsNight(!isNight)}
-            className={`p-3 rounded-none border transition-all duration-300 flex items-center gap-2 text-sm font-semibold ${
+            className={`p-3 rounded-none border transition-all duration-300 flex items-center gap-2 text-sm font-normal ${
               isNight 
                 ? 'bg-crimson border-crimson text-white shadow-crimson/10' 
                 : 'bg-white border-gray-100 text-premium-black hover:bg-gray-50'
@@ -585,7 +585,7 @@ export default function Cabin3DViewer({ cabinId, baseMaterial = 'steel' }: Cabin
 
           <button 
             onClick={() => setIsInterior(!isInterior)}
-            className={`p-3 rounded-none border transition-all duration-300 flex items-center gap-2 text-sm font-semibold ${
+            className={`p-3 rounded-none border transition-all duration-300 flex items-center gap-2 text-sm font-normal ${
               isInterior 
                 ? 'bg-crimson border-crimson text-white shadow-crimson/10' 
                 : 'bg-white border-gray-100 text-premium-black hover:bg-gray-50'
@@ -600,8 +600,8 @@ export default function Cabin3DViewer({ cabinId, baseMaterial = 'steel' }: Cabin
       {/* Material Cladding Selector Bar */}
       <div className="bg-gray-50/50 border-t border-gray-200/60 p-4 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div className="flex flex-col">
-          <span className="text-base font-bold text-premium-black uppercase tracking-wider">Material Cladding System</span>
-          <span className="text-xs text-gray-500 mt-0.5">Customize the modular exterior finish</span>
+          <span className="content font-normal text-premium-black">Material Cladding System</span>
+          <span className="content text-gray-500 mt-0.5">Customize the modular exterior finish</span>
         </div>
         
         <div className="flex gap-2">
@@ -615,7 +615,7 @@ export default function Cabin3DViewer({ cabinId, baseMaterial = 'steel' }: Cabin
               onClick={() => setMaterial(mat.id as any)}
               className={`px-3 py-2 bg-white rounded-none border text-sm font-medium transition-all duration-300 flex items-center gap-2 ${
                 material === mat.id 
-                  ? 'border-crimson text-crimson font-bold' 
+                  ? 'border-crimson text-crimson font-normal' 
                   : 'border-gray-200 text-gray-600 hover:border-gray-300'
               }`}
             >

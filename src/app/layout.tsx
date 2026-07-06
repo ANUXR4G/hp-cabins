@@ -6,7 +6,7 @@ import Footer from '@/components/Footer';
 import FloatingElements from '@/components/FloatingElements';
 import SocialSidebar from '@/components/SocialSidebar';
 import { getCms } from '@/lib/cms';
-import { inter } from '@/lib/fonts';
+import { displayFont, bodyFont, monoFont } from '@/lib/fonts';
 
 export function generateMetadata(): Metadata {
   const db = getCms();
@@ -52,12 +52,12 @@ export default function RootLayout({
         <style dangerouslySetInnerHTML={{ __html: colorVariables }} />
         <link rel="icon" href={db?.branding?.logos?.favicon || db?.branding?.faviconUrl || '/favicon.ico'} />
       </head>
-      <body className={`${inter.variable} font-sans antialiased min-h-screen flex flex-col bg-[#F5F5F5] overflow-x-clip w-full`}>
+      <body className={`${displayFont.variable} ${bodyFont.variable} ${monoFont.variable} font-serif antialiased min-h-screen flex flex-col bg-[#F5F5F5] overflow-x-clip w-full`}>
         <Navbar />
         <SocialSidebar />
         <FloatingElements />
 
-        <main className="flex-grow pt-16 relative z-10 w-full min-w-0 overflow-x-clip">
+        <main className="flex-grow pt-14 relative z-10 w-full min-w-0 overflow-x-clip">
           {children}
         </main>
 

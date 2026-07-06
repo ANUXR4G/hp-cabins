@@ -43,14 +43,14 @@ export default function SearchForm({ onSearch, compact = false }: SearchFormProp
         
         {/* Category Filter */}
         <div className="space-y-2">
-          <label className="text-sm uppercase tracking-wider font-bold text-gray-500 flex items-center gap-1.5">
+          <label className="content font-normal text-gray-500 flex items-center gap-1.5">
             <Building className="w-3.5 h-3.5 text-crimson" />
             <span>Cabin Category</span>
           </label>
           <select 
             value={category} 
             onChange={(e) => setCategory(e.target.value)}
-            className="w-full bg-white/80 border border-gray-200/80 rounded-none px-3 py-3 text-sm text-premium-black font-semibold focus:outline-none focus:border-crimson transition-colors duration-200 cursor-pointer"
+            className="w-full bg-white/80 border border-gray-200/80 rounded-none px-3 py-3 content text-premium-black font-normal focus:outline-none focus:border-crimson transition-colors duration-200 cursor-pointer"
           >
             <option value="">All Categories</option>
             {categories.map(cat => (
@@ -61,14 +61,14 @@ export default function SearchForm({ onSearch, compact = false }: SearchFormProp
 
         {/* UAE Delivery City Filter */}
         <div className="space-y-2">
-          <label className="text-sm uppercase tracking-wider font-bold text-gray-500 flex items-center gap-1.5">
+          <label className="content font-normal text-gray-500 flex items-center gap-1.5">
             <MapPin className="w-3.5 h-3.5 text-crimson" />
             <span>Delivery Region</span>
           </label>
           <select 
             value={city} 
             onChange={(e) => setCity(e.target.value)}
-            className="w-full bg-white/80 border border-gray-200/80 rounded-none px-3 py-3 text-sm text-premium-black font-semibold focus:outline-none focus:border-crimson transition-colors duration-200 cursor-pointer"
+            className="w-full bg-white/80 border border-gray-200/80 rounded-none px-3 py-3 content text-premium-black font-normal focus:outline-none focus:border-crimson transition-colors duration-200 cursor-pointer"
           >
             <option value="">All Regions (India-wide)</option>
             {cities.map(c => (
@@ -79,14 +79,14 @@ export default function SearchForm({ onSearch, compact = false }: SearchFormProp
 
         {/* Size Range Filter */}
         <div className="space-y-2">
-          <label className="text-sm uppercase tracking-wider font-bold text-gray-500 flex items-center gap-1.5">
+          <label className="content font-normal text-gray-500 flex items-center gap-1.5">
             <Maximize2 className="w-3.5 h-3.5 text-crimson" />
             <span>Footprint Size</span>
           </label>
           <select 
             value={size} 
             onChange={(e) => setSize(e.target.value)}
-            className="w-full bg-white/80 border border-gray-200/80 rounded-none px-3 py-3 text-sm text-premium-black font-semibold focus:outline-none focus:border-crimson transition-colors duration-200 cursor-pointer"
+            className="w-full bg-white/80 border border-gray-200/80 rounded-none px-3 py-3 content text-premium-black font-normal focus:outline-none focus:border-crimson transition-colors duration-200 cursor-pointer"
           >
             <option value="">Any Dimensions</option>
             <option value="compact">Compact (Under 150 sqft)</option>
@@ -97,14 +97,14 @@ export default function SearchForm({ onSearch, compact = false }: SearchFormProp
 
         {/* Budget Filter */}
         <div className="space-y-2">
-          <label className="text-sm uppercase tracking-wider font-bold text-gray-500 flex items-center gap-1.5">
+          <label className="content font-normal text-gray-500 flex items-center gap-1.5">
             <DollarSign className="w-3.5 h-3.5 text-crimson" />
             <span>Budget Range</span>
           </label>
           <select 
             value={budget} 
             onChange={(e) => setBudget(e.target.value)}
-            className="w-full bg-white/80 border border-gray-200/80 rounded-none px-3 py-3 text-sm text-premium-black font-semibold focus:outline-none focus:border-crimson transition-colors duration-200 cursor-pointer"
+            className="w-full bg-white/80 border border-gray-200/80 rounded-none px-3 py-3 content text-premium-black font-normal focus:outline-none focus:border-crimson transition-colors duration-200 cursor-pointer"
           >
             <option value="">Request Quote</option>
           </select>
@@ -116,7 +116,7 @@ export default function SearchForm({ onSearch, compact = false }: SearchFormProp
       <div className="flex justify-end mt-5">
         <button 
           type="submit" 
-          className="flex items-center justify-center gap-2 bg-crimson hover:bg-crimson-dark text-white font-sans uppercase font-bold text-sm tracking-wider py-3.5 px-8 rounded-none transition-all duration-300 w-full lg:w-auto cursor-pointer"
+          className="flex items-center justify-center gap-2 bg-crimson hover:bg-crimson-dark text-white font-sans uppercase font-normal text-sm tracking-wider py-3.5 px-8 rounded-none transition-all duration-300 w-full lg:w-auto cursor-pointer"
         >
           <Search className="w-4 h-4 text-white" />
           <span>Find Modular Cabins</span>

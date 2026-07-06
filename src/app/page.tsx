@@ -3,10 +3,9 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { 
-  Building, ShieldCheck, MapPin, Award, CheckCircle2, ArrowRight, 
-  Waves, Dumbbell, Shield, Compass, Landmark, Flame, Video, FileText,
-  Briefcase, Utensils, Zap, Car, Film, Compass as SpaIcon, Users, Calendar, Sparkles,
-  Hammer, HelpCircle, Phone, ArrowRightLeft, ArrowUpRight, ChevronDown, Mail, Home
+  Building, ShieldCheck, MapPin,  CheckCircle2, ArrowRight, 
+   Landmark, Flame, FileText, Compass as Users, Calendar,
+   Phone, ChevronDown, Mail, Home
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import PropertyCard from '@/components/PropertyCard';
@@ -15,10 +14,9 @@ import YouTubeCard from '@/components/YouTubeCard';
 import CertificateCarousel from '@/components/CertificateCarousel';
 import ClientLogoCarousel from '@/components/ClientLogoCarousel';
 import TestimonialCarousel from '@/components/TestimonialCarousel';
-import { propertiesData, Property } from '@/data/properties';
+import { Property } from '@/data/properties';
 import { clientLogos as allClientLogos } from '@/data/clients';
 import { testimonialsData } from '@/data/testimonials';
-import { projectsData } from '@/data/projects';
 import { getCms } from '@/lib/cms';
 import { 
   workingProcess, welcomeParagraphs, whyChooseUs, safetyCards,
@@ -126,14 +124,12 @@ export default function HomePage() {
               <Link 
                 href={heroSlides[activeSlide]?.link || '/properties'}
                 className="btn-primary w-full sm:w-auto"
-                style={{ backgroundColor: accentColor, borderColor: accentColor }}
               >
                 Explore Products
               </Link>
               <Link 
                 href="#contact-section" 
                 className="btn-primary-outline w-full sm:w-auto"
-                style={{ color: accentColor, borderColor: accentColor }}
               >
                 Get a Quote
               </Link>
@@ -166,40 +162,40 @@ export default function HomePage() {
               <div className="w-10 h-10 sm:w-11 sm:h-11 bg-crimson/5 flex items-center justify-center rounded-full text-crimson mb-2 sm:mb-3" style={{ color: accentColor, backgroundColor: accentColor + '0d' }}>
                 <Building className="w-5 h-5" />
               </div>
-              <span className="block text-lg sm:text-2xl font-extrabold tabular-nums text-[#111111] leading-none">15+</span>
-              <span className="block text-xs font-extrabold text-gray-400 uppercase tracking-widest mt-1.5 sm:mt-2">Years Experience</span>
+              <span className="block heading tabular-nums text-[#111111] leading-none">15+</span>
+              <span className="block content text-gray-400 mt-1.5 sm:mt-2">Years Experience</span>
             </div>
 
             <div className="card-surface p-4 sm:p-5 transition-all duration-300 flex flex-col items-center justify-center text-center min-h-[120px]">
               <div className="w-10 h-10 sm:w-11 sm:h-11 bg-crimson/5 flex items-center justify-center rounded-full text-crimson mb-2 sm:mb-3" style={{ color: accentColor, backgroundColor: accentColor + '0d' }}>
                 <Home className="w-5 h-5" />
               </div>
-              <span className="block text-lg sm:text-2xl font-extrabold tabular-nums text-[#111111] leading-none">5,000+</span>
-              <span className="block text-xs font-extrabold text-gray-400 uppercase tracking-widest mt-1.5 sm:mt-2">Projects Completed</span>
+              <span className="block heading tabular-nums text-[#111111] leading-none">5,000+</span>
+              <span className="block content text-gray-400 mt-1.5 sm:mt-2">Projects Completed</span>
             </div>
 
             <div className="card-surface p-4 sm:p-5 transition-all duration-300 flex flex-col items-center justify-center text-center min-h-[120px]">
               <div className="w-10 h-10 sm:w-11 sm:h-11 bg-crimson/5 flex items-center justify-center rounded-full text-crimson mb-2 sm:mb-3" style={{ color: accentColor, backgroundColor: accentColor + '0d' }}>
                 <Users className="w-5 h-5" />
               </div>
-              <span className="block text-lg sm:text-2xl font-extrabold tabular-nums text-[#111111] leading-none">3,000+</span>
-              <span className="block text-xs font-extrabold text-gray-400 uppercase tracking-widest mt-1.5 sm:mt-2">Clients Served</span>
+              <span className="block heading tabular-nums text-[#111111] leading-none">3,000+</span>
+              <span className="block content text-gray-400 mt-1.5 sm:mt-2">Clients Served</span>
             </div>
 
             <div className="card-surface p-4 sm:p-5 transition-all duration-300 flex flex-col items-center justify-center text-center min-h-[120px]">
               <div className="w-10 h-10 sm:w-11 sm:h-11 bg-crimson/5 flex items-center justify-center rounded-full text-crimson mb-2 sm:mb-3" style={{ color: accentColor, backgroundColor: accentColor + '0d' }}>
                 <MapPin className="w-5 h-5" />
               </div>
-              <span className="block text-lg sm:text-2xl font-extrabold tabular-nums text-[#111111] leading-none">Nationwide</span>
-              <span className="block text-xs font-extrabold text-gray-400 uppercase tracking-widest mt-1.5 sm:mt-2">India Coverage</span>
+              <span className="block heading tabular-nums text-[#111111] leading-none">Nationwide</span>
+              <span className="block content text-gray-400 mt-1.5 sm:mt-2">India Coverage</span>
             </div>
 
             <div className="card-surface p-4 sm:p-5 transition-all duration-300 flex flex-col items-center justify-center text-center min-h-[120px] col-span-2 sm:col-span-1">
               <div className="w-10 h-10 sm:w-11 sm:h-11 bg-crimson/5 flex items-center justify-center rounded-full text-crimson mb-2 sm:mb-3" style={{ color: accentColor, backgroundColor: accentColor + '0d' }}>
                 <CheckCircle2 className="w-5 h-5" />
               </div>
-              <span className="block text-lg sm:text-2xl font-extrabold tabular-nums text-[#111111] leading-none">100%</span>
-              <span className="block text-xs font-extrabold text-gray-400 uppercase tracking-widest mt-1.5 sm:mt-2">Quality Guarantee</span>
+              <span className="block heading tabular-nums text-[#111111] leading-none">100%</span>
+              <span className="block content text-gray-400 mt-1.5 sm:mt-2">Quality Guarantee</span>
             </div>
 
           </div>
@@ -247,7 +243,7 @@ export default function HomePage() {
       </section>
 
       {/* WHY CHOOSE US */}
-      <section className="py-24 bg-white border-b border-gray-200/50">
+      <section className="section-spacing tile-light border-b border-hairline">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
             <span className="section-eyebrow" style={{ color: accentColor }}>Why Us</span>
@@ -260,7 +256,7 @@ export default function HomePage() {
             {whyChooseUs.map((item, idx) => {
               const Icon = item.icon;
               return (
-                <div key={idx} className="bg-gray-50 p-6 rounded-none border border-gray-100/80 space-y-4 transition-shadow">
+                <div key={idx} className="bg-gray-50 p-6 rounded-none border border-hairline/80 space-y-4 transition-shadow">
                   <div className="w-10 h-10 bg-crimson/5 flex items-center justify-center rounded-none text-crimson" style={{ color: accentColor, backgroundColor: accentColor + '0d' }}>
                     <Icon className="w-5 h-5" />
                   </div>
@@ -274,7 +270,7 @@ export default function HomePage() {
       </section>
 
       {/* 3. 3D CABIN CONFIGURATOR PRESENTATION */}
-      <section className="py-20 bg-premium-black text-white overflow-hidden relative">
+      <section className="section-spacing tile-dark text-white overflow-hidden relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
@@ -282,7 +278,7 @@ export default function HomePage() {
             <div className="lg:col-span-4 space-y-6">
               <span className="section-eyebrow" style={{ color: accentColor }}>Virtual Demonstration</span>
               <h2 className="section-title leading-tight">Interactive 3D Cabin Configurator</h2>
-              <p className="text-base text-white/60 leading-relaxed">
+              <p className="content text-white/60 leading-relaxed">
                 Configure double-glazing parameters, swap exterior claddings interactively, and toggle internal layout profiles dynamically.
               </p>
               
@@ -323,7 +319,7 @@ export default function HomePage() {
         <div className="text-center mt-10 sm:mt-12">
           <Link
             href="/properties"
-            className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-crimson hover:gap-3 transition-all"
+            className="inline-flex items-center gap-2 text-xs font-normal text-crimson hover:gap-3 transition-all"
             style={{ color: accentColor }}
           >
             View All Products
@@ -333,7 +329,7 @@ export default function HomePage() {
       </section>
 
       {/* QUALITY WE OFFERS */}
-      <section className="py-24 bg-[#F5F5F5] border-b border-gray-200/50">
+      <section className="section-spacing tile-parchment border-b border-hairline">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white p-8 sm:p-10 rounded-none border border-gray-200/60 mb-12 space-y-3">
             <span className="section-eyebrow" style={{ color: accentColor }}>Our Promise</span>
@@ -371,7 +367,7 @@ export default function HomePage() {
             {activeIndustries.map((ind: any, idx: number) => {
               const Icon = getIndustryIcon(ind.icon);
               return (
-                <div key={idx} className="bg-gray-50 p-6 rounded-none border border-gray-100/80 space-y-4 transition-shadow">
+                <div key={idx} className="bg-gray-50 p-6 rounded-none border border-hairline/80 space-y-4 transition-shadow">
                   <div className="w-10 h-10 bg-crimson/5 flex items-center justify-center rounded-none text-crimson" style={{ color: accentColor, backgroundColor: accentColor + '0d' }}>
                     <Icon className="w-5 h-5" />
                   </div>
@@ -385,7 +381,7 @@ export default function HomePage() {
       </section>
 
       {/* OUR COMMITMENT TO SAFETY */}
-      <section className="py-24 bg-white border-b border-gray-200/50">
+      <section className="section-spacing tile-light border-b border-hairline">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
             <span className="section-eyebrow" style={{ color: accentColor }}>Safety First</span>
@@ -398,7 +394,7 @@ export default function HomePage() {
             {safetyCards.map((item, idx) => {
               const Icon = item.icon;
               return (
-                <div key={idx} className="bg-gray-50 p-6 rounded-none border border-gray-100/80 space-y-4 transition-shadow">
+                <div key={idx} className="bg-gray-50 p-6 rounded-none border border-hairline/80 space-y-4 transition-shadow">
                   <div className="w-10 h-10 bg-crimson/5 flex items-center justify-center rounded-none" style={{ color: accentColor, backgroundColor: accentColor + '0d' }}>
                     <Icon className="w-5 h-5" />
                   </div>
@@ -419,9 +415,9 @@ export default function HomePage() {
             <h2 className="section-title">Our Principles</h2>
             <ul className="space-y-3">
               {principles.map((p) => (
-                <li key={p.title} className="flex gap-3 text-base text-gray-600 leading-relaxed">
+                <li key={p.title} className="flex gap-3 content text-gray-600 leading-relaxed">
                   <CheckCircle2 className="w-4 h-4 shrink-0 mt-0.5" style={{ color: accentColor }} />
-                  <span><strong className="text-premium-black font-semibold">{p.title}</strong> — {p.desc}</span>
+                  <span><strong className="text-premium-black font-normal">{p.title}</strong> — {p.desc}</span>
                 </li>
               ))}
             </ul>
@@ -460,8 +456,8 @@ export default function HomePage() {
                   }`}
                   style={{ borderColor: isActive ? accentColor : undefined }}
                 >
-                  <span className="text-xs font-bold tracking-widest tabular-nums" style={{ color: accentColor }}>STAGE {stage.number}</span>
-                  <span className="text-base font-bold uppercase tracking-wider leading-snug">
+                  <span className="content tracking-widest tabular-nums" style={{ color: accentColor }}>STAGE {stage.number}</span>
+                  <span className="content font-normal leading-snug">
                     {stage.name}
                   </span>
                 </button>
@@ -471,8 +467,8 @@ export default function HomePage() {
 
           <div className="mt-8 p-8 bg-white/5 rounded-none border border-white/10 max-w-3xl mx-auto text-center space-y-3 animate-fade-in">
             <span className="btn-label" style={{ color: accentColor }}>Stage {timelineStages[activeTimelineStage].number} Details</span>
-            <h4 className="text-lg font-bold">{timelineStages[activeTimelineStage].name}</h4>
-            <p className="text-base text-white/60 max-w-lg mx-auto leading-relaxed">
+            <h4 className="heading">{timelineStages[activeTimelineStage].name}</h4>
+            <p className="content text-white/60 max-w-lg mx-auto leading-relaxed">
               {timelineStages[activeTimelineStage].desc}
             </p>
           </div>
@@ -481,7 +477,7 @@ export default function HomePage() {
       </section>
 
       {/* 5. FEATURED PROJECTS COMPOUNDS */}
-      <section id="projects-section" className="py-24 bg-white border-b border-gray-200/50">
+      <section id="projects-section" className="section-spacing tile-light border-b border-hairline">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
             <span className="section-eyebrow" style={{ color: accentColor }}>Field Applications</span>
@@ -503,16 +499,16 @@ export default function HomePage() {
                 </div>
                 <div className="p-5 sm:p-6 sm:w-3/5 lg:w-1/2 flex flex-col justify-between gap-4 flex-grow">
                   <div className="space-y-2">
-                    <span className="text-xs font-bold uppercase tracking-wider" style={{ color: accentColor }}>Modular Compound</span>
-                    <h4 className="text-base font-extrabold text-premium-black">{project.name}</h4>
-                    <p className="text-base text-gray-500 leading-normal">{project.description}</p>
+                    <span className="content" style={{ color: accentColor }}>Modular Compound</span>
+                    <h4 className="content font-normal text-premium-black">{project.name}</h4>
+                    <p className="content text-gray-500 leading-normal">{project.description}</p>
                   </div>
                   <div className="flex items-center justify-between pt-4 border-t border-gray-200/60">
-                    <div className="flex items-center gap-1.5 text-base text-gray-500">
+                    <div className="flex items-center gap-1.5 content text-gray-500">
                       <MapPin className="w-3.5 h-3.5 text-crimson" style={{ color: accentColor }} />
                       <span>{project.location}</span>
                     </div>
-                    <span className="text-xs text-gray-400 font-medium tabular-nums">{project.date}</span>
+                    <span className="content text-gray-400 font-medium tabular-nums">{project.date}</span>
                   </div>
                 </div>
               </div>
@@ -522,7 +518,7 @@ export default function HomePage() {
       </section>
 
       {/* 7. MEDIA — team photo & award video */}
-      <section id="videos-section" className="py-24 bg-[#F5F5F5] border-b border-gray-200/50">
+      <section id="videos-section" className="section-spacing tile-parchment border-b border-hairline">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
             <span className="section-eyebrow block" style={{ color: accentColor }}>Recognition</span>
@@ -546,7 +542,7 @@ export default function HomePage() {
       </section>
 
       {/* BRANCHES & MANUFACTURING UNITS */}
-      <section id="branches-section" className="py-24 bg-white border-b border-gray-200/50">
+      <section id="branches-section" className="section-spacing tile-light border-b border-hairline">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-10 space-y-3">
             <span className="section-eyebrow" style={{ color: accentColor }}>Locations</span>
@@ -557,7 +553,7 @@ export default function HomePage() {
               <button
                 key={tab}
                 onClick={() => setBranchTab(tab)}
-                className={`px-6 py-2.5 rounded-none text-xs font-bold uppercase tracking-wider transition-all ${
+                className={`px-6 py-2.5 rounded-none text-xs font-normal transition-all ${
                   branchTab === tab ? 'text-white' : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
                 }`}
                 style={branchTab === tab ? { backgroundColor: accentColor } : undefined}
@@ -568,17 +564,17 @@ export default function HomePage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {branches.map((branch, idx) => (
-              <div key={idx} className="bg-gray-50 p-6 rounded-none border border-gray-100/80 space-y-3 transition-shadow">
+              <div key={idx} className="bg-gray-50 p-6 rounded-none border border-hairline/80 space-y-3 transition-shadow">
                 <div className="flex items-center gap-2">
                   <MapPin className="w-4 h-4 shrink-0" style={{ color: accentColor }} />
                   <h4 className="card-title">{branch.name}</h4>
                 </div>
                 <p className="section-desc">{branch.address}</p>
-                <div className="flex items-start gap-2 text-base text-gray-500">
+                <div className="flex items-start gap-2 content text-gray-500">
                   <Phone className="w-3.5 h-3.5 shrink-0 mt-0.5" style={{ color: accentColor }} />
                   <span>{branch.phones}</span>
                 </div>
-                <div className="flex items-start gap-2 text-base text-gray-500">
+                <div className="flex items-start gap-2 content text-gray-500">
                   <Mail className="w-3.5 h-3.5 shrink-0 mt-0.5" style={{ color: accentColor }} />
                   <span>{branch.emails}</span>
                 </div>
@@ -589,7 +585,7 @@ export default function HomePage() {
       </section>
 
       {/* 7.5. PHOTOREALISTIC GALLERY SHOWCASE */}
-      <section id="gallery-section" className="py-24 bg-white border-b border-gray-200/50">
+      <section id="gallery-section" className="section-spacing tile-light border-b border-hairline">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
             <span className="section-eyebrow block" style={{ color: accentColor }}>Visual Showcase</span>
@@ -608,7 +604,7 @@ export default function HomePage() {
                 className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" 
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-white">
-                <span className="text-xs uppercase tracking-widest font-extrabold" style={{ color: accentColor }}>{item.category}</span>
+                <span className="content" style={{ color: accentColor }}>{item.category}</span>
                 <h4 className="card-title mt-1">{item.title}</h4>
               </div>
             </div>
@@ -631,7 +627,7 @@ export default function HomePage() {
         <div className="page-container">
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5">
           {affiliations.map((name) => (
-            <span key={name} className="px-4 sm:px-6 py-4 bg-white rounded-none text-base font-extrabold text-premium-black text-center flex items-center justify-center min-h-[72px]">
+            <span key={name} className="px-4 sm:px-6 py-4 bg-white rounded-none content text-premium-black text-center flex items-center justify-center min-h-[72px]">
               {name}
             </span>
           ))}
@@ -650,7 +646,7 @@ export default function HomePage() {
           {faqsList.map((faq, idx) => {
             const isOpen = activeFaq === idx;
             return (
-              <div key={idx} className="bg-white rounded-none border border-gray-200/60 overflow-hidden transition-all">
+              <div key={idx} className="bg-white rounded-none border border-hairline overflow-hidden transition-all">
                 <button 
                   onClick={() => setActiveFaq(isOpen ? null : idx)}
                   className="w-full flex items-center justify-between p-5 text-left card-title hover:text-crimson transition-colors focus:outline-none"
@@ -659,7 +655,7 @@ export default function HomePage() {
                   <ChevronDown className="w-4 h-4 transition-transform duration-300" style={{ transform: isOpen ? 'rotate(180deg)' : undefined, color: accentColor }} />
                 </button>
                 {isOpen && (
-                  <div className="p-5 border-t border-gray-200/60 text-base text-gray-600 leading-relaxed animate-fade-in">
+                  <div className="p-5 border-t border-gray-200/60 content text-gray-600 leading-relaxed animate-fade-in">
                     {faq.a}
                   </div>
                 )}
@@ -677,13 +673,13 @@ export default function HomePage() {
             
             {/* Left Column Coordinates */}
             <div className="lg:col-span-5 space-y-5 sm:space-y-6 text-center lg:text-left">
-              <span className="text-xs font-extrabold uppercase tracking-widest" style={{ color: accentColor }}>Get Estimation</span>
-              <h2 className="text-3xl font-extrabold font-display leading-tight">Connect with Our Factory desk</h2>
-              <p className="text-base text-white/60 leading-relaxed">
+              <span className="content" style={{ color: accentColor }}>Get Estimation</span>
+              <h2 className="heading leading-tight">Connect with Our Factory desk</h2>
+              <p className="content text-white/60 leading-relaxed">
                 {db?.contact?.address || cms.contact.address}
               </p>
               
-              <div className="space-y-4 text-base font-semibold inline-flex flex-col items-center lg:items-start">
+              <div className="space-y-4 content inline-flex flex-col items-center lg:items-start">
                 <div className="flex gap-3"><Phone className="w-4 h-4 text-crimson shrink-0" style={{ color: accentColor }} /> <span>{db?.contact?.phone || cms.contact.phone}</span></div>
                 <div className="flex gap-3"><Mail className="w-4 h-4 text-crimson shrink-0" style={{ color: accentColor }} /> <span>{db?.contact?.email || cms.contact.email}</span></div>
                 <div className="flex gap-3"><Calendar className="w-4 h-4 text-crimson shrink-0" style={{ color: accentColor }} /> <span>{db?.contact?.officeHours || 'Mon - Sat | 8:30 AM - 6:00 PM'}</span></div>
@@ -697,8 +693,8 @@ export default function HomePage() {
                   <div className="p-4 bg-crimson/5 rounded-full text-crimson w-16 h-16 flex items-center justify-center mx-auto" style={{ color: accentColor, backgroundColor: accentColor + '0d' }}>
                     <CheckCircle2 className="w-8 h-8" />
                   </div>
-                  <h3 className="text-lg font-bold font-display text-premium-black">Enquiry Dispatched</h3>
-                  <p className="text-base text-gray-500 max-w-sm mx-auto">
+                  <h3 className="heading font-display text-premium-black">Enquiry Dispatched</h3>
+                  <p className="content text-gray-500 max-w-sm mx-auto">
                     Your site compound layout specs have been routed to the estimator team queue.
                   </p>
                 </div>
@@ -713,22 +709,22 @@ export default function HomePage() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-1.5">
                       <label className="label-text">Contact Name</label>
-                      <input type="text" required placeholder="Enter name" className="w-full bg-gray-50 border border-gray-200 rounded-none p-3 focus:outline-none focus:border-[#017501] font-semibold" />
+                      <input type="text" required placeholder="Enter name" className="w-full bg-gray-50 border border-gray-200 rounded-none p-3 focus:outline-none focus:border-[#017501] font-normal" />
                     </div>
                     <div className="space-y-1.5">
                       <label className="label-text">Phone Number</label>
-                      <input type="tel" required placeholder="Enter phone" className="w-full bg-gray-50 border border-gray-200 rounded-none p-3 focus:outline-none focus:border-[#017501] font-semibold" />
+                      <input type="tel" required placeholder="Enter phone" className="w-full bg-gray-50 border border-gray-200 rounded-none p-3 focus:outline-none focus:border-[#017501] font-normal" />
                     </div>
                   </div>
                   
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-1.5">
                       <label className="label-text">Email Address</label>
-                      <input type="email" required placeholder="Enter email" className="w-full bg-gray-50 border border-gray-200 rounded-none p-3 focus:outline-none focus:border-[#017501] font-semibold" />
+                      <input type="email" required placeholder="Enter email" className="w-full bg-gray-50 border border-gray-200 rounded-none p-3 focus:outline-none focus:border-[#017501] font-normal" />
                     </div>
                     <div className="space-y-1.5">
                       <label className="label-text">Inquiry Category</label>
-                      <select className="w-full bg-gray-50 border border-gray-200 rounded-none p-3 focus:outline-none cursor-pointer font-semibold">
+                      <select className="w-full bg-gray-50 border border-gray-200 rounded-none p-3 focus:outline-none cursor-pointer font-normal">
                         <option>Request Price Estimation drawing</option>
                         <option>Schedule Factory Visit</option>
                         <option>Bespoke Cabin Layout engineering</option>
@@ -743,7 +739,7 @@ export default function HomePage() {
 
                   <button 
                     type="submit" 
-                    className="w-full text-white btn-label uppercase tracking-wider py-4 rounded-none transition-all duration-300 cursor-pointer hover:shadow-lg"
+                    className="w-full text-white btn-label py-4 rounded-none transition-all duration-300 cursor-pointer hover:shadow-lg"
                     style={{ backgroundColor: accentColor }}
                   >
                     Dispatch Enquiry Request

@@ -14,7 +14,7 @@ export default function Footer() {
 
   const footerLogo = db?.branding?.logos?.footer || db?.branding?.logoUrl || cms.branding.logoUrl;
   return (
-    <footer className="bg-premium-black text-white/70 border-t border-white/10 pt-16 pb-8 font-sans w-full overflow-x-hidden">
+    <footer className="bg-white text-muted border-t border-hairline pt-16 pb-10 font-serif w-full overflow-x-hidden">
       <div className="page-container">
         
         {/* Main Footer Content */}
@@ -37,17 +37,17 @@ export default function Footer() {
                 </svg>
               )}
             </Link>
-            <p className="text-base leading-relaxed text-white/50">
+            <p className="text-body-sm leading-[1.5] text-muted normal-case">
               Leading manufacturer of high-quality portable office containers, site cabins, security cabins, and customized modular solutions across India since 2010.
             </p>
             {/* Newsletter */}
             <div className="space-y-3 pt-2">
-              <h4 className="text-xs font-semibold text-white uppercase tracking-wider">Subscribe to Catalog Updates</h4>
+              <h4 className="content text-white">Subscribe to Catalog Updates</h4>
               <form onSubmit={(e) => e.preventDefault()} className="relative flex items-center">
                 <input 
                   type="email" 
                   placeholder="Your Email Address" 
-                  className="bg-navy-light text-xs text-white placeholder-white/30 w-full pl-4 pr-12 py-3 rounded-none border border-white/10 focus:outline-none focus:border-crimson transition-colors duration-200"
+                  className="bg-navy-light content text-white placeholder-white/30 w-full pl-4 pr-12 py-3 rounded-none border border-white/10 focus:outline-none focus:border-crimson transition-colors duration-200"
                 />
                 <button type="submit" className="absolute right-2 p-1.5 bg-crimson hover:bg-crimson-dark text-white rounded-none transition-colors duration-200 cursor-pointer">
                   <Send className="w-3.5 h-3.5" />
@@ -58,10 +58,10 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-white uppercase text-xs font-bold tracking-wider mb-6 border-l-2 border-crimson pl-3">
+            <h3 className="heading text-white tracking-wider mb-6 border-l-2 border-crimson pl-3">
               Quick Links
             </h3>
-            <ul className="space-y-3 text-xs">
+            <ul className="space-y-3 content">
               <li>
                 <Link href="/" className="hover:text-crimson transition-colors duration-200">Home Page</Link>
               </li>
@@ -82,10 +82,10 @@ export default function Footer() {
 
           {/* Cabin Categories */}
           <div>
-            <h3 className="text-white uppercase text-xs font-bold tracking-wider mb-6 border-l-2 border-crimson pl-3">
+            <h3 className="heading text-white tracking-wider mb-6 border-l-2 border-crimson pl-3">
               Cabin Range
             </h3>
-            <ul className="space-y-3 text-xs text-white/50">
+            <ul className="space-y-3 content text-white/50">
               <li>MS & GI Portable Office Cabins</li>
               <li>Security & Guard Cabins</li>
               <li>Accommodation & Bunkhouse Units</li>
@@ -97,7 +97,7 @@ export default function Footer() {
 
           {/* Contact Details & Certification */}
           <div className="space-y-6">
-            <h3 className="text-white uppercase text-xs font-bold tracking-wider border-l-2 border-crimson pl-3">
+            <h3 className="heading text-white tracking-wider border-l-2 border-crimson pl-3">
               Hyderabad Head Office
             </h3>
             <ul className="space-y-3.5 text-xs">
@@ -116,10 +116,10 @@ export default function Footer() {
             </ul>
             
             {/* Accreditation section */}
-            <div className="pt-4 border-t border-white/10 flex items-center gap-3 text-xs text-white/40">
+            <div className="pt-4 border-t border-white/10 flex items-center gap-3 content text-white/40">
               <BadgeCheck className="w-8 h-8 text-crimson shrink-0" />
               <div>
-                <p className="font-semibold uppercase text-white/50">Quality Certified Manufacturer</p>
+                <p className="font-normal uppercase text-white/50">Quality Certified Manufacturer</p>
                 <p>15+ Years Experience | Nationwide Delivery</p>
               </div>
             </div>
@@ -129,7 +129,7 @@ export default function Footer() {
 
         {/* Bottom Socials & Copyright */}
         <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-white/40">
+          <p className="content text-white/40">
             &copy; {currentYear} {db?.branding?.name || 'Hindustan Portable Cabins'}. All rights reserved.
           </p>
           <div className="flex gap-4">

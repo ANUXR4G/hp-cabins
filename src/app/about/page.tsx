@@ -40,7 +40,7 @@ export default function AboutPage() {
               <span>Home</span>
             </Link>
             <ChevronRight className="w-3 h-3" />
-            <span className="text-crimson font-bold">About Us</span>
+            <span className="text-crimson font-normal">About Us</span>
           </div>
         </div>
       </div>
@@ -49,8 +49,8 @@ export default function AboutPage() {
       <div className="bg-premium-black border-y border-white/10 py-6 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between gap-4 mb-4">
-            <span className="text-xs text-crimson uppercase tracking-widest font-extrabold">Delivered Modular Arrays</span>
-            <Link href="/projects" className="text-xs text-white/50 hover:text-crimson transition-colors font-bold uppercase tracking-wider">View Project Timeline</Link>
+            <span className="content text-crimson font-normal">Delivered Modular Arrays</span>
+            <Link href="/projects" className="content text-white/50 hover:text-crimson transition-colors font-normal">View Project Timeline</Link>
           </div>
           <div className="flex gap-4 overflow-x-auto no-scrollbar pb-2">
             {recentProjectImages.map((imgUrl, idx) => (
@@ -72,7 +72,7 @@ export default function AboutPage() {
             <span className="text-crimson section-eyebrow block mb-1">Since 2010</span>
             <h2 className="section-title text-premium-black">Leading Portable Cabin Manufacturer in India</h2>
             
-            <p className="text-base leading-relaxed text-gray-600">
+            <p className="content leading-relaxed text-gray-600">
               Hindustan Portable Cabins is a leading and fast-growing manufacturer of high-quality portable cabins in India. We specialize in portable office containers, site cabins, security cabins, and customized modular solutions. With branches and manufacturing units across India, we serve clients nationwide and internationally with excellence, innovation, and reliability.
             </p>
 
@@ -84,8 +84,8 @@ export default function AboutPage() {
                   <Check className="w-3.5 h-3.5" />
                 </div>
                 <div>
-                  <h4 className="text-base font-bold text-premium-black uppercase tracking-wider">Superior Quality & Craftsmanship</h4>
-                  <p className="text-base text-gray-500 mt-0.5 leading-relaxed">
+                  <h4 className="content font-normal text-premium-black">Superior Quality & Craftsmanship</h4>
+                  <p className="content text-gray-500 mt-0.5 leading-relaxed">
                     We use premium materials and advanced technology to ensure every cabin is durable, weather-resistant, and built to last.
                   </p>
                 </div>
@@ -96,8 +96,8 @@ export default function AboutPage() {
                   <Layers className="w-3.5 h-3.5" />
                 </div>
                 <div>
-                  <h4 className="text-base font-bold text-premium-black uppercase tracking-wider">Customized Solutions</h4>
-                  <p className="text-base text-gray-500 mt-0.5 leading-relaxed">
+                  <h4 className="content font-normal text-premium-black">Customized Solutions</h4>
+                  <p className="content text-gray-500 mt-0.5 leading-relaxed">
                     From portable office containers to specialized modular cabins, we offer fully tailored solutions to fit your specific space, purpose, and budget.
                   </p>
                 </div>
@@ -108,8 +108,8 @@ export default function AboutPage() {
                   <Award className="w-3.5 h-3.5" />
                 </div>
                 <div>
-                  <h4 className="text-base font-bold text-premium-black uppercase tracking-wider">Safety & Compliance</h4>
-                  <p className="text-base text-gray-500 mt-0.5 leading-relaxed">
+                  <h4 className="content font-normal text-premium-black">Safety & Compliance</h4>
+                  <p className="content text-gray-500 mt-0.5 leading-relaxed">
                     Each cabin is engineered for structural strength, fire resistance, and electrical safety, following stringent national and international safety standards.
                   </p>
                 </div>
@@ -120,7 +120,7 @@ export default function AboutPage() {
             <div className="pt-2">
               <Link 
                 href="/contact"
-                className="bg-crimson hover:bg-crimson-dark text-white text-sm font-bold uppercase tracking-wider py-4 px-8 rounded-none inline-block transition-all shadow-crimson/15 hover:scale-105 active:scale-95"
+                className="bg-crimson hover:bg-crimson-dark content text-white py-4 px-8 rounded-none inline-block transition-all shadow-crimson/15 hover:scale-105 active:scale-95"
               >
                 Request Factory Visit
               </Link>
@@ -147,8 +147,8 @@ export default function AboutPage() {
           <div className="grid grid-cols-2 md:grid-cols-5 gap-8 text-center">
             {stats.map((stat, idx) => (
               <div key={idx} className="space-y-1">
-                <span className="block text-2xl sm:text-3xl font-extrabold text-crimson tabular-nums">{stat.value}</span>
-                <span className="block text-xs uppercase tracking-wider text-white/50 font-bold">{stat.label}</span>
+                <span className="block heading text-crimson tabular-nums">{stat.value}</span>
+                <span className="block content text-white/50 font-normal">{stat.label}</span>
               </div>
             ))}
           </div>

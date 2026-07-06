@@ -40,8 +40,8 @@ export default function PropertyDetailsPage(_props: PageProps) {
   if (isLoading) {
     return (
       <div className="py-24 text-center max-w-xl mx-auto space-y-4">
-        <h2 className="text-xl font-bold font-display text-premium-black">Loading product...</h2>
-        <p className="text-base text-gray-500">Please wait...</p>
+        <h2 className="heading text-premium-black">Loading product...</h2>
+        <p className="content text-gray-500">Please wait...</p>
       </div>
     );
   }
@@ -49,9 +49,9 @@ export default function PropertyDetailsPage(_props: PageProps) {
   if (!property) {
     return (
       <div className="py-24 text-center max-w-xl mx-auto space-y-4">
-        <h2 className="text-xl font-bold font-display text-premium-black">Model Not Found</h2>
-        <p className="text-base text-gray-500">The product you are trying to view does not exist or has been removed.</p>
-        <Link href="/properties" className="bg-crimson text-white text-sm font-bold uppercase py-3.5 px-6 rounded-none inline-block">
+        <h2 className="heading text-premium-black">Model Not Found</h2>
+        <p className="content text-gray-500">The product you are trying to view does not exist or has been removed.</p>
+        <Link href="/properties" className="bg-crimson content text-white py-3.5 px-6 rounded-none inline-block">
           Back to Catalog
         </Link>
       </div>
@@ -64,12 +64,12 @@ export default function PropertyDetailsPage(_props: PageProps) {
       {/* Breadcrumb banner */}
       <div className="bg-white border-b border-gray-200/50 py-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-2 text-xs uppercase tracking-wider text-gray-400 font-bold">
+          <div className="flex items-center gap-2 content text-gray-400 font-normal">
             <Link href="/" className="hover:text-crimson transition-colors">Home</Link>
             <ChevronRight className="w-3 h-3 text-gray-300" />
             <Link href="/properties" className="hover:text-crimson transition-colors">Cabin Catalog</Link>
             <ChevronRight className="w-3 h-3 text-gray-300" />
-            <span className="text-crimson font-extrabold">{property.title}</span>
+            <span className="text-crimson font-normal">{property.title}</span>
           </div>
         </div>
       </div>
@@ -96,11 +96,11 @@ export default function PropertyDetailsPage(_props: PageProps) {
             {/* Tagline & Overview */}
             <div className="bg-white p-6 sm:p-8 rounded-none border border-gray-200/60 space-y-4">
               {property.tagline && (
-                <h2 className="text-xl sm:text-2xl font-extrabold font-display text-crimson leading-snug">
+                <h2 className="heading text-crimson leading-snug">
                   {property.tagline}
                 </h2>
               )}
-              <p className="text-base leading-relaxed text-gray-600">
+              <p className="content leading-relaxed text-gray-600">
                 {property.overview || property.description}
               </p>
             </div>
@@ -108,16 +108,16 @@ export default function PropertyDetailsPage(_props: PageProps) {
             {/* Product Features */}
             {(property.featureCards?.length ?? 0) > 0 && (
               <div className="bg-white p-6 sm:p-8 rounded-none border border-gray-200/60 space-y-6">
-                <h2 className="text-lg font-bold uppercase border-l-2 border-crimson pl-3 text-premium-black font-display">
+                <h2 className="heading border-l-2 border-crimson pl-3 text-premium-black font-display">
                   Product Features
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {property.featureCards!.map((card) => (
-                    <div key={card.title} className="bg-gray-50 p-5 rounded-none border border-gray-100 space-y-3">
-                      <h3 className="text-sm font-bold text-crimson">{card.title}</h3>
+                    <div key={card.title} className="bg-gray-50 p-5 rounded-none border border-hairline space-y-3">
+                      <h3 className="content font-normal text-crimson">{card.title}</h3>
                       <ul className="space-y-2">
                         {card.points.map((point) => (
-                          <li key={point} className="flex gap-2 text-base text-gray-600 leading-relaxed">
+                          <li key={point} className="flex gap-2 content text-gray-600 leading-relaxed">
                             <CheckCircle2 className="w-4 h-4 text-crimson shrink-0 mt-0.5" />
                             <span>{point}</span>
                           </li>
@@ -132,15 +132,15 @@ export default function PropertyDetailsPage(_props: PageProps) {
             {/* Key Benefits */}
             {(property.keyBenefits?.length ?? 0) > 0 && (
               <div className="bg-white p-6 sm:p-8 rounded-none border border-gray-200/60 space-y-4">
-                <h2 className="text-lg font-bold uppercase border-l-2 border-crimson pl-3 text-premium-black font-display">
+                <h2 className="heading border-l-2 border-crimson pl-3 text-premium-black font-display">
                   Key Benefits
                 </h2>
                 <ul className="space-y-3">
                   {property.keyBenefits!.map((benefit) => (
-                    <li key={benefit.title} className="flex gap-3 text-base text-gray-600 leading-relaxed">
+                    <li key={benefit.title} className="flex gap-3 content text-gray-600 leading-relaxed">
                       <CheckCircle2 className="w-4 h-4 text-crimson shrink-0 mt-0.5" />
                       <span>
-                        <strong className="text-premium-black font-semibold">{benefit.title}</strong>
+                        <strong className="text-premium-black font-normal">{benefit.title}</strong>
                         {benefit.description ? ` — ${benefit.description}` : ''}
                       </span>
                     </li>
@@ -152,13 +152,13 @@ export default function PropertyDetailsPage(_props: PageProps) {
             {/* Applications */}
             {(property.applications?.length ?? 0) > 0 && (
               <div className="bg-white p-6 sm:p-8 rounded-none border border-gray-200/60 space-y-4">
-                <h2 className="text-lg font-bold uppercase border-l-2 border-crimson pl-3 text-premium-black font-display">
+                <h2 className="heading border-l-2 border-crimson pl-3 text-premium-black font-display">
                   Applications
                 </h2>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   {property.applications!.map((app) => (
-                    <li key={app} className="flex gap-2 text-base text-gray-600">
-                      <span className="text-crimson font-bold">•</span>
+                    <li key={app} className="flex gap-2 content text-gray-600">
+                      <span className="text-crimson font-normal">•</span>
                       <span>{app}</span>
                     </li>
                   ))}
@@ -176,7 +176,7 @@ export default function PropertyDetailsPage(_props: PageProps) {
               
               <div className="border-b border-gray-100 pb-4 text-center">
                 <span className="text-crimson section-eyebrow block mb-1">Get In Touch</span>
-                <h3 className="text-base font-extrabold font-display text-premium-black">Request a Quote</h3>
+                <h3 className="content font-normal font-display text-premium-black">Request a Quote</h3>
               </div>
 
               {viewingFormSubmitted ? (
@@ -184,7 +184,7 @@ export default function PropertyDetailsPage(_props: PageProps) {
                   <div className="w-12 h-12 bg-crimson/5 text-crimson flex items-center justify-center rounded-full mx-auto">
                     <CheckCircle2 className="w-6 h-6" />
                   </div>
-                  <h4 className="font-bold text-sm">Enquiry Submitted</h4>
+                  <h4 className="font-normal text-sm">Enquiry Submitted</h4>
                   <p className="section-desc">
                     Thank you. Our team will contact you shortly with product details and availability.
                   </p>
@@ -198,7 +198,7 @@ export default function PropertyDetailsPage(_props: PageProps) {
                   className="space-y-4 text-base"
                 >
                   <div className="space-y-1.5">
-                    <label className="font-bold text-gray-500 uppercase">Your Name</label>
+                    <label className="font-normal text-gray-500 uppercase">Your Name</label>
                     <input 
                       type="text" 
                       required 
@@ -208,7 +208,7 @@ export default function PropertyDetailsPage(_props: PageProps) {
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="font-bold text-gray-500 uppercase">Phone Number</label>
+                    <label className="font-normal text-gray-500 uppercase">Phone Number</label>
                     <input 
                       type="tel" 
                       required 
@@ -218,7 +218,7 @@ export default function PropertyDetailsPage(_props: PageProps) {
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="font-bold text-gray-500 uppercase">Email Address</label>
+                    <label className="font-normal text-gray-500 uppercase">Email Address</label>
                     <input 
                       type="email" 
                       required 
@@ -228,7 +228,7 @@ export default function PropertyDetailsPage(_props: PageProps) {
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="font-bold text-gray-500 uppercase">Message</label>
+                    <label className="font-normal text-gray-500 uppercase">Message</label>
                     <textarea 
                       required 
                       rows={3}
@@ -249,7 +249,7 @@ export default function PropertyDetailsPage(_props: PageProps) {
               <div className="pt-4 border-t border-gray-100 flex flex-col gap-3 text-sm">
                 <a 
                   href={`tel:${(cms.contact?.phone || '+919000088459').replace(/\s/g, '')}`}
-                  className="flex items-center justify-center gap-2 border border-gray-200 hover:border-crimson py-3 rounded-none font-bold transition-colors"
+                  className="flex items-center justify-center gap-2 border border-gray-200 hover:border-crimson py-3 rounded-none font-normal transition-colors"
                 >
                   <Phone className="w-4 h-4 text-crimson" />
                   <span>Call {cms.contact?.phone || '+91 90000 88459'}</span>
@@ -258,7 +258,7 @@ export default function PropertyDetailsPage(_props: PageProps) {
                   href={`https://wa.me/${(cms.contact?.whatsapp || cms.contact?.phone || '+919000088459').replace(/\D/g, '')}`}
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="flex items-center justify-center gap-2 bg-[#25D366] text-white py-3 rounded-none font-bold hover:bg-[#20ba59] transition-colors"
+                  className="flex items-center justify-center gap-2 bg-[#25D366] text-white py-3 rounded-none font-normal hover:bg-[#20ba59] transition-colors"
                 >
                   <MessageSquare className="w-4 h-4 fill-white text-[#25D366]" />
                   <span>Inquire via WhatsApp</span>
@@ -273,7 +273,7 @@ export default function PropertyDetailsPage(_props: PageProps) {
         {/* Similar Properties Showcase */}
         {similarProperties.length > 0 && (
           <div className="border-t border-gray-200/60 pt-16 mt-16 space-y-8">
-            <h2 className="text-xl font-bold font-display text-premium-black">Similar Products in {property.category}</h2>
+            <h2 className="heading text-premium-black">Similar Products in {property.category}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl">
               {similarProperties.map((p) => (
                 <PropertyCard key={p.id} property={p} />
